@@ -31,11 +31,12 @@ class SplashPage extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: Image.asset("assets/images/splash.jpeg").image,
-                fit: BoxFit.cover,
-                alignment: _backgroundImageAlignments[
-                    math.Random().nextInt(_backgroundImageAlignments.length)],
-                opacity: 0.055),
+              image: Image.asset("assets/images/splash.jpeg").image,
+              fit: BoxFit.cover,
+              alignment: _backgroundImageAlignments[
+                  math.Random().nextInt(_backgroundImageAlignments.length)],
+              opacity: 0.055,
+            ),
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -53,26 +54,41 @@ class SplashPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BlocConsumer<SplashCubit, SplashState>(
-                listener: (context, state) {
-                  // TODO: Событие загрузки
-                },
+                listener: _splashListener,
                 builder: (context, state) {
                   return ProgressLogo(progress: state.progress);
                 },
               ),
               const SizedBox(height: 20),
-              Text(
-                S.of(context).BrujAnime,
-                style: GoogleFonts.prompt(
-                  fontSize: 50,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 3,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
+              const _LogoText(),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void _splashListener(context, SplashState state) {
+    state.mapOrNull(loaded: (state) {
+      // TODO: Navigation after loaded
+    });
+  }
+}
+
+class _LogoText extends StatelessWidget {
+  const _LogoText({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      S.of(context).BrujAnime,
+      style: GoogleFonts.prompt(
+        fontSize: 50,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 3,
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

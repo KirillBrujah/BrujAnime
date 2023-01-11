@@ -1,18 +1,18 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'splash_cubit.freezed.dart';
 part 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
-  SplashCubit() : super(const SplashInitial());
+  SplashCubit() : super(const SplashState.loading(progress: 0));
 
   Future<void> startLoad() async {
-    emit(const SplashInitial());
-    emit(const SplashUpdateProgress(0.01));
+    emit(const SplashState.loading(progress: 0.1));
     for (int i = 0; i < 9; i++) {
-      emit(SplashUpdateProgress(state.progress + 0.1));
+      emit(state.copyWith(progress: state.progress + 0.1));
       await Future.delayed(const Duration(milliseconds: 300));
     }
-    emit(const SplashLoadComplete());
+    emit(const SplashState.loaded());
   }
 }
