@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `BrujAnime`
+  String get BrujAnime {
+    return Intl.message(
+      'BrujAnime',
+      name: 'BrujAnime',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Home`
   String get home {
     return Intl.message(
