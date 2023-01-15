@@ -1,7 +1,9 @@
 {
   "BrujAnime": "BrujAnime",
   "home": "Home",
+  "catalog": "Catalog",
   "genres": "Genres",
   "top": "Top",
-  "favorites": "Favorites"
+  "favorite": "Favorite",
+  "settings": "Settings"
 }

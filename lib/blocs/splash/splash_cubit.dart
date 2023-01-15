@@ -11,7 +11,7 @@ class SplashCubit extends Cubit<SplashState> {
     emit(const SplashState.loading(progress: 0.1));
     for (int i = 0; i < 9; i++) {
       emit(state.copyWith(progress: state.progress + 0.1));
-      await Future.delayed(const Duration(milliseconds: 300));
+      await Future.delayed(const Duration(milliseconds: 10));
     }
     emit(const SplashState.loaded());
   }

@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Catalog`
+  String get catalog {
+    return Intl.message(
+      'Catalog',
+      name: 'catalog',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Genres`
   String get genres {
     return Intl.message(
@@ -90,11 +100,21 @@ class S {
     );
   }
 
-  /// `Favorites`
-  String get favorites {
+  /// `Favorite`
+  String get favorite {
     return Intl.message(
-      'Favorites',
-      name: 'favorites',
+      'Favorite',
+      name: 'favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
       desc: '',
       args: [],
     );

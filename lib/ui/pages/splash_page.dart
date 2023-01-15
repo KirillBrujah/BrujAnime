@@ -1,8 +1,10 @@
 import 'dart:math' as math;
 
+import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/splash/splash_cubit.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/progress_logo.dart';
+import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,7 +72,9 @@ class SplashPage extends StatelessWidget {
 
   void _splashListener(context, SplashState state) {
     state.mapOrNull(loaded: (state) {
-      // TODO: Navigation after loaded
+      // TODO: Saving loaded data into objects
+
+      AutoRouter.of(context).replace(const MainRoute());
     });
   }
 }

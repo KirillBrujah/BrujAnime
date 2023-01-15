@@ -6,50 +6,73 @@ import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
 
-const _homeTab = AutoRoute(
-  name: "HomeTabRoute",
-  initial: true,
-  page: EmptyRouterPage,
-  children: [
-    //
-  ],
-);
+class _CommonRoutes {
+  static const anime = AutoRoute(page: AnimePage);
+  static const search = AutoRoute(page: SearchPage);
+}
 
-const _catalogTab = AutoRoute(
-  name: "CatalogTabRoute",
-  page: EmptyRouterPage,
-  children: [
-    AutoRoute(
-      page: CatalogPage,
-      initial: true,
-    ),
-  ],
-);
+class _MainTabs {
+  static const home = AutoRoute(
+    name: "HomeTabRoute",
+    initial: true,
+    page: EmptyRouterPage,
+    children: [
+      AutoRoute(
+        page: HomePage,
+        initial: true,
+      ),
+      _CommonRoutes.anime,
+      _CommonRoutes.search,
+    ],
+  );
 
-const _favoriteTab = AutoRoute(
-  name: "FavoriteTabRoute",
-  page: EmptyRouterPage,
-  children: [
-    //
-  ],
-);
+  static const catalog = AutoRoute(
+    name: "CatalogTabRoute",
+    page: EmptyRouterPage,
+    children: [
+      AutoRoute(
+        page: CatalogPage,
+        initial: true,
+        children: [
+          AutoRoute(page: ScheduleCatalogPage),
+          AutoRoute(page: GenresCatalogPage),
+          AutoRoute(page: TopCatalogPage),
+        ],
+      ),
+      _CommonRoutes.anime,
+      _CommonRoutes.search,
+    ],
+  );
 
-const _settingsTab = AutoRoute(
-  name: "SettingsTabRoute",
-  page: EmptyRouterPage,
-  children: [
-    //
-  ],
-);
+  static const favorite = AutoRoute(
+    name: "FavoriteTabRoute",
+    page: EmptyRouterPage,
+    children: [
+      AutoRoute(
+        page: FavoritePage,
+        initial: true,
+      ),
+      _CommonRoutes.anime,
+    ],
+  );
+
+  static const settings = AutoRoute(
+    name: "SettingsTabRoute",
+    page: EmptyRouterPage,
+    children: [
+      AutoRoute(
+        page: SettingsPage,
+        initial: true,
+      ),
+    ],
+  );
+
+  static const List<AutoRoute> tabs = [home, catalog, favorite, settings];
+}
 
 const _mainRoute = AutoRoute(
   page: MainPage,
-  children: [
-    _homeTab,
-    _catalogTab,
-    _favoriteTab,
-    _settingsTab,
-  ],
+  children: _MainTabs.tabs,
 );
 
 @MaterialAutoRouter(
