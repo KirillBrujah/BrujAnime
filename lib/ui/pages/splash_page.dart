@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:auto_route/auto_route.dart';
-import 'package:brujanime/blocs/splash/splash_cubit.dart';
+import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/progress_logo.dart';
 import 'package:brujanime/utils/app_router.dart';
@@ -27,7 +27,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => SplashCubit()..startLoad(),
+      create: (_) => ApplicationPreloadCubit()..startLoad(),
       child: Scaffold(
         body: Container(
           width: MediaQuery.of(context).size.width,
@@ -55,7 +55,7 @@ class SplashPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              BlocConsumer<SplashCubit, SplashState>(
+              BlocConsumer<ApplicationPreloadCubit, ApplicationPreloadState>(
                 listener: _splashListener,
                 builder: (context, state) {
                   return ProgressLogo(progress: state.progress);
@@ -70,8 +70,8 @@ class SplashPage extends StatelessWidget {
     );
   }
 
-  void _splashListener(context, SplashState state) {
-    state.mapOrNull(loaded: (state) {
+  void _splashListener(context, ApplicationPreloadState state) {
+    state.mapOrNull(completed: (state) {
       // TODO: Saving loaded data into objects
 
       AutoRouter.of(context).replace(const MainRoute());
