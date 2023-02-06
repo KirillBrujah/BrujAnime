@@ -1,0 +1,9 @@
+export 'anime_character_models.dart';
+export 'anime_episode_models.dart';
+export 'anime_general_models.dart';
+export 'anime_news_models.dart';
+export 'anime_recommendation_models.dart';
+export 'anime_relation_models.dart';
+export 'anime_review_models.dart';
+export 'anime_statistics_models.dart';
+export 'anime_videos_models.dart';
