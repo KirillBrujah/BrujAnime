@@ -6,7 +6,7 @@ part of 'anime_general_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Anime _$AnimeFromJson(Map<String, dynamic> json) => Anime(
+_$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
       id: json['mal_id'] as int,
       title: json['title'] as String?,
       titleEnglish: json['title_english'] as String?,
@@ -22,7 +22,7 @@ Anime _$AnimeFromJson(Map<String, dynamic> json) => Anime(
       background: json['background'] as String? ?? "",
     );
 
-Map<String, dynamic> _$AnimeToJson(Anime instance) => <String, dynamic>{
+Map<String, dynamic> _$$_AnimeToJson(_$_Anime instance) => <String, dynamic>{
       'mal_id': instance.id,
       'title': instance.title,
       'title_english': instance.titleEnglish,
@@ -38,21 +38,23 @@ Map<String, dynamic> _$AnimeToJson(Anime instance) => <String, dynamic>{
       'background': instance.background,
     };
 
-AnimeTitle _$AnimeTitleFromJson(Map<String, dynamic> json) => AnimeTitle(
+_$_AnimeTitle _$$_AnimeTitleFromJson(Map<String, dynamic> json) =>
+    _$_AnimeTitle(
       json['title'] as String,
     );
 
-Map<String, dynamic> _$AnimeTitleToJson(AnimeTitle instance) =>
+Map<String, dynamic> _$$_AnimeTitleToJson(_$_AnimeTitle instance) =>
     <String, dynamic>{
       'title': instance.title,
     };
 
-AnimeAired _$AnimeAiredFromJson(Map<String, dynamic> json) => AnimeAired(
+_$_AnimeAired _$$_AnimeAiredFromJson(Map<String, dynamic> json) =>
+    _$_AnimeAired(
       DateTime.parse(json['from'] as String),
       DateTime.parse(json['to'] as String),
     );
 
-Map<String, dynamic> _$AnimeAiredToJson(AnimeAired instance) =>
+Map<String, dynamic> _$$_AnimeAiredToJson(_$_AnimeAired instance) =>
     <String, dynamic>{
       'from': instance.from.toIso8601String(),
       'to': instance.to.toIso8601String(),

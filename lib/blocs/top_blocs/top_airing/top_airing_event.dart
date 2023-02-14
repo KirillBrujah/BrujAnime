@@ -1,4 +1,6 @@
 part of 'top_airing_bloc.dart';
 
-@immutable
-abstract class TopAiringEvent {}
+@freezed
+class TopAiringEvent {
+  const factory TopAiringEvent.load() = _TopAiringLoadEvent;
+}
