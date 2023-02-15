@@ -1,5 +1,4 @@
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/models/api_models/anime_models/anime_general_models.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/services/network/network.dart';
 import 'package:brujanime/utils/debug_functions.dart';
@@ -12,12 +11,17 @@ part 'top_airing_state.dart';
 
 class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
   TopAiringBloc() : super(const TopAiringState.initial()) {
-    on<_TopAiringLoadEvent>(_load);
+    on<_TopAiringLoadEvent>(
+      _load,
+      // TODO: Debounce
+    );
   }
 
   Future<void> _load(_TopAiringLoadEvent event, emit) async {
     try {
-      final results = await TopNetworkService().getTop();
+      final results = await TopNetworkService().getTop(
+        filter: AnimeSearchFilter.airing,
+      );
 
       emit(TopAiringState.data(
         data: results.successResults,
