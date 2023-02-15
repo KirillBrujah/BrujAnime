@@ -17,7 +17,7 @@
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'api_response.freezed.dart';
+part 'response_models.freezed.dart';
 // part 'api_response.g.dart';
 
 @Freezed(genericArgumentFactories: true)
