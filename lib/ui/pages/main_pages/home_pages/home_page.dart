@@ -9,13 +9,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (_) => TopAiringBloc()
-          ..add(
-            TopAiringEvent.load(),
-          ),
+        create: (_) => TopAiringBloc()..add(TopAiringEvent.load()),
         child: BlocBuilder<TopAiringBloc, TopAiringState>(
           builder: (context, state) => state.when(
-            initial: () => CircularProgressIndicator(),
+            initial: () => const Center(child: CircularProgressIndicator()),
             data: (data) => Text('${data.length}'),
             error: (message) => Text(message),
           ),

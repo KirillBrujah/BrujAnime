@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Can't load Top`
+  String get top_load_error {
+    return Intl.message(
+      'Can\'t load Top',
+      name: 'top_load_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

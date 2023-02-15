@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "top": MessageLookupByLibrary.simpleMessage("Top")
+        "top": MessageLookupByLibrary.simpleMessage("Top"),
+        "top_load_error":
+            MessageLookupByLibrary.simpleMessage("Can\'t load Top")
       };
 }

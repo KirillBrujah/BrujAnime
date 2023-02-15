@@ -1,9 +1,22 @@
 {
   "BrujAnime": "BrujAnime",
+
+  "@_TITLES" : {},
   "home": "Home",
   "catalog": "Catalog",
   "genres": "Genres",
   "top": "Top",
   "favorite": "Favorite",
-  "settings": "Settings"
+  "settings": "Settings",
+
+
+
+
+
+
+
+  "@_ERRORS": {},
+  "top_load_error": "Can't load Top"
+
+
 }

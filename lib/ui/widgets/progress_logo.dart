@@ -1,8 +1,7 @@
 import 'dart:math' as math;
-import 'dart:ui';
 
+import 'package:brujanime/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProgressLogo extends StatelessWidget {
   const ProgressLogo({Key? key, this.progress = 0.0}) : super(key: key);
@@ -24,7 +23,7 @@ class ProgressLogo extends StatelessWidget {
             child: SizedBox(
               height: 170,
               width: 170,
-              child: SvgPicture.asset("assets/svg/yin_yang.svg"),
+              child: Assets.svg.yinYang.svg(),
             ),
           ),
         ],

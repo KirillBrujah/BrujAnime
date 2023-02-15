@@ -1,3 +1,4 @@
+import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/api_models/anime_models/anime_general_models.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/services/network/network.dart';
@@ -17,13 +18,11 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     try {
       final results = await TopNetworkService().getTop();
 
-      ApiResponse;
-
       emit(TopAiringState.data(
         data: results.successResults,
       ));
     } catch (e) {
-      print(e);
+      emit(TopAiringState.error(S.current.top_load_error));
     }
   }
 }
