@@ -14,7 +14,7 @@ _$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
       episodes: json['episodes'] as int? ?? 0,
       airing: json['airing'] as bool,
       duration: json['duration'] as String,
-      score: json['score'] as int? ?? 0,
+      score: (json['score'] as num?)?.toDouble() ?? 0,
       scoredBy: json['scoredBy'] as int? ?? 0,
       rank: json['rank'] as int? ?? 0,
       popularity: json['popularity'] as int? ?? 0,

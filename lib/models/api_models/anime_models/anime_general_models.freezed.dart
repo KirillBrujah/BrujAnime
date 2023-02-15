@@ -33,7 +33,7 @@ mixin _$Anime {
   int get episodes => throw _privateConstructorUsedError; // TODO: AnimeStatuses
   bool get airing => throw _privateConstructorUsedError; // TODO: Aired
   String get duration => throw _privateConstructorUsedError; // TODO: rating
-  int get score => throw _privateConstructorUsedError;
+  double get score => throw _privateConstructorUsedError;
   int get scoredBy => throw _privateConstructorUsedError;
   int get rank => throw _privateConstructorUsedError;
   int get popularity => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $AnimeCopyWith<$Res> {
       int episodes,
       bool airing,
       String duration,
-      int score,
+      double score,
       int scoredBy,
       int rank,
       int popularity,
@@ -125,7 +125,7 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       scoredBy: null == scoredBy
           ? _value.scoredBy
           : scoredBy // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
       int episodes,
       bool airing,
       String duration,
-      int score,
+      double score,
       int scoredBy,
       int rank,
       int popularity,
@@ -227,7 +227,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       scoredBy: null == scoredBy
           ? _value.scoredBy
           : scoredBy // ignore: cast_nullable_to_non_nullable
@@ -254,7 +254,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Anime implements _Anime {
+class _$_Anime extends _Anime {
   const _$_Anime(
       {@JsonKey(name: "mal_id") required this.id,
       this.title,
@@ -268,7 +268,8 @@ class _$_Anime implements _Anime {
       this.rank = 0,
       this.popularity = 0,
       this.synopsis = "",
-      this.background = ""});
+      this.background = ""})
+      : super._();
 
   factory _$_Anime.fromJson(Map<String, dynamic> json) =>
       _$$_AnimeFromJson(json);
@@ -301,7 +302,7 @@ class _$_Anime implements _Anime {
 // TODO: rating
   @override
   @JsonKey()
-  final int score;
+  final double score;
   @override
   @JsonKey()
   final int scoredBy;
@@ -383,7 +384,7 @@ class _$_Anime implements _Anime {
   }
 }
 
-abstract class _Anime implements Anime {
+abstract class _Anime extends Anime {
   const factory _Anime(
       {@JsonKey(name: "mal_id") required final int id,
       final String? title,
@@ -392,12 +393,13 @@ abstract class _Anime implements Anime {
       final int episodes,
       required final bool airing,
       required final String duration,
-      final int score,
+      final double score,
       final int scoredBy,
       final int rank,
       final int popularity,
       final String synopsis,
       final String background}) = _$_Anime;
+  const _Anime._() : super._();
 
   factory _Anime.fromJson(Map<String, dynamic> json) = _$_Anime.fromJson;
 
@@ -422,7 +424,7 @@ abstract class _Anime implements Anime {
   @override // TODO: Aired
   String get duration;
   @override // TODO: rating
-  int get score;
+  double get score;
   @override
   int get scoredBy;
   @override

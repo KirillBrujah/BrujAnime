@@ -5,6 +5,8 @@ part 'anime_general_models.g.dart';
 
 @freezed
 class Anime with _$Anime {
+  const Anime._();
+
   const factory Anime({
     @JsonKey(name: "mal_id") required int id,
     // TODO: images
@@ -25,7 +27,7 @@ class Anime with _$Anime {
     required String duration,
 
     // TODO: rating
-    @Default(0) int score,
+    @Default(0) double score,
     @Default(0) int scoredBy,
     @Default(0) int rank,
     @Default(0) int popularity,
@@ -34,23 +36,11 @@ class Anime with _$Anime {
 
     // TODO: List<AnimeStudio>
     // TODO: List<AnimeGenre>
-
-    // required this.id,
-    // this.title,
-    // this.titleEnglish,
-    // this.titleJapanese,
-    // this.episodes = 0,
-    // required this.airing,
-    // required this.duration,
-    // this.score = 0,
-    // this.scoredBy = 0,
-    // this.rank = 0,
-    // this.popularity = 0,
-    // this.synopsis = "",
-    // this.background = "",
   }) = _Anime;
 
   factory Anime.fromJson(Map<String, dynamic> json) => _$AnimeFromJson(json);
+
+  static Anime Function(Map<String, dynamic>) get converter => _$AnimeFromJson;
 }
 
 @freezed

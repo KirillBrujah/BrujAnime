@@ -14,61 +14,45 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ApiResponse<T> _$ApiResponseFromJson<T>(
-    Map<String, dynamic> json, T Function(Object?) fromJsonT) {
-  switch (json['runtimeType']) {
-    case 'data':
-      return _ApiResponseData<T>.fromJson(json, fromJsonT);
-    case 'error':
-      return _ApiResponseError<T>.fromJson(json, fromJsonT);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'ApiResponse',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
-}
-
 /// @nodoc
 mixin _$ApiResponse<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(T data) success,
     required TResult Function(Object exception) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(T data)? success,
     TResult? Function(Object exception)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(T data)? success,
     TResult Function(Object exception)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseData<T> value) data,
+    required TResult Function(_ApiResponseSuccess<T> value) success,
     required TResult Function(_ApiResponseError<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseData<T> value)? data,
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
     TResult? Function(_ApiResponseError<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseData<T> value)? data,
+    TResult Function(_ApiResponseSuccess<T> value)? success,
     TResult Function(_ApiResponseError<T> value)? error,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
       throw _privateConstructorUsedError;
 }
 
@@ -91,20 +75,20 @@ class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$_ApiResponseDataCopyWith<T, $Res> {
-  factory _$$_ApiResponseDataCopyWith(_$_ApiResponseData<T> value,
-          $Res Function(_$_ApiResponseData<T>) then) =
-      __$$_ApiResponseDataCopyWithImpl<T, $Res>;
+abstract class _$$_ApiResponseSuccessCopyWith<T, $Res> {
+  factory _$$_ApiResponseSuccessCopyWith(_$_ApiResponseSuccess<T> value,
+          $Res Function(_$_ApiResponseSuccess<T>) then) =
+      __$$_ApiResponseSuccessCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$_ApiResponseDataCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$_ApiResponseData<T>>
-    implements _$$_ApiResponseDataCopyWith<T, $Res> {
-  __$$_ApiResponseDataCopyWithImpl(
-      _$_ApiResponseData<T> _value, $Res Function(_$_ApiResponseData<T>) _then)
+class __$$_ApiResponseSuccessCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$_ApiResponseSuccess<T>>
+    implements _$$_ApiResponseSuccessCopyWith<T, $Res> {
+  __$$_ApiResponseSuccessCopyWithImpl(_$_ApiResponseSuccess<T> _value,
+      $Res Function(_$_ApiResponseSuccess<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +96,7 @@ class __$$_ApiResponseDataCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_ApiResponseData<T>(
+    return _then(_$_ApiResponseSuccess<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -122,35 +106,26 @@ class __$$_ApiResponseDataCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-@JsonSerializable(genericArgumentFactories: true)
-class _$_ApiResponseData<T> implements _ApiResponseData<T> {
-  const _$_ApiResponseData(this.data, {final String? $type})
-      : $type = $type ?? 'data';
 
-  factory _$_ApiResponseData.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
-      _$$_ApiResponseDataFromJson(json, fromJsonT);
+class _$_ApiResponseSuccess<T> extends _ApiResponseSuccess<T> {
+  const _$_ApiResponseSuccess(this.data) : super._();
 
   @override
   final T data;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'ApiResponse<$T>.data(data: $data)';
+    return 'ApiResponse<$T>.success(data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiResponseData<T> &&
+            other is _$_ApiResponseSuccess<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
@@ -158,37 +133,37 @@ class _$_ApiResponseData<T> implements _ApiResponseData<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiResponseDataCopyWith<T, _$_ApiResponseData<T>> get copyWith =>
-      __$$_ApiResponseDataCopyWithImpl<T, _$_ApiResponseData<T>>(
+  _$$_ApiResponseSuccessCopyWith<T, _$_ApiResponseSuccess<T>> get copyWith =>
+      __$$_ApiResponseSuccessCopyWithImpl<T, _$_ApiResponseSuccess<T>>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(T data) success,
     required TResult Function(Object exception) error,
   }) {
-    return data(this.data);
+    return success(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(T data)? success,
     TResult? Function(Object exception)? error,
   }) {
-    return data?.call(this.data);
+    return success?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(T data)? success,
     TResult Function(Object exception)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this.data);
+    if (success != null) {
+      return success(data);
     }
     return orElse();
   }
@@ -196,50 +171,42 @@ class _$_ApiResponseData<T> implements _ApiResponseData<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseData<T> value) data,
+    required TResult Function(_ApiResponseSuccess<T> value) success,
     required TResult Function(_ApiResponseError<T> value) error,
   }) {
-    return data(this);
+    return success(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseData<T> value)? data,
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
     TResult? Function(_ApiResponseError<T> value)? error,
   }) {
-    return data?.call(this);
+    return success?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseData<T> value)? data,
+    TResult Function(_ApiResponseSuccess<T> value)? success,
     TResult Function(_ApiResponseError<T> value)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
-    return _$$_ApiResponseDataToJson<T>(this, toJsonT);
-  }
 }
 
-abstract class _ApiResponseData<T> implements ApiResponse<T> {
-  const factory _ApiResponseData(final T data) = _$_ApiResponseData<T>;
-
-  factory _ApiResponseData.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =
-      _$_ApiResponseData<T>.fromJson;
+abstract class _ApiResponseSuccess<T> extends ApiResponse<T> {
+  const factory _ApiResponseSuccess(final T data) = _$_ApiResponseSuccess<T>;
+  const _ApiResponseSuccess._() : super._();
 
   T get data;
   @JsonKey(ignore: true)
-  _$$_ApiResponseDataCopyWith<T, _$_ApiResponseData<T>> get copyWith =>
+  _$$_ApiResponseSuccessCopyWith<T, _$_ApiResponseSuccess<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -272,20 +239,12 @@ class __$$_ApiResponseErrorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-@JsonSerializable(genericArgumentFactories: true)
-class _$_ApiResponseError<T> implements _ApiResponseError<T> {
-  const _$_ApiResponseError(this.exception, {final String? $type})
-      : $type = $type ?? 'error';
 
-  factory _$_ApiResponseError.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
-      _$$_ApiResponseErrorFromJson(json, fromJsonT);
+class _$_ApiResponseError<T> extends _ApiResponseError<T> {
+  const _$_ApiResponseError(this.exception) : super._();
 
   @override
   final Object exception;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
 
   @override
   String toString() {
@@ -300,7 +259,6 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
             const DeepCollectionEquality().equals(other.exception, exception));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
@@ -315,7 +273,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(T data) success,
     required TResult Function(Object exception) error,
   }) {
     return error(exception);
@@ -324,7 +282,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(T data)? success,
     TResult? Function(Object exception)? error,
   }) {
     return error?.call(exception);
@@ -333,7 +291,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(T data)? success,
     TResult Function(Object exception)? error,
     required TResult orElse(),
   }) {
@@ -346,7 +304,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseData<T> value) data,
+    required TResult Function(_ApiResponseSuccess<T> value) success,
     required TResult Function(_ApiResponseError<T> value) error,
   }) {
     return error(this);
@@ -355,7 +313,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseData<T> value)? data,
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
     TResult? Function(_ApiResponseError<T> value)? error,
   }) {
     return error?.call(this);
@@ -364,7 +322,7 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseData<T> value)? data,
+    TResult Function(_ApiResponseSuccess<T> value)? success,
     TResult Function(_ApiResponseError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -373,20 +331,12 @@ class _$_ApiResponseError<T> implements _ApiResponseError<T> {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
-    return _$$_ApiResponseErrorToJson<T>(this, toJsonT);
-  }
 }
 
-abstract class _ApiResponseError<T> implements ApiResponse<T> {
+abstract class _ApiResponseError<T> extends ApiResponse<T> {
   const factory _ApiResponseError(final Object exception) =
       _$_ApiResponseError<T>;
-
-  factory _ApiResponseError.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =
-      _$_ApiResponseError<T>.fromJson;
+  const _ApiResponseError._() : super._();
 
   Object get exception;
   @JsonKey(ignore: true)

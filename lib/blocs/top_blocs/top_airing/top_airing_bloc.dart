@@ -15,12 +15,12 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
 
   Future<void> _load(_TopAiringLoadEvent event, emit) async {
     try {
-      final data = await TopNetworkService().getTop();
+      final results = await TopNetworkService().getTop();
 
       ApiResponse;
 
       emit(TopAiringState.data(
-        data: [],
+        data: results.successResults,
       ));
     } catch (e) {
       print(e);
