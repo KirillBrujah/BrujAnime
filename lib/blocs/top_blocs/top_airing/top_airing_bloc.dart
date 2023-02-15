@@ -2,6 +2,7 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/api_models/anime_models/anime_general_models.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/services/network/network.dart';
+import 'package:brujanime/utils/debug_functions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -21,7 +22,12 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
       emit(TopAiringState.data(
         data: results.successResults,
       ));
-    } catch (e) {
+    } catch (exc) {
+      reportError(
+        exception: exc,
+        library: "Top Airing Bloc",
+        context: "Load Top Airing",
+      );
       emit(TopAiringState.error(S.current.top_load_error));
     }
   }
