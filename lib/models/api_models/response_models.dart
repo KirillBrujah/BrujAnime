@@ -1,25 +1,8 @@
-// abstract class APIResult<T> {}
-//
-// class APIResultSuccess<T> {
-//   final T value;
-//
-//   APIResultSuccess(this.value);
-// }
-//
-// class APIResultError<T> {
-//   final Object exception;
-//
-//   APIResultError(this.exception);
-// }
-//
-//
-
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'response_models.freezed.dart';
 part 'response_models.g.dart';
-// part 'api_response.g.dart';
 
 @Freezed(
   genericArgumentFactories: true,
