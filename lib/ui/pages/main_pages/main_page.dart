@@ -9,7 +9,8 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter.tabBar(
-      routes: [
+      physics: const NeverScrollableScrollPhysics(),
+      routes: const [
         HomeTabRoute(),
         CatalogTabRoute(),
         FavoriteTabRoute(),
@@ -17,34 +18,52 @@ class MainPage extends StatelessWidget {
       ],
       builder: (context, child, controller) {
         final tabsRouter = AutoTabsRouter.of(context);
-        final localize = S.of(context);
         return Scaffold(
-          appBar: AppBar(title: Text(context.topRoute.name)),
           body: child,
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: tabsRouter.activeIndex,
-            onTap: tabsRouter.setActiveIndex,
-            items: [
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.home),
-                label: localize.home,
-              ),
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.list),
-                label: localize.catalog,
-              ),
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.favorite),
-                label: localize.favorite,
-              ),
-              BottomNavigationBarItem(
-                icon: const Icon(Icons.settings),
-                label: localize.settings,
-              ),
-            ],
+          bottomNavigationBar: _MainBottomNavigation(
+            activeIndex: tabsRouter.activeIndex,
+            setActiveIndex: tabsRouter.setActiveIndex,
           ),
         );
       },
+    );
+  }
+}
+
+class _MainBottomNavigation extends StatelessWidget {
+  const _MainBottomNavigation({
+    super.key,
+    required this.activeIndex,
+    required this.setActiveIndex,
+  });
+
+  final int activeIndex;
+  final void Function(int) setActiveIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return BottomNavigationBar(
+      currentIndex: activeIndex,
+      onTap: setActiveIndex,
+      items: [
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.home),
+          label: s.home,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.list),
+          label: s.catalog,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.favorite),
+          label: s.favorite,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.settings),
+          label: s.settings,
+        ),
+      ],
     );
   }
 }

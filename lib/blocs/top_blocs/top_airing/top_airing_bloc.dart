@@ -2,6 +2,7 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/services/network/network.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/utils/stream_transformers.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,23 +12,26 @@ part 'top_airing_state.dart';
 
 class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
   TopAiringBloc() : super(const TopAiringState.initial()) {
-    on<_TopAiringLoadEvent>(
-      _load,
-      // TODO: Debounce
+    on<_TopAiringFetchEvent>(
+      _fetch,
+      transformer: debounceTransformer(debounceDuration),
     );
+    on<_TopAiringResetEvent>(_reset);
   }
 
-  Future<void> _load(_TopAiringLoadEvent event, emit) async {
+  Future<void> _fetch(_TopAiringFetchEvent event, emit) async {
+    final pagination = state.pagination;
+    if (pagination?.hasNextPage == false) return;
+
     try {
       final results = await TopNetworkService().getTop(
         filter: AnimeSearchFilter.airing,
-        limit: 2,
+        page: pagination != null ? pagination.currentPage + 1 : 1,
       );
-
-      print('PAGINATION ${results.pagination}');
 
       emit(TopAiringState.data(
         data: results.successResults,
+        pagination: results.pagination!,
       ));
     } catch (exc) {
       reportError(
@@ -37,5 +41,10 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
       );
       emit(TopAiringState.error(S.current.top_load_error));
     }
+  }
+
+  void _reset(_TopAiringResetEvent event, emit) {
+    emit(const TopAiringState.initial());
+    add(TopAiringEvent.fetch());
   }
 }

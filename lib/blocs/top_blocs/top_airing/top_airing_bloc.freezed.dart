@@ -18,33 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TopAiringEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function() fetch,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function()? fetch,
+    TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function()? fetch,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_TopAiringLoadEvent value) load,
+    required TResult Function(_TopAiringFetchEvent value) fetch,
+    required TResult Function(_TopAiringResetEvent value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_TopAiringLoadEvent value)? load,
+    TResult? Function(_TopAiringFetchEvent value)? fetch,
+    TResult? Function(_TopAiringResetEvent value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_TopAiringLoadEvent value)? load,
+    TResult Function(_TopAiringFetchEvent value)? fetch,
+    TResult Function(_TopAiringResetEvent value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,35 +75,35 @@ class _$TopAiringEventCopyWithImpl<$Res, $Val extends TopAiringEvent>
 }
 
 /// @nodoc
-abstract class _$$_TopAiringLoadEventCopyWith<$Res> {
-  factory _$$_TopAiringLoadEventCopyWith(_$_TopAiringLoadEvent value,
-          $Res Function(_$_TopAiringLoadEvent) then) =
-      __$$_TopAiringLoadEventCopyWithImpl<$Res>;
+abstract class _$$_TopAiringFetchEventCopyWith<$Res> {
+  factory _$$_TopAiringFetchEventCopyWith(_$_TopAiringFetchEvent value,
+          $Res Function(_$_TopAiringFetchEvent) then) =
+      __$$_TopAiringFetchEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TopAiringLoadEventCopyWithImpl<$Res>
-    extends _$TopAiringEventCopyWithImpl<$Res, _$_TopAiringLoadEvent>
-    implements _$$_TopAiringLoadEventCopyWith<$Res> {
-  __$$_TopAiringLoadEventCopyWithImpl(
-      _$_TopAiringLoadEvent _value, $Res Function(_$_TopAiringLoadEvent) _then)
+class __$$_TopAiringFetchEventCopyWithImpl<$Res>
+    extends _$TopAiringEventCopyWithImpl<$Res, _$_TopAiringFetchEvent>
+    implements _$$_TopAiringFetchEventCopyWith<$Res> {
+  __$$_TopAiringFetchEventCopyWithImpl(_$_TopAiringFetchEvent _value,
+      $Res Function(_$_TopAiringFetchEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_TopAiringLoadEvent implements _TopAiringLoadEvent {
-  const _$_TopAiringLoadEvent();
+class _$_TopAiringFetchEvent implements _TopAiringFetchEvent {
+  const _$_TopAiringFetchEvent();
 
   @override
   String toString() {
-    return 'TopAiringEvent.load()';
+    return 'TopAiringEvent.fetch()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_TopAiringLoadEvent);
+        (other.runtimeType == runtimeType && other is _$_TopAiringFetchEvent);
   }
 
   @override
@@ -106,27 +112,30 @@ class _$_TopAiringLoadEvent implements _TopAiringLoadEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() load,
+    required TResult Function() fetch,
+    required TResult Function() reset,
   }) {
-    return load();
+    return fetch();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? load,
+    TResult? Function()? fetch,
+    TResult? Function()? reset,
   }) {
-    return load?.call();
+    return fetch?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
+    TResult Function()? fetch,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
-    if (load != null) {
-      return load();
+    if (fetch != null) {
+      return fetch();
     }
     return orElse();
   }
@@ -134,34 +143,139 @@ class _$_TopAiringLoadEvent implements _TopAiringLoadEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_TopAiringLoadEvent value) load,
+    required TResult Function(_TopAiringFetchEvent value) fetch,
+    required TResult Function(_TopAiringResetEvent value) reset,
   }) {
-    return load(this);
+    return fetch(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_TopAiringLoadEvent value)? load,
+    TResult? Function(_TopAiringFetchEvent value)? fetch,
+    TResult? Function(_TopAiringResetEvent value)? reset,
   }) {
-    return load?.call(this);
+    return fetch?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_TopAiringLoadEvent value)? load,
+    TResult Function(_TopAiringFetchEvent value)? fetch,
+    TResult Function(_TopAiringResetEvent value)? reset,
     required TResult orElse(),
   }) {
-    if (load != null) {
-      return load(this);
+    if (fetch != null) {
+      return fetch(this);
     }
     return orElse();
   }
 }
 
-abstract class _TopAiringLoadEvent implements TopAiringEvent {
-  const factory _TopAiringLoadEvent() = _$_TopAiringLoadEvent;
+abstract class _TopAiringFetchEvent implements TopAiringEvent {
+  const factory _TopAiringFetchEvent() = _$_TopAiringFetchEvent;
+}
+
+/// @nodoc
+abstract class _$$_TopAiringResetEventCopyWith<$Res> {
+  factory _$$_TopAiringResetEventCopyWith(_$_TopAiringResetEvent value,
+          $Res Function(_$_TopAiringResetEvent) then) =
+      __$$_TopAiringResetEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_TopAiringResetEventCopyWithImpl<$Res>
+    extends _$TopAiringEventCopyWithImpl<$Res, _$_TopAiringResetEvent>
+    implements _$$_TopAiringResetEventCopyWith<$Res> {
+  __$$_TopAiringResetEventCopyWithImpl(_$_TopAiringResetEvent _value,
+      $Res Function(_$_TopAiringResetEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_TopAiringResetEvent implements _TopAiringResetEvent {
+  const _$_TopAiringResetEvent();
+
+  @override
+  String toString() {
+    return 'TopAiringEvent.reset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_TopAiringResetEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetch,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetch,
+    TResult? Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetch,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TopAiringFetchEvent value) fetch,
+    required TResult Function(_TopAiringResetEvent value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TopAiringFetchEvent value)? fetch,
+    TResult? Function(_TopAiringResetEvent value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TopAiringFetchEvent value)? fetch,
+    TResult Function(_TopAiringResetEvent value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TopAiringResetEvent implements TopAiringEvent {
+  const factory _TopAiringResetEvent() = _$_TopAiringResetEvent;
 }
 
 /// @nodoc
@@ -169,21 +283,21 @@ mixin _$TopAiringState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data) data,
+    required TResult Function(List<Anime> data, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data)? data,
+    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data)? data,
+    TResult Function(List<Anime> data, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -248,8 +362,8 @@ class __$$_TopAiringInitialStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TopAiringInitialState implements _TopAiringInitialState {
-  const _$_TopAiringInitialState();
+class _$_TopAiringInitialState extends _TopAiringInitialState {
+  const _$_TopAiringInitialState() : super._();
 
   @override
   String toString() {
@@ -269,7 +383,7 @@ class _$_TopAiringInitialState implements _TopAiringInitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data) data,
+    required TResult Function(List<Anime> data, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -279,7 +393,7 @@ class _$_TopAiringInitialState implements _TopAiringInitialState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data)? data,
+    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -289,7 +403,7 @@ class _$_TopAiringInitialState implements _TopAiringInitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data)? data,
+    TResult Function(List<Anime> data, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -334,8 +448,9 @@ class _$_TopAiringInitialState implements _TopAiringInitialState {
   }
 }
 
-abstract class _TopAiringInitialState implements TopAiringState {
+abstract class _TopAiringInitialState extends TopAiringState {
   const factory _TopAiringInitialState() = _$_TopAiringInitialState;
+  const _TopAiringInitialState._() : super._();
 }
 
 /// @nodoc
@@ -344,7 +459,9 @@ abstract class _$$_TopAiringDataStateCopyWith<$Res> {
           $Res Function(_$_TopAiringDataState) then) =
       __$$_TopAiringDataStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Anime> data});
+  $Res call({List<Anime> data, ApiPagination pagination});
+
+  $ApiPaginationCopyWith<$Res> get pagination;
 }
 
 /// @nodoc
@@ -359,20 +476,36 @@ class __$$_TopAiringDataStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? pagination = null,
   }) {
     return _then(_$_TopAiringDataState(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Anime>,
+      pagination: null == pagination
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as ApiPagination,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiPaginationCopyWith<$Res> get pagination {
+    return $ApiPaginationCopyWith<$Res>(_value.pagination, (value) {
+      return _then(_value.copyWith(pagination: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$_TopAiringDataState implements _TopAiringDataState {
-  const _$_TopAiringDataState({required final List<Anime> data}) : _data = data;
+class _$_TopAiringDataState extends _TopAiringDataState {
+  const _$_TopAiringDataState(
+      {required final List<Anime> data, required this.pagination})
+      : _data = data,
+        super._();
 
   final List<Anime> _data;
   @override
@@ -383,8 +516,11 @@ class _$_TopAiringDataState implements _TopAiringDataState {
   }
 
   @override
+  final ApiPagination pagination;
+
+  @override
   String toString() {
-    return 'TopAiringState.data(data: $data)';
+    return 'TopAiringState.data(data: $data, pagination: $pagination)';
   }
 
   @override
@@ -392,12 +528,14 @@ class _$_TopAiringDataState implements _TopAiringDataState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TopAiringDataState &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.pagination, pagination) ||
+                other.pagination == pagination));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), pagination);
 
   @JsonKey(ignore: true)
   @override
@@ -410,32 +548,32 @@ class _$_TopAiringDataState implements _TopAiringDataState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data) data,
+    required TResult Function(List<Anime> data, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
-    return data(this.data);
+    return data(this.data, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data)? data,
+    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
-    return data?.call(this.data);
+    return data?.call(this.data, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data)? data,
+    TResult Function(List<Anime> data, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(this.data);
+      return data(this.data, pagination);
     }
     return orElse();
   }
@@ -475,11 +613,14 @@ class _$_TopAiringDataState implements _TopAiringDataState {
   }
 }
 
-abstract class _TopAiringDataState implements TopAiringState {
-  const factory _TopAiringDataState({required final List<Anime> data}) =
-      _$_TopAiringDataState;
+abstract class _TopAiringDataState extends TopAiringState {
+  const factory _TopAiringDataState(
+      {required final List<Anime> data,
+      required final ApiPagination pagination}) = _$_TopAiringDataState;
+  const _TopAiringDataState._() : super._();
 
   List<Anime> get data;
+  ApiPagination get pagination;
   @JsonKey(ignore: true)
   _$$_TopAiringDataStateCopyWith<_$_TopAiringDataState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -518,8 +659,8 @@ class __$$_TopAiringErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TopAiringErrorState implements _TopAiringErrorState {
-  const _$_TopAiringErrorState(this.message);
+class _$_TopAiringErrorState extends _TopAiringErrorState {
+  const _$_TopAiringErrorState(this.message) : super._();
 
   @override
   final String message;
@@ -551,7 +692,7 @@ class _$_TopAiringErrorState implements _TopAiringErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data) data,
+    required TResult Function(List<Anime> data, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -561,7 +702,7 @@ class _$_TopAiringErrorState implements _TopAiringErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data)? data,
+    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -571,7 +712,7 @@ class _$_TopAiringErrorState implements _TopAiringErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data)? data,
+    TResult Function(List<Anime> data, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -616,9 +757,10 @@ class _$_TopAiringErrorState implements _TopAiringErrorState {
   }
 }
 
-abstract class _TopAiringErrorState implements TopAiringState {
+abstract class _TopAiringErrorState extends TopAiringState {
   const factory _TopAiringErrorState(final String message) =
       _$_TopAiringErrorState;
+  const _TopAiringErrorState._() : super._();
 
   String get message;
   @JsonKey(ignore: true)
