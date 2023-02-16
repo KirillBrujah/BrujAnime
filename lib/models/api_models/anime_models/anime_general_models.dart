@@ -1,3 +1,4 @@
+import 'package:brujanime/models/api_models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'anime_general_models.freezed.dart';
@@ -9,7 +10,7 @@ class Anime with _$Anime {
 
   const factory Anime({
     @JsonKey(name: "mal_id") required int id,
-    // TODO: images
+    ImagesWrapper? images,
     // TODO: trailer
 
     // TODO: List<Title>
@@ -39,6 +40,8 @@ class Anime with _$Anime {
   }) = _Anime;
 
   factory Anime.fromJson(Map<String, dynamic> json) => _$AnimeFromJson(json);
+
+  String get simpleTitle => title ?? titleEnglish ?? titleJapanese ?? "";
 
   static Anime Function(Map<String, dynamic>) get converter => _$AnimeFromJson;
 }

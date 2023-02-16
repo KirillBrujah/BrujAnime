@@ -45,6 +45,6 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
 
   void _reset(_TopAiringResetEvent event, emit) {
     emit(const TopAiringState.initial());
-    add(TopAiringEvent.fetch());
+    add(const TopAiringEvent.fetch());
   }
 }

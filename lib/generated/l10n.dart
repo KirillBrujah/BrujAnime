@@ -129,6 +129,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Can't load Recommendations`
+  String get recommendations_load_error {
+    return Intl.message(
+      'Can\'t load Recommendations',
+      name: 'recommendations_load_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -8,6 +8,9 @@ part of 'anime_general_models.dart';
 
 _$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
       id: json['mal_id'] as int,
+      images: json['images'] == null
+          ? null
+          : ImagesWrapper.fromJson(json['images'] as Map<String, dynamic>),
       title: json['title'] as String?,
       titleEnglish: json['title_english'] as String?,
       titleJapanese: json['title_japanese'] as String?,
@@ -24,6 +27,7 @@ _$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
 
 Map<String, dynamic> _$$_AnimeToJson(_$_Anime instance) => <String, dynamic>{
       'mal_id': instance.id,
+      'images': instance.images,
       'title': instance.title,
       'title_english': instance.titleEnglish,
       'title_japanese': instance.titleJapanese,

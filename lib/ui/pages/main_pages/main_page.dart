@@ -19,7 +19,16 @@ class MainPage extends StatelessWidget {
       builder: (context, child, controller) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
-          body: child,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: MediaQuery.of(context).padding.top,
+                color: Theme.of(context).colorScheme.surface,
+              ),
+              Expanded(child: child),
+            ],
+          ),
           bottomNavigationBar: _MainBottomNavigation(
             activeIndex: tabsRouter.activeIndex,
             setActiveIndex: tabsRouter.setActiveIndex,

@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => TopAiringBloc()),
+        BlocProvider(create: (_) => AnimeRecommendationsBloc()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

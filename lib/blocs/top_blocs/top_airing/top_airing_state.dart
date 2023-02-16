@@ -11,11 +11,6 @@ class TopAiringState with _$TopAiringState {
   }) = _TopAiringDataState;
   const factory TopAiringState.error(String message) = _TopAiringErrorState;
 
-  bool get isInitial => maybeMap(
-        orElse: () => false,
-        initial: (_) => true,
-      );
-
   ApiPagination? get pagination => maybeMap(
         orElse: () => null,
         data: (state) => state.pagination,

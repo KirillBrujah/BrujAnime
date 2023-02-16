@@ -21,8 +21,9 @@ Anime _$AnimeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Anime {
   @JsonKey(name: "mal_id")
-  int get id => throw _privateConstructorUsedError; // TODO: images
-// TODO: trailer
+  int get id => throw _privateConstructorUsedError;
+  ImagesWrapper? get images =>
+      throw _privateConstructorUsedError; // TODO: trailer
 // TODO: List<Title>
   String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: "title_english")
@@ -52,6 +53,7 @@ abstract class $AnimeCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "mal_id") int id,
+      ImagesWrapper? images,
       String? title,
       @JsonKey(name: "title_english") String? titleEnglish,
       @JsonKey(name: "title_japanese") String? titleJapanese,
@@ -64,6 +66,8 @@ abstract class $AnimeCopyWith<$Res> {
       int popularity,
       String synopsis,
       String background});
+
+  $ImagesWrapperCopyWith<$Res>? get images;
 }
 
 /// @nodoc
@@ -80,6 +84,7 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
   @override
   $Res call({
     Object? id = null,
+    Object? images = freezed,
     Object? title = freezed,
     Object? titleEnglish = freezed,
     Object? titleJapanese = freezed,
@@ -98,6 +103,10 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      images: freezed == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as ImagesWrapper?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -148,6 +157,18 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
               as String,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ImagesWrapperCopyWith<$Res>? get images {
+    if (_value.images == null) {
+      return null;
+    }
+
+    return $ImagesWrapperCopyWith<$Res>(_value.images!, (value) {
+      return _then(_value.copyWith(images: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -158,6 +179,7 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "mal_id") int id,
+      ImagesWrapper? images,
       String? title,
       @JsonKey(name: "title_english") String? titleEnglish,
       @JsonKey(name: "title_japanese") String? titleJapanese,
@@ -170,6 +192,9 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
       int popularity,
       String synopsis,
       String background});
+
+  @override
+  $ImagesWrapperCopyWith<$Res>? get images;
 }
 
 /// @nodoc
@@ -182,6 +207,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
   @override
   $Res call({
     Object? id = null,
+    Object? images = freezed,
     Object? title = freezed,
     Object? titleEnglish = freezed,
     Object? titleJapanese = freezed,
@@ -200,6 +226,10 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      images: freezed == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as ImagesWrapper?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -257,6 +287,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
 class _$_Anime extends _Anime {
   const _$_Anime(
       {@JsonKey(name: "mal_id") required this.id,
+      this.images,
       this.title,
       @JsonKey(name: "title_english") this.titleEnglish,
       @JsonKey(name: "title_japanese") this.titleJapanese,
@@ -277,7 +308,8 @@ class _$_Anime extends _Anime {
   @override
   @JsonKey(name: "mal_id")
   final int id;
-// TODO: images
+  @override
+  final ImagesWrapper? images;
 // TODO: trailer
 // TODO: List<Title>
   @override
@@ -321,7 +353,7 @@ class _$_Anime extends _Anime {
 
   @override
   String toString() {
-    return 'Anime(id: $id, title: $title, titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, episodes: $episodes, airing: $airing, duration: $duration, score: $score, scoredBy: $scoredBy, rank: $rank, popularity: $popularity, synopsis: $synopsis, background: $background)';
+    return 'Anime(id: $id, images: $images, title: $title, titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, episodes: $episodes, airing: $airing, duration: $duration, score: $score, scoredBy: $scoredBy, rank: $rank, popularity: $popularity, synopsis: $synopsis, background: $background)';
   }
 
   @override
@@ -330,6 +362,7 @@ class _$_Anime extends _Anime {
         (other.runtimeType == runtimeType &&
             other is _$_Anime &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.images, images) || other.images == images) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.titleEnglish, titleEnglish) ||
                 other.titleEnglish == titleEnglish) &&
@@ -357,6 +390,7 @@ class _$_Anime extends _Anime {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      images,
       title,
       titleEnglish,
       titleJapanese,
@@ -387,6 +421,7 @@ class _$_Anime extends _Anime {
 abstract class _Anime extends Anime {
   const factory _Anime(
       {@JsonKey(name: "mal_id") required final int id,
+      final ImagesWrapper? images,
       final String? title,
       @JsonKey(name: "title_english") final String? titleEnglish,
       @JsonKey(name: "title_japanese") final String? titleJapanese,
@@ -406,8 +441,9 @@ abstract class _Anime extends Anime {
   @override
   @JsonKey(name: "mal_id")
   int get id;
-  @override // TODO: images
-// TODO: trailer
+  @override
+  ImagesWrapper? get images;
+  @override // TODO: trailer
 // TODO: List<Title>
   String? get title;
   @override

@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/blocs.dart';
-import 'package:brujanime/gen/assets.gen.dart';
+import 'package:brujanime/generated/assets.gen.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/progress_logo.dart';
 import 'package:brujanime/utils/app_router.dart';

@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:brujanime/gen/assets.gen.dart';
+import 'package:brujanime/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class ProgressLogo extends StatelessWidget {

@@ -16,7 +16,8 @@
 
 
   "@_ERRORS": {},
-  "top_load_error": "Can't load Top"
+  "top_load_error": "Can't load Top",
+  "recommendations_load_error": "Can't load Recommendations"
 
 
 }
