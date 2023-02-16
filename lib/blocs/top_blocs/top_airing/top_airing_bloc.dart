@@ -21,7 +21,10 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     try {
       final results = await TopNetworkService().getTop(
         filter: AnimeSearchFilter.airing,
+        limit: 2,
       );
+
+      print('PAGINATION ${results.pagination}');
 
       emit(TopAiringState.data(
         data: results.successResults,

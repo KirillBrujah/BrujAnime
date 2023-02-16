@@ -19,6 +19,6 @@ class TopNetworkService extends NetworkService {
       },
     );
 
-    return ApiResponseList.fromJson(response.data["data"], Anime.converter);
+    return ApiResponseList.fromJson(response.data, Anime.converter);
   }
 }
