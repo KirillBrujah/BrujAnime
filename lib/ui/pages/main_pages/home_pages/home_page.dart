@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/models/api_models/models.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,51 +32,17 @@ class _Recommendations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
-      bloc: context.read<AnimeRecommendationsBloc>()
-        ..add(const AnimeRecommendationsEvent.fetch()),
       builder: (context, state) => state.when(
         initial: () => const Center(child: CircularProgressIndicator()),
         error: (message) => Text(message),
-        data: (data, _) => _RecommendationsView(list: data),
+        data: (data, _) => RecommendationsCarousel(list: data),
       ),
-    );
-  }
-}
-
-class _RecommendationsView extends StatelessWidget {
-  const _RecommendationsView({Key? key, required this.list}) : super(key: key);
-
-  final List<Anime> list;
-
-  @override
-  Widget build(BuildContext context) {
-    return CarouselSlider(
-      options: CarouselOptions(
-        height: 400,
-        enlargeFactor: 1,
-        viewportFraction: 1,
-      ),
-      items: list
-          .where((anime) => anime.images?.maxSizeImage != null)
-          .map(
-            // (_) => Placeholder(),
-            (anime) => SizedBox(
-              width: double.infinity,
-              child: Image(
-                fit: BoxFit.fitHeight,
-                image: NetworkImage(anime.images!.maxSizeImage!),
-              ),
-            ),
-          )
-          .toList(),
     );
   }
 }
 
 class _TopAiring extends StatelessWidget {
-  const _TopAiring({
-    super.key,
-  });
+  const _TopAiring({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/assets.gen.dart';
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/ui/widgets/progress_logo.dart';
+import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +27,9 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context
+        .read<AnimeRecommendationsBloc>()
+        .add(const AnimeRecommendationsEvent.fetch());
     return BlocProvider(
       create: (_) => ApplicationPreloadCubit()..startLoad(),
       child: Scaffold(
