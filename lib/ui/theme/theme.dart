@@ -63,4 +63,5 @@ final kDarkTheme = ThemeData.from(
   iconTheme: const IconThemeData(
     color: _primary,
   ),
+  splashColor: _primary.withOpacity(0.5),
 );

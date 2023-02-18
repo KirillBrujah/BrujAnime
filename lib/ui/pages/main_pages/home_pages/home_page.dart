@@ -35,7 +35,13 @@ class _Recommendations extends StatelessWidget {
       builder: (context, state) => state.when(
         initial: () => const Center(child: CircularProgressIndicator()),
         error: (message) => Text(message),
-        data: (data, _) => RecommendationsCarousel(list: data),
+        data: (data, _) {
+          final recommendations = data
+              .where((anime) => anime.images?.maxSizeImage != null)
+              .toList();
+          return RecommendationsCarousel(
+              list: recommendations.sublist(0, min(6, recommendations.length)));
+        },
       ),
     );
   }
