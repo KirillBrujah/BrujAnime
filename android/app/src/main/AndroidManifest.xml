@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="clan.brujah.brujanime">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="brujanime"
         android:name="${applicationName}"
