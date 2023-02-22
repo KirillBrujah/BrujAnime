@@ -60,9 +60,13 @@ class _$AppRouter extends RootStackRouter {
       );
     },
     AnimeRoute.name: (routeData) {
+      final args = routeData.argsAs<AnimeRouteArgs>();
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const AnimePage(),
+        child: AnimePage(
+          key: args.key,
+          anime: args.anime,
+        ),
       );
     },
     SearchRoute.name: (routeData) {
@@ -305,14 +309,36 @@ class HomeRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [AnimePage]
-class AnimeRoute extends PageRouteInfo<void> {
-  const AnimeRoute()
-      : super(
+class AnimeRoute extends PageRouteInfo<AnimeRouteArgs> {
+  AnimeRoute({
+    Key? key,
+    required Anime anime,
+  }) : super(
           AnimeRoute.name,
           path: 'anime-page',
+          args: AnimeRouteArgs(
+            key: key,
+            anime: anime,
+          ),
         );
 
   static const String name = 'AnimeRoute';
+}
+
+class AnimeRouteArgs {
+  const AnimeRouteArgs({
+    this.key,
+    required this.anime,
+  });
+
+  final Key? key;
+
+  final Anime anime;
+
+  @override
+  String toString() {
+    return 'AnimeRouteArgs{key: $key, anime: $anime}';
+  }
 }
 
 /// generated route for

@@ -8,7 +8,6 @@ import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 const _backgroundImageAlignments = [
   Alignment.bottomRight,
@@ -27,9 +26,13 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Replace recommendations fetch
     context
         .read<AnimeRecommendationsBloc>()
         .add(const AnimeRecommendationsEvent.fetch());
+
+    final colorScheme = Theme.of(context).colorScheme;
+
     return BlocProvider(
       create: (_) => ApplicationPreloadCubit()..startLoad(),
       child: Scaffold(
@@ -47,12 +50,10 @@ class SplashPage extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Theme.of(context).colorScheme.background,
-                Theme.of(context).colorScheme.onPrimary,
-                Theme.of(context).colorScheme.background,
-                // Theme.of(context).colorScheme.primary,
+                colorScheme.background,
+                colorScheme.onPrimary,
+                colorScheme.background,
               ],
-              // stops: const [0.0, 0.9, 1.0],
             ),
           ),
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
@@ -61,9 +62,8 @@ class SplashPage extends StatelessWidget {
             children: [
               BlocConsumer<ApplicationPreloadCubit, ApplicationPreloadState>(
                 listener: _splashListener,
-                builder: (context, state) {
-                  return ProgressLogo(progress: state.progress);
-                },
+                builder: (context, state) =>
+                    ProgressLogo(progress: state.progress),
               ),
               const SizedBox(height: 20),
               const _LogoText(),
@@ -77,7 +77,6 @@ class SplashPage extends StatelessWidget {
   void _splashListener(context, ApplicationPreloadState state) {
     state.mapOrNull(completed: (state) {
       // TODO: Saving loaded data into objects
-
       AutoRouter.of(context).replace(const MainRoute());
     });
   }
@@ -92,12 +91,7 @@ class _LogoText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       S.of(context).BrujAnime,
-      style: GoogleFonts.prompt(
-        fontSize: 50,
-        fontWeight: FontWeight.w700,
-        letterSpacing: 3,
-        color: Theme.of(context).colorScheme.primary,
-      ),
+      style: Theme.of(context).textTheme.displayLarge,
     );
   }
 }

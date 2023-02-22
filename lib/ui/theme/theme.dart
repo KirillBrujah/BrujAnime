@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+part 'text_theme.dart';
 
 // Background			      #040A04
 // on BackGround 		  	#E4FFE3
@@ -35,33 +38,40 @@ const _onError = Color.fromRGBO(255, 200, 199, 1);
 const _errorContainer = Color.fromRGBO(255, 160, 158, 1);
 const _onErrorContainer = Color.fromRGBO(255, 54, 51, 1);
 
+const _colorScheme = ColorScheme(
+  primary: _primary,
+  onPrimary: _onPrimary,
+  primaryContainer: _primaryContainer,
+  onPrimaryContainer: _onPrimaryContainer,
+  secondary: _secondary,
+  onSecondary: _onSecondary,
+  background: _background,
+  onBackground: _onBackground,
+  surface: _surface,
+  onSurface: _onSurface,
+  error: _error,
+  onError: _onError,
+  errorContainer: _errorContainer,
+  onErrorContainer: _onErrorContainer,
+  brightness: Brightness.dark,
+);
+
+const _bottomNavigationBarTheme = BottomNavigationBarThemeData(
+  selectedItemColor: _primary,
+  unselectedItemColor: _secondary,
+  showSelectedLabels: true,
+  showUnselectedLabels: true,
+);
+
+const _iconTheme = IconThemeData(
+  color: _primary,
+);
+
 final kDarkTheme = ThemeData.from(
-  colorScheme: const ColorScheme(
-    primary: _primary,
-    onPrimary: _onPrimary,
-    primaryContainer: _primaryContainer,
-    onPrimaryContainer: _onPrimaryContainer,
-    secondary: _secondary,
-    onSecondary: _onSecondary,
-    background: _background,
-    onBackground: _onBackground,
-    surface: _surface,
-    onSurface: _onSurface,
-    error: _error,
-    onError: _onError,
-    errorContainer: _errorContainer,
-    onErrorContainer: _onErrorContainer,
-    brightness: Brightness.dark,
-  ),
+  colorScheme: _colorScheme,
 ).copyWith(
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    selectedItemColor: _primary,
-    unselectedItemColor: _secondary,
-    showSelectedLabels: true,
-    showUnselectedLabels: true,
-  ),
-  iconTheme: const IconThemeData(
-    color: _primary,
-  ),
+  bottomNavigationBarTheme: _bottomNavigationBarTheme,
+  iconTheme: _iconTheme,
   splashColor: _primary.withOpacity(0.5),
+  textTheme: _textTheme,
 );

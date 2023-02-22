@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/utils/app_router.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -22,11 +24,10 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     return Stack(
       children: [
-        _NeonDivider(colorScheme: colorScheme),
-        _BackgroundColor(colorScheme: colorScheme),
+        _NeonDivider(),
+        _BackgroundColor(),
         ClipRect(
           child: Align(
             alignment: Alignment.topCenter,
@@ -62,18 +63,17 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
 class _BackgroundColor extends StatelessWidget {
   const _BackgroundColor({
     super.key,
-    required this.colorScheme,
   });
-
-  final ColorScheme colorScheme;
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       height: _containerHeight,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: colorScheme.primaryContainer.withOpacity(.1),
+        color: colorScheme.primaryContainer.withOpacity(.05),
       ),
     );
   }
@@ -82,13 +82,11 @@ class _BackgroundColor extends StatelessWidget {
 class _NeonDivider extends StatelessWidget {
   const _NeonDivider({
     super.key,
-    required this.colorScheme,
   });
-
-  final ColorScheme colorScheme;
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Container(
       height: 2,
       margin: const EdgeInsets.only(top: _containerHeight),
@@ -99,7 +97,7 @@ class _NeonDivider extends StatelessWidget {
             color: colorScheme.primary,
             blurRadius: 2,
             spreadRadius: 1,
-            offset: const Offset(0, 3),
+            offset: const Offset(0, 2),
           ),
         ],
       ),
@@ -135,13 +133,12 @@ class _Carousel extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    // TODO: Navigate to Anime Details
+                    context.router.push(AnimeRoute(anime: anime));
                   },
                   borderRadius: BorderRadius.circular(5),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // const SizedBox(width: 15),
                       SizedBox(
                         height: 200,
                         width: 130,
@@ -230,7 +227,6 @@ class _Carousel extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // const SizedBox(width: 15),
                     ],
                   ),
                 ),
