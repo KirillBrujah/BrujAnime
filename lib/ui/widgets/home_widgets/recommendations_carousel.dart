@@ -115,6 +115,7 @@ class _Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
 
     return CarouselSlider(
       options: CarouselOptions(
@@ -148,7 +149,6 @@ class _Carousel extends StatelessWidget {
                             fit: StackFit.expand,
                             children: [
                               Image(
-                                // height: 200,
                                 fit: BoxFit.fill,
                                 image:
                                     NetworkImage(anime.images!.maxSizeImage!),
@@ -208,21 +208,19 @@ class _Carousel extends StatelessWidget {
                       Expanded(
                         child: Column(
                           children: [
+                            const SizedBox(height: 10),
                             Text(
                               anime.simpleTitle,
                               maxLines: 2,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: colorScheme.primary,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              style: textTheme.titleMedium,
                             ),
                             const SizedBox(height: 10),
                             Text(
                               anime.synopsis,
                               maxLines: 8,
                               overflow: TextOverflow.ellipsis,
+                              style: textTheme.bodyMedium,
                             ),
                           ],
                         ),
