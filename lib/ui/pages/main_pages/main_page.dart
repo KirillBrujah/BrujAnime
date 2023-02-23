@@ -29,6 +29,17 @@ class MainPage extends StatelessWidget {
               Expanded(child: child),
             ],
           ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              //
+            },
+            backgroundColor: Colors.green,
+            child: Icon(
+              Icons.search_rounded,
+            ),
+          ),
           bottomNavigationBar: _MainBottomNavigation(
             activeIndex: tabsRouter.activeIndex,
             setActiveIndex: tabsRouter.setActiveIndex,

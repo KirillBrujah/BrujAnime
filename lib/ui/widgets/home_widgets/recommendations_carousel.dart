@@ -74,7 +74,15 @@ class _BackgroundColor extends StatelessWidget {
       height: _containerHeight,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: colorScheme.primaryContainer.withOpacity(.05),
+        gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          colors: [
+            colorScheme.primary.withOpacity(.3),
+            colorScheme.background,
+          ],
+          stops: const [.0, .04],
+        ),
       ),
     );
   }

@@ -33,11 +33,11 @@ class ProgressLogo extends StatelessWidget {
 }
 
 class _ProgressArc extends StatefulWidget {
-  const _ProgressArc(
-      {Key? key,
-      required this.progress,
-      this.duration = const Duration(milliseconds: 500)})
-      : super(key: key);
+  const _ProgressArc({
+    Key? key,
+    required this.progress,
+    this.duration = const Duration(milliseconds: 500),
+  }) : super(key: key);
   final double progress;
   final Duration duration;
 

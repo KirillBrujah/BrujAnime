@@ -16,10 +16,6 @@ class CatalogPage extends StatelessWidget {
       builder: (context, child, _) {
         final autoTabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
-          appBar: AppBar(
-            title: Text(context.routeData.name),
-            leading: AutoLeadingButton(),
-          ),
           body: child,
           bottomNavigationBar: BottomNavigationBar(
             onTap: autoTabsRouter.setActiveIndex,
