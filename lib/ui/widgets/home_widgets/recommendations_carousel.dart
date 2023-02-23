@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +28,8 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        _NeonDivider(),
-        _BackgroundColor(),
+        const _NeonDivider(),
+        const _BackgroundColor(),
         ClipRect(
           child: Align(
             alignment: Alignment.topCenter,
@@ -61,9 +63,7 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
 }
 
 class _BackgroundColor extends StatelessWidget {
-  const _BackgroundColor({
-    super.key,
-  });
+  const _BackgroundColor();
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +80,7 @@ class _BackgroundColor extends StatelessWidget {
 }
 
 class _NeonDivider extends StatelessWidget {
-  const _NeonDivider({
-    super.key,
-  });
+  const _NeonDivider();
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +112,6 @@ class _Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return CarouselSlider(
@@ -127,7 +124,6 @@ class _Carousel extends StatelessWidget {
       items: list
           .where((anime) => anime.images?.maxSizeImage != null)
           .map(
-            // (_) => Placeholder(),
             (anime) => Padding(
               padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
               child: Material(
@@ -148,58 +144,8 @@ class _Carousel extends StatelessWidget {
                           child: Stack(
                             fit: StackFit.expand,
                             children: [
-                              Image(
-                                fit: BoxFit.fill,
-                                image:
-                                    NetworkImage(anime.images!.maxSizeImage!),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Container(
-                                  height: 30,
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 5,
-                                    horizontal: 8,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: colorScheme.primary,
-                                    borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(5),
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: colorScheme.background
-                                            .withOpacity(.75),
-                                        blurRadius: 4,
-                                        spreadRadius: 3,
-                                      ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.star_rounded,
-                                        color: colorScheme.onPrimary,
-                                        size: 14,
-                                      ),
-                                      const SizedBox(width: 4),
-                                      Text(
-                                        '${anime.score}',
-                                        textAlign: TextAlign.center,
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          color: colorScheme.onPrimary,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                              _Image(imageUrl: anime.images!.maxSizeImage!),
+                              _Score(score: anime.score),
                             ],
                           ),
                         ),
@@ -232,6 +178,81 @@ class _Carousel extends StatelessWidget {
             ),
           )
           .toList(),
+    );
+  }
+}
+
+class _Score extends StatelessWidget {
+  const _Score({
+    required this.score,
+  });
+
+  final double score;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Align(
+      alignment: Alignment.bottomLeft,
+      child: Container(
+        height: 30,
+        padding: const EdgeInsets.symmetric(
+          vertical: 5,
+          horizontal: 5,
+        ),
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
+          borderRadius: const BorderRadius.only(
+            topRight: Radius.circular(5),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: colorScheme.background.withOpacity(.75),
+              blurRadius: 4,
+              spreadRadius: 3,
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.star_rounded,
+              color: colorScheme.onPrimary,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+            Text(
+              '$score',
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              style: TextStyle(
+                color: colorScheme.onPrimary,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Image extends StatelessWidget {
+  const _Image({
+    required this.imageUrl,
+  });
+
+  final String imageUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return CachedNetworkImage(
+      fit: BoxFit.fill,
+      imageUrl: imageUrl,
+      placeholder: (_, __) => const ImageShimmerPlaceholder(),
     );
   }
 }

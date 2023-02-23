@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/pages/main_pages/pages.dart';
 import 'package:brujanime/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';

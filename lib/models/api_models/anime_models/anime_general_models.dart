@@ -1,4 +1,4 @@
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'anime_general_models.freezed.dart';

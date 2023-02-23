@@ -1,4 +1,4 @@
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
 
 import 'network_service.dart';
 

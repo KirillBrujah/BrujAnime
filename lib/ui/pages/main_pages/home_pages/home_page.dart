@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:brujanime/blocs/blocs.dart';
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -85,8 +86,8 @@ class _TopAiringHorizontalScroll extends StatelessWidget {
           for (Anime anime in list)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Card(
-                child: Text(anime.simpleTitle),
+              child: AnimeHorizontalCard(
+                anime: anime,
               ),
             ),
           //

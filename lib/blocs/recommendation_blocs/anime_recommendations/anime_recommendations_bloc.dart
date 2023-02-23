@@ -1,5 +1,5 @@
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/models/api_models/models.dart';
+import 'package:brujanime/models/models.dart';
 import 'package:brujanime/services/network/network.dart';
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:brujanime/utils/stream_transformers.dart';
