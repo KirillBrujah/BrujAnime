@@ -29,12 +29,13 @@ mixin _$Anime {
   @JsonKey(name: "title_english")
   String? get titleEnglish => throw _privateConstructorUsedError;
   @JsonKey(name: "title_japanese")
-  String? get titleJapanese => throw _privateConstructorUsedError; // TODO: type
-// TODO: source
+  String? get titleJapanese => throw _privateConstructorUsedError;
+  AnimeType get type => throw _privateConstructorUsedError; // TODO: source
   int get episodes => throw _privateConstructorUsedError; // TODO: AnimeStatuses
   bool get airing => throw _privateConstructorUsedError; // TODO: Aired
   String get duration => throw _privateConstructorUsedError; // TODO: rating
   double get score => throw _privateConstructorUsedError;
+  int get favorites => throw _privateConstructorUsedError;
   int get scoredBy => throw _privateConstructorUsedError;
   int get rank => throw _privateConstructorUsedError;
   int get popularity => throw _privateConstructorUsedError;
@@ -57,10 +58,12 @@ abstract class $AnimeCopyWith<$Res> {
       String? title,
       @JsonKey(name: "title_english") String? titleEnglish,
       @JsonKey(name: "title_japanese") String? titleJapanese,
+      AnimeType type,
       int episodes,
       bool airing,
       String duration,
       double score,
+      int favorites,
       int scoredBy,
       int rank,
       int popularity,
@@ -88,10 +91,12 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
     Object? title = freezed,
     Object? titleEnglish = freezed,
     Object? titleJapanese = freezed,
+    Object? type = null,
     Object? episodes = null,
     Object? airing = null,
     Object? duration = null,
     Object? score = null,
+    Object? favorites = null,
     Object? scoredBy = null,
     Object? rank = null,
     Object? popularity = null,
@@ -119,6 +124,10 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
           ? _value.titleJapanese
           : titleJapanese // ignore: cast_nullable_to_non_nullable
               as String?,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AnimeType,
       episodes: null == episodes
           ? _value.episodes
           : episodes // ignore: cast_nullable_to_non_nullable
@@ -135,6 +144,10 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as double,
+      favorites: null == favorites
+          ? _value.favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as int,
       scoredBy: null == scoredBy
           ? _value.scoredBy
           : scoredBy // ignore: cast_nullable_to_non_nullable
@@ -183,10 +196,12 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
       String? title,
       @JsonKey(name: "title_english") String? titleEnglish,
       @JsonKey(name: "title_japanese") String? titleJapanese,
+      AnimeType type,
       int episodes,
       bool airing,
       String duration,
       double score,
+      int favorites,
       int scoredBy,
       int rank,
       int popularity,
@@ -211,10 +226,12 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
     Object? title = freezed,
     Object? titleEnglish = freezed,
     Object? titleJapanese = freezed,
+    Object? type = null,
     Object? episodes = null,
     Object? airing = null,
     Object? duration = null,
     Object? score = null,
+    Object? favorites = null,
     Object? scoredBy = null,
     Object? rank = null,
     Object? popularity = null,
@@ -242,6 +259,10 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
           ? _value.titleJapanese
           : titleJapanese // ignore: cast_nullable_to_non_nullable
               as String?,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AnimeType,
       episodes: null == episodes
           ? _value.episodes
           : episodes // ignore: cast_nullable_to_non_nullable
@@ -258,6 +279,10 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as double,
+      favorites: null == favorites
+          ? _value.favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as int,
       scoredBy: null == scoredBy
           ? _value.scoredBy
           : scoredBy // ignore: cast_nullable_to_non_nullable
@@ -291,10 +316,12 @@ class _$_Anime extends _Anime {
       this.title,
       @JsonKey(name: "title_english") this.titleEnglish,
       @JsonKey(name: "title_japanese") this.titleJapanese,
+      required this.type,
       this.episodes = 0,
       required this.airing,
       required this.duration,
       this.score = 0,
+      this.favorites = 0,
       this.scoredBy = 0,
       this.rank = 0,
       this.popularity = 0,
@@ -320,7 +347,8 @@ class _$_Anime extends _Anime {
   @override
   @JsonKey(name: "title_japanese")
   final String? titleJapanese;
-// TODO: type
+  @override
+  final AnimeType type;
 // TODO: source
   @override
   @JsonKey()
@@ -335,6 +363,9 @@ class _$_Anime extends _Anime {
   @override
   @JsonKey()
   final double score;
+  @override
+  @JsonKey()
+  final int favorites;
   @override
   @JsonKey()
   final int scoredBy;
@@ -353,7 +384,7 @@ class _$_Anime extends _Anime {
 
   @override
   String toString() {
-    return 'Anime(id: $id, images: $images, title: $title, titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, episodes: $episodes, airing: $airing, duration: $duration, score: $score, scoredBy: $scoredBy, rank: $rank, popularity: $popularity, synopsis: $synopsis, background: $background)';
+    return 'Anime(id: $id, images: $images, title: $title, titleEnglish: $titleEnglish, titleJapanese: $titleJapanese, type: $type, episodes: $episodes, airing: $airing, duration: $duration, score: $score, favorites: $favorites, scoredBy: $scoredBy, rank: $rank, popularity: $popularity, synopsis: $synopsis, background: $background)';
   }
 
   @override
@@ -368,12 +399,15 @@ class _$_Anime extends _Anime {
                 other.titleEnglish == titleEnglish) &&
             (identical(other.titleJapanese, titleJapanese) ||
                 other.titleJapanese == titleJapanese) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.episodes, episodes) ||
                 other.episodes == episodes) &&
             (identical(other.airing, airing) || other.airing == airing) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             (identical(other.score, score) || other.score == score) &&
+            (identical(other.favorites, favorites) ||
+                other.favorites == favorites) &&
             (identical(other.scoredBy, scoredBy) ||
                 other.scoredBy == scoredBy) &&
             (identical(other.rank, rank) || other.rank == rank) &&
@@ -394,10 +428,12 @@ class _$_Anime extends _Anime {
       title,
       titleEnglish,
       titleJapanese,
+      type,
       episodes,
       airing,
       duration,
       score,
+      favorites,
       scoredBy,
       rank,
       popularity,
@@ -425,10 +461,12 @@ abstract class _Anime extends Anime {
       final String? title,
       @JsonKey(name: "title_english") final String? titleEnglish,
       @JsonKey(name: "title_japanese") final String? titleJapanese,
+      required final AnimeType type,
       final int episodes,
       required final bool airing,
       required final String duration,
       final double score,
+      final int favorites,
       final int scoredBy,
       final int rank,
       final int popularity,
@@ -452,8 +490,9 @@ abstract class _Anime extends Anime {
   @override
   @JsonKey(name: "title_japanese")
   String? get titleJapanese;
-  @override // TODO: type
-// TODO: source
+  @override
+  AnimeType get type;
+  @override // TODO: source
   int get episodes;
   @override // TODO: AnimeStatuses
   bool get airing;
@@ -461,6 +500,8 @@ abstract class _Anime extends Anime {
   String get duration;
   @override // TODO: rating
   double get score;
+  @override
+  int get favorites;
   @override
   int get scoredBy;
   @override

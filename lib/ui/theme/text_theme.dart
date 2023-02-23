@@ -36,6 +36,22 @@ final _titleSmall = GoogleFonts.prompt(
   fontWeight: FontWeight.w500,
 );
 
+final _labelLarge = GoogleFonts.prompt(
+  fontSize: 14,
+  color: _primary,
+  fontWeight: FontWeight.w500,
+);
+final _labelMedium = GoogleFonts.prompt(
+  fontSize: 12,
+  color: _primary,
+  fontWeight: FontWeight.w500,
+);
+final _labelSmall = GoogleFonts.prompt(
+  fontSize: 11,
+  color: _primary,
+  fontWeight: FontWeight.w500,
+);
+
 final _bodyLarge = GoogleFonts.roboto(
   fontSize: 16,
   color: _onBackground,
@@ -57,6 +73,9 @@ final _textTheme = TextTheme(
   titleLarge: _titleLarge,
   titleMedium: _titleMedium,
   titleSmall: _titleSmall,
+  labelLarge: _labelLarge,
+  labelMedium: _labelMedium,
+  labelSmall: _labelSmall,
   bodyLarge: _bodyLarge,
   bodyMedium: _bodyMedium,
   bodySmall: _bodySmall,

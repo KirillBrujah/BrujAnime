@@ -17,8 +17,7 @@ class Anime with _$Anime {
     String? title,
     @JsonKey(name: "title_english") String? titleEnglish,
     @JsonKey(name: "title_japanese") String? titleJapanese,
-
-    // TODO: type
+    required AnimeType type,
     // TODO: source
 
     @Default(0) int episodes,
@@ -29,6 +28,7 @@ class Anime with _$Anime {
 
     // TODO: rating
     @Default(0) double score,
+    @Default(0) int favorites,
     @Default(0) int scoredBy,
     @Default(0) int rank,
     @Default(0) int popularity,

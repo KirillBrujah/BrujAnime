@@ -7,6 +7,7 @@ import 'package:brujanime/utils/app_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 const _containerHeight = 270.0;
 
@@ -87,15 +88,15 @@ class _NeonDivider extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
       height: 2,
-      margin: const EdgeInsets.only(top: _containerHeight),
+      margin: const EdgeInsets.only(top: _containerHeight + 2),
       width: double.infinity,
       decoration: BoxDecoration(
+        color: colorScheme.primary,
         boxShadow: [
           BoxShadow(
             color: colorScheme.primary,
             blurRadius: 2,
-            spreadRadius: 1,
-            offset: const Offset(0, 2),
+            spreadRadius: 1.5,
           ),
         ],
       ),
@@ -145,7 +146,10 @@ class _Carousel extends StatelessWidget {
                             fit: StackFit.expand,
                             children: [
                               _Image(imageUrl: anime.images!.maxSizeImage!),
-                              _Score(score: anime.score),
+                              _Score(
+                                score: anime.score,
+                                favorites: anime.favorites,
+                              ),
                             ],
                           ),
                         ),
@@ -185,26 +189,26 @@ class _Carousel extends StatelessWidget {
 class _Score extends StatelessWidget {
   const _Score({
     required this.score,
+    required this.favorites,
   });
 
   final double score;
+  final int favorites;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Align(
       alignment: Alignment.bottomLeft,
       child: Container(
         height: 30,
+        width: double.infinity,
         padding: const EdgeInsets.symmetric(
           vertical: 5,
           horizontal: 5,
         ),
         decoration: BoxDecoration(
-          color: colorScheme.primary,
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(5),
-          ),
           boxShadow: [
             BoxShadow(
               color: colorScheme.background.withOpacity(.75),
@@ -219,7 +223,7 @@ class _Score extends StatelessWidget {
           children: [
             Icon(
               Icons.star_rounded,
-              color: colorScheme.onPrimary,
+              color: colorScheme.primary,
               size: 14,
             ),
             const SizedBox(width: 4),
@@ -227,11 +231,22 @@ class _Score extends StatelessWidget {
               '$score',
               textAlign: TextAlign.center,
               maxLines: 1,
-              style: TextStyle(
-                color: colorScheme.onPrimary,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: textTheme.titleSmall,
+            ),
+            const SizedBox(width: 2),
+            const Spacer(),
+            const SizedBox(width: 2),
+            Icon(
+              Icons.favorite_rounded,
+              color: colorScheme.primary,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+            Text(
+              NumberFormat.compact().format(favorites),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              style: textTheme.titleSmall,
             ),
           ],
         ),

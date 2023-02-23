@@ -120,6 +120,26 @@ class S {
     );
   }
 
+  /// `Top Airing`
+  String get top_airing {
+    return Intl.message(
+      'Top Airing',
+      name: 'top_airing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top All`
+  String get top_all {
+    return Intl.message(
+      'Top All',
+      name: 'top_all',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Can't load Top`
   String get top_load_error {
     return Intl.message(

@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:brujanime/blocs/blocs.dart';
-import 'package:brujanime/models/models.dart';
-import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
+import 'package:brujanime/generated/l10n.dart';
+import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
 import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +34,7 @@ class _Recommendations extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
       builder: (context, state) => state.when(
+        // TODO: Change loading widget
         initial: () => const Center(child: CircularProgressIndicator()),
         error: (message) => Text(message),
         data: (data, _) {
@@ -41,7 +42,8 @@ class _Recommendations extends StatelessWidget {
               .where((anime) => anime.images?.maxSizeImage != null)
               .toList();
           return RecommendationsCarousel(
-              list: recommendations.sublist(0, min(6, recommendations.length)));
+            list: recommendations.sublist(0, min(8, recommendations.length)),
+          );
         },
       ),
     );
@@ -56,42 +58,19 @@ class _TopAiring extends StatelessWidget {
     return BlocBuilder<TopAiringBloc, TopAiringState>(
       bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
       builder: (context, state) => state.when(
+        // TODO: Change loading widget
         initial: () => const Center(child: CircularProgressIndicator()),
-        data: (data, _) => _TopAiringHorizontalScroll(
+        data: (data, _) => HorizontalAnimeList(
           list: data.sublist(
             0,
             min(10, data.length),
           ),
+          title: S.of(context).top_airing,
+          onNavigateTap: () {
+            // TODO: Navigate to all Top Airing
+          },
         ),
         error: (message) => Text(message),
-      ),
-    );
-  }
-}
-
-class _TopAiringHorizontalScroll extends StatelessWidget {
-  const _TopAiringHorizontalScroll({
-    Key? key,
-    required this.list,
-  }) : super(key: key);
-
-  final List<Anime> list;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          for (Anime anime in list)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: AnimeHorizontalCard(
-                anime: anime,
-              ),
-            ),
-          //
-        ],
       ),
     );
   }

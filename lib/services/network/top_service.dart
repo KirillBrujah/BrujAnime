@@ -7,7 +7,7 @@ class TopNetworkService extends NetworkService {
     int? page,
     int? limit,
     AnimeSearchFilter? filter,
-    AnimeSearchType? type,
+    AnimeType? type,
   }) async {
     final response = await dioClient.get(
       'top/anime',

@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Can\'t load Recommendations"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "top": MessageLookupByLibrary.simpleMessage("Top"),
+        "top_airing": MessageLookupByLibrary.simpleMessage("Top Airing"),
+        "top_all": MessageLookupByLibrary.simpleMessage("Top All"),
         "top_load_error":
             MessageLookupByLibrary.simpleMessage("Can\'t load Top")
       };
