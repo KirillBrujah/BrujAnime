@@ -4,7 +4,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
-import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SearchAppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

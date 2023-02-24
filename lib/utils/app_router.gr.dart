@@ -199,6 +199,11 @@ class _$AppRouter extends RootStackRouter {
                   path: 'anime-page',
                   parent: FavoriteTabRoute.name,
                 ),
+                RouteConfig(
+                  SearchRoute.name,
+                  path: 'search-page',
+                  parent: FavoriteTabRoute.name,
+                ),
               ],
             ),
             RouteConfig(
@@ -210,7 +215,12 @@ class _$AppRouter extends RootStackRouter {
                   SettingsRoute.name,
                   path: '',
                   parent: SettingsTabRoute.name,
-                )
+                ),
+                RouteConfig(
+                  SearchRoute.name,
+                  path: 'search-page',
+                  parent: SettingsTabRoute.name,
+                ),
               ],
             ),
           ],

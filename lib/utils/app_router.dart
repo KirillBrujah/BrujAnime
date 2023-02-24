@@ -54,6 +54,7 @@ class _MainTabs {
         initial: true,
       ),
       _CommonRoutes.anime,
+      _CommonRoutes.search,
     ],
   );
 
@@ -65,6 +66,7 @@ class _MainTabs {
         page: SettingsPage,
         initial: true,
       ),
+      _CommonRoutes.search,
     ],
   );
 
