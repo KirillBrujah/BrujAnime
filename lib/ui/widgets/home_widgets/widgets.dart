@@ -1,1 +1,1 @@
-export 'recommendations_carousel.dart';
+export 'recommendations.dart';

@@ -39,8 +39,8 @@ class AnimeRecommendationsBloc
     } catch (exc) {
       reportError(
         exception: exc,
-        library: "Top Airing Bloc",
-        context: "Load Top Airing",
+        library: "Anime recommendations Bloc",
+        context: "Load recommendations",
       );
       emit(AnimeRecommendationsState.error(
           S.current.recommendations_load_error));

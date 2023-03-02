@@ -11,23 +11,61 @@ import 'package:intl/intl.dart';
 
 const _containerHeight = 270.0;
 
-class RecommendationsCarousel extends StatefulWidget {
-  const RecommendationsCarousel({
-    Key? key,
-    required this.list,
-    this.isLoading = false,
-  }) : super(key: key);
+class RecommendationsCarousel extends StatelessWidget {
+  const RecommendationsCarousel({Key? key, required this.list})
+      : super(key: key);
 
   final List<Anime> list;
-  final bool isLoading;
 
   @override
-  State<RecommendationsCarousel> createState() =>
-      _RecommendationsCarouselState();
+  Widget build(BuildContext context) {
+    return _RecommendationsContainer(child: _Recommendations(list: list));
+  }
 }
 
-class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
-  int currentIndex = 0;
+class RecommendationsLoading extends StatelessWidget {
+  const RecommendationsLoading({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const _RecommendationsContainer(
+        child: _ContentPlaceholder(isShimmering: true));
+  }
+}
+
+class RecommendationsError extends StatelessWidget {
+  const RecommendationsError(this.error, {Key? key}) : super(key: key);
+
+  final String error;
+
+  @override
+  Widget build(BuildContext context) {
+    return _RecommendationsContainer(
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          const _ContentPlaceholder(isShimmering: false),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Center(
+              child: Text(
+                error,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RecommendationsContainer extends StatelessWidget {
+  const _RecommendationsContainer({Key? key, required this.child})
+      : super(key: key);
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -35,38 +73,33 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
       children: [
         const _NeonDivider(),
         const _BackgroundColor(),
-        ClipRect(
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 0, sigmaY: 8),
-              child: SizedBox(
-                height: _containerHeight,
-                width: double.infinity,
-                child: widget.isLoading
-                    ? const HomeRecommendationsCarouselShimmer()
-                    : Column(
-                        children: [
-                          _Carousel(
-                              list: widget.list, onPageChanged: _onPageChanged),
-                          const SizedBox(height: 20),
-                          _PageIndicator(
-                            currentIndex: currentIndex,
-                            count: widget.list.length,
-                          ),
-                        ],
-                      ),
-              ),
-            ),
-          ),
-        ),
+        _ContentContainer(child: child)
       ],
     );
   }
+}
 
-  _onPageChanged(int index, _) => setState(() {
-        currentIndex = index;
-      });
+class _ContentContainer extends StatelessWidget {
+  const _ContentContainer({Key? key, required this.child}) : super(key: key);
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRect(
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 0, sigmaY: 8),
+          child: SizedBox(
+            height: _containerHeight,
+            width: double.infinity,
+            child: child,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class _BackgroundColor extends StatelessWidget {
@@ -116,6 +149,40 @@ class _NeonDivider extends StatelessWidget {
       ),
     );
   }
+}
+
+class _Recommendations extends StatefulWidget {
+  const _Recommendations({Key? key, required this.list}) : super(key: key);
+
+  final List<Anime> list;
+
+  @override
+  State<_Recommendations> createState() => _RecommendationsState();
+}
+
+class _RecommendationsState extends State<_Recommendations> {
+  int currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        _Carousel(
+          list: widget.list,
+          onPageChanged: _onPageChanged,
+        ),
+        const SizedBox(height: 20),
+        _PageIndicator(
+          currentIndex: currentIndex,
+          count: widget.list.length,
+        ),
+      ],
+    );
+  }
+
+  _onPageChanged(int index, _) => setState(() {
+        currentIndex = index;
+      });
 }
 
 class _Carousel extends StatelessWidget {
@@ -281,7 +348,7 @@ class _Image extends StatelessWidget {
     return CachedNetworkImage(
       fit: BoxFit.fill,
       imageUrl: imageUrl,
-      placeholder: (_, __) => const ImageShimmerPlaceholder(),
+      placeholder: (_, __) => const ImageShimmer(),
     );
   }
 }
@@ -323,6 +390,73 @@ class _PageIndicator extends StatelessWidget {
             ),
         ],
       ),
+    );
+  }
+}
+
+class _ContentPlaceholder extends StatelessWidget {
+  const _ContentPlaceholder({
+    Key? key,
+    this.isShimmering = false,
+  }) : super(key: key);
+
+  final bool isShimmering;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 220,
+      width: 200,
+      padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 200,
+            width: 130,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: isShimmering
+                  ? const ImageShimmer()
+                  : const ImagePlaceholder(),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: isShimmering ? _textShimmerContent() : _textContent(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _textShimmerContent() {
+    return ShimmerContainer(
+      child: Column(
+        children: const [
+          SizedBox(height: 10),
+          TextShimmerPlaceholder(height: 24, width: 130),
+          SizedBox(height: 10),
+          TextShimmerPlaceholder(
+            height: 20 * 7,
+            width: double.infinity,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Column _textContent() {
+    return Column(
+      children: const [
+        SizedBox(height: 10),
+        TextPlaceholder(height: 24, width: 130),
+        SizedBox(height: 10),
+        TextPlaceholder(
+          height: 20 * 7,
+          width: double.infinity,
+        ),
+      ],
     );
   }
 }

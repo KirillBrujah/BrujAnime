@@ -42,7 +42,7 @@ class HorizontalAnimeCard extends StatelessWidget {
                 child: CachedNetworkImage(
                   fit: BoxFit.fill,
                   imageUrl: anime.images?.maxSizeImage ?? "",
-                  placeholder: (_, __) => const ImageShimmerPlaceholder(),
+                  placeholder: (_, __) => const ImageShimmer(),
                 ),
               ),
             ),
