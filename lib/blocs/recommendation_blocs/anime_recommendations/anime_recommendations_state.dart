@@ -17,4 +17,14 @@ class AnimeRecommendationsState with _$AnimeRecommendationsState {
         orElse: () => null,
         data: (state) => state.pagination,
       );
+
+  List<Anime> get data => maybeWhen(
+        orElse: () => [],
+        data: (data, _) => data,
+      );
+
+  bool get isLoading => maybeWhen(
+        orElse: () => false,
+        initial: () => true,
+      );
 }

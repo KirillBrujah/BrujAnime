@@ -30,6 +30,8 @@ class AnimeRecommendationsBloc
         page: pagination != null ? pagination.currentPage + 1 : 1,
       );
 
+      await Future.delayed(const Duration(seconds: 2));
+
       emit(AnimeRecommendationsState.data(
         data: results.successResults,
         pagination: results.pagination!,

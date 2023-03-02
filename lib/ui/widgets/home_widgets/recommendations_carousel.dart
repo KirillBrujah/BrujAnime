@@ -12,10 +12,14 @@ import 'package:intl/intl.dart';
 const _containerHeight = 270.0;
 
 class RecommendationsCarousel extends StatefulWidget {
-  const RecommendationsCarousel({Key? key, required this.list})
-      : super(key: key);
+  const RecommendationsCarousel({
+    Key? key,
+    required this.list,
+    this.isLoading = false,
+  }) : super(key: key);
 
   final List<Anime> list;
+  final bool isLoading;
 
   @override
   State<RecommendationsCarousel> createState() =>
@@ -39,17 +43,19 @@ class _RecommendationsCarouselState extends State<RecommendationsCarousel> {
               child: SizedBox(
                 height: _containerHeight,
                 width: double.infinity,
-                child: Column(
-                  children: [
-                    // const SizedBox(height: 20),
-                    _Carousel(list: widget.list, onPageChanged: _onPageChanged),
-                    const SizedBox(height: 20),
-                    _PageIndicator(
-                      currentIndex: currentIndex,
-                      count: widget.list.length,
-                    ),
-                  ],
-                ),
+                child: widget.isLoading
+                    ? const HomeRecommendationsCarouselShimmer()
+                    : Column(
+                        children: [
+                          _Carousel(
+                              list: widget.list, onPageChanged: _onPageChanged),
+                          const SizedBox(height: 20),
+                          _PageIndicator(
+                            currentIndex: currentIndex,
+                            count: widget.list.length,
+                          ),
+                        ],
+                      ),
               ),
             ),
           ),

@@ -39,19 +39,30 @@ class _Recommendations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
-      builder: (context, state) => state.when(
-        // TODO: Change loading widget
-        initial: () => const Center(child: CircularProgressIndicator()),
-        error: (message) => Text(message),
-        data: (data, _) {
-          final recommendations = data
-              .where((anime) => anime.images?.maxSizeImage != null)
-              .toList();
-          return RecommendationsCarousel(
-            list: recommendations.sublist(0, min(8, recommendations.length)),
-          );
-        },
-      ),
+      builder: (context, state) {
+        final recommendations = state.data
+            .where((anime) => anime.images?.maxSizeImage != null)
+            .toList();
+
+        return RecommendationsCarousel(
+          list: recommendations.sublist(0, min(8, recommendations.length)),
+          isLoading: state.isLoading,
+        );
+
+        return state.when(
+          // TODO: Change loading widget
+          initial: () => const Center(child: CircularProgressIndicator()),
+          error: (message) => Text(message),
+          data: (data, _) {
+            final recommendations = data
+                .where((anime) => anime.images?.maxSizeImage != null)
+                .toList();
+            return RecommendationsCarousel(
+              list: recommendations.sublist(0, min(8, recommendations.length)),
+            );
+          },
+        );
+      },
     );
   }
 }
