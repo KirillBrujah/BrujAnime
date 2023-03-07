@@ -1,3 +1,4 @@
+import 'package:brujanime/ui/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -90,14 +91,13 @@ class HorizontalCardShimmerPlaceholder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
     return Container(
       decoration: BoxDecoration(
         color: _plugColor,
         borderRadius: BorderRadius.circular(5),
       ),
-      width: 140,
-      height: 283,
+      width: SizeConstants.horizontalCardSize.width,
+      height: SizeConstants.horizontalCardSize.height,
     );
   }
 }
@@ -113,8 +113,8 @@ class HorizontalCardPlaceholder extends StatelessWidget {
         color: colorScheme.primary.withOpacity(.1),
         borderRadius: BorderRadius.circular(5),
       ),
-      width: 140,
-      height: 283,
+      width: SizeConstants.horizontalCardSize.width,
+      height: SizeConstants.horizontalCardSize.height,
     );
   }
 }

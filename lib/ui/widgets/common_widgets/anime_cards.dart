@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/theme/constants.dart';
 import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -26,8 +27,8 @@ class HorizontalAnimeCard extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(5),
       ),
-      width: 140,
-      height: 283,
+      width: SizeConstants.horizontalCardSize.width,
+      height: SizeConstants.horizontalCardSize.height,
       child: InkWell(
         onTap: _handleTap(context),
         child: Column(
@@ -70,13 +71,6 @@ class HorizontalAnimeCard extends StatelessWidget {
                           ?.copyWith(color: colorScheme.onBackground),
                     ),
                   ),
-                  // const SizedBox(height: 5),
-                  // Text(
-                  //   "Anime",
-                  //   style: textTheme.bodySmall?.copyWith(
-                  //     color: colorScheme.onBackground.withOpacity(0.75),
-                  //   ),
-                  // ),
                   const SizedBox(height: 5),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
