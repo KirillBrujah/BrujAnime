@@ -27,6 +27,7 @@ class HorizontalAnimeCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
       ),
       width: 140,
+      height: 283,
       child: InkWell(
         onTap: _handleTap(context),
         child: Column(

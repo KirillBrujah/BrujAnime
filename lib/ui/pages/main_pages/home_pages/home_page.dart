@@ -41,7 +41,6 @@ class _Recommendations extends StatelessWidget {
     return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
       builder: (context, state) {
         return state.when(
-          // TODO: Change loading widget
           initial: () => const RecommendationsLoading(),
           error: (message) => RecommendationsError(message),
           data: (data, _) {
@@ -53,15 +52,6 @@ class _Recommendations extends StatelessWidget {
             );
           },
         );
-
-        // final recommendations = state.data
-        //     .where((anime) => anime.images?.maxSizeImage != null)
-        //     .toList();
-        //
-        // return RecommendationsCarousel(
-        //   list: recommendations.sublist(0, min(8, recommendations.length)),
-        //   isLoading: state.isLoading,
-        // );
       },
     );
   }
@@ -70,26 +60,13 @@ class _Recommendations extends StatelessWidget {
 class _TopAiring extends StatelessWidget {
   const _TopAiring();
 
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<TopAiringBloc, TopAiringState>(
-      bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
-      builder: (context, state) => state.when(
-        // TODO: Change loading widget
-        initial: () => const Center(child: CircularProgressIndicator()),
-        data: (data, _) => HorizontalAnimeList(
-          list: data.sublist(
-            0,
-            min(10, data.length),
-          ),
-          title: S.of(context).top_airing,
-          onNavigateTap: () {
-            final catalogRouter = context.tabsRouter
-                .innerRouterOf<StackRouter>(CatalogTabRoute.name)
-                ?.innerRouterOf<TabsRouter>(CatalogRoute.name);
-            catalogRouter?.setActiveIndex(2);
-            context.tabsRouter.setActiveIndex(1);
-            /*
+  VoidCallback _handleNavigate(BuildContext context) => () {
+        final catalogRouter = context.tabsRouter
+            .innerRouterOf<StackRouter>(CatalogTabRoute.name)
+            ?.innerRouterOf<TabsRouter>(CatalogRoute.name);
+        catalogRouter?.setActiveIndex(2);
+        context.tabsRouter.setActiveIndex(1);
+        /*
             final ordersRouter =
             context.tabsRouter.innerRouterOf<StackRouter>(OrdersTabRoute.name);
 
@@ -104,10 +81,26 @@ class _TopAiring extends StatelessWidget {
             context.tabsRouter.setActiveIndex(2);
             */
 
-            // TODO: Navigate to all Top Airing
-          },
+        // TODO: Navigate to all Top Airing
+      };
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<TopAiringBloc, TopAiringState>(
+      bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
+      builder: (context, state) => HorizontalList(
+        title: S.of(context).top_airing,
+        onNavigateTap: _handleNavigate(context),
+        child: state.when(
+          initial: () => const HorizontalListLoading(),
+          error: (message) => HorizontalListError(message),
+          data: (data, _) => HorizontalListData(
+            data: data.sublist(
+              0,
+              min(10, data.length),
+            ),
+          ),
         ),
-        error: (message) => Text(message),
       ),
     );
   }

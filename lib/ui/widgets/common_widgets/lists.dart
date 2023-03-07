@@ -1,19 +1,15 @@
 import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-import 'anime_cards.dart';
+class HorizontalList extends StatelessWidget {
+  const HorizontalList(
+      {Key? key, required this.child, this.title, this.onNavigateTap})
+      : super(key: key);
 
-class HorizontalAnimeList extends StatelessWidget {
-  const HorizontalAnimeList({
-    Key? key,
-    required this.list,
-    this.title,
-    this.onNavigateTap,
-  }) : super(key: key);
-
+  final Widget child;
   final String? title;
   final VoidCallback? onNavigateTap;
-  final List<Anime> list;
 
   @override
   Widget build(BuildContext context) {
@@ -50,22 +46,100 @@ class HorizontalAnimeList extends StatelessWidget {
               ],
             ),
           ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              for (Anime anime in list)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: HorizontalAnimeCard(
-                    anime: anime,
-                  ),
-                ),
-              //
-            ],
-          ),
-        )
+        child,
       ],
+    );
+  }
+}
+
+class HorizontalListData extends StatelessWidget {
+  const HorizontalListData({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  final List<Anime> data;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (Anime anime in data)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: HorizontalAnimeCard(
+                anime: anime,
+              ),
+            ),
+          //
+        ],
+      ),
+    );
+  }
+}
+
+class HorizontalListLoading extends StatelessWidget {
+  const HorizontalListLoading({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      physics: const NeverScrollableScrollPhysics(),
+      child: ShimmerContainer(
+        child: Row(
+          children: [
+            for (int i = 0; i < 3; i++)
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: HorizontalCardShimmerPlaceholder(),
+              ),
+            //
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class HorizontalListError extends StatelessWidget {
+  const HorizontalListError(this.message, {Key? key}) : super(key: key);
+
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 300,
+      width: double.infinity,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const NeverScrollableScrollPhysics(),
+            child: Row(
+              children: [
+                for (int i = 0; i < 3; i++)
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: HorizontalCardPlaceholder(),
+                  ),
+                //
+              ],
+            ),
+          ),
+          Center(
+            child: Text(
+              message,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

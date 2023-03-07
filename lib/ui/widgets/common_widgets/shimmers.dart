@@ -84,3 +84,37 @@ class ImagePlaceholder extends StatelessWidget {
     );
   }
 }
+
+class HorizontalCardShimmerPlaceholder extends StatelessWidget {
+  const HorizontalCardShimmerPlaceholder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Container(
+      decoration: BoxDecoration(
+        color: _plugColor,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      width: 140,
+      height: 283,
+    );
+  }
+}
+
+class HorizontalCardPlaceholder extends StatelessWidget {
+  const HorizontalCardPlaceholder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Container(
+      decoration: BoxDecoration(
+        color: colorScheme.primary.withOpacity(.1),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      width: 140,
+      height: 283,
+    );
+  }
+}
