@@ -7,7 +7,9 @@ class RecommendationsNetworkService extends NetworkService {
     int? page,
   }) async {
     final response = await dioClient.get(
-      'recommendations/anime',
+      // TODO: Fix end-point
+      // 'recommendations/anime',
+      'top/anime',
       queryParameters: {
         if (page != null) "page": page,
       },
