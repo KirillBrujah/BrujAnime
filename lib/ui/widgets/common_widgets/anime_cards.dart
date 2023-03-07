@@ -61,7 +61,7 @@ class HorizontalAnimeCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   SizedBox(
-                    height: 50,
+                    height: 40,
                     child: Text(
                       anime.simpleTitle,
                       // textAlign: TextAlign.center,
