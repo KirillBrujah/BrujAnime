@@ -1,11 +1,10 @@
 import 'dart:math';
 
-import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
 import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
-import 'package:brujanime/utils/app_router.dart';
+import 'package:brujanime/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,39 +57,13 @@ class _Header extends StatelessWidget {
 class _TopAiring extends StatelessWidget {
   const _TopAiring();
 
-  VoidCallback _handleNavigate(BuildContext context) => () {
-        print("INSIDE NAVIGATE");
-        context.tabsRouter.setActiveIndex(1);
-        final catalogRouter = context.tabsRouter
-            .innerRouterOf<StackRouter>(CatalogTabRoute.name)
-            ?.innerRouterOf<TabsRouter>(CatalogRoute.name);
-        print("CATALOG ROUTER = $catalogRouter");
-        catalogRouter?.setActiveIndex(2);
-        /*
-            final ordersRouter =
-            context.tabsRouter.innerRouterOf<StackRouter>(OrdersTabRoute.name);
-
-            if (ordersRouter == null) return;
-
-            if (ordersRouter.current.name == OrderRoute.name) {
-              ordersRouter.replace(OrderRoute(orderId: orderId));
-            } else {
-              ordersRouter.push(OrderRoute(orderId: orderId));
-            }
-
-            context.tabsRouter.setActiveIndex(2);
-            */
-
-        // TODO: Navigate to all Top Airing
-      };
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TopAiringBloc, TopAiringState>(
       bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
       builder: (context, state) => HorizontalList(
         title: S.of(context).top_airing,
-        onNavigateTap: _handleNavigate(context),
+        onNavigateTap: AutoRouteNavigator.navigateTop(context),
         child: state.when(
           initial: () => const HorizontalListLoading(),
           error: (message) => HorizontalListError(message),
