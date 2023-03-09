@@ -7,7 +7,7 @@ class AnimeRecommendationsState with _$AnimeRecommendationsState {
   const factory AnimeRecommendationsState.initial() =
       _AnimeRecommendationsInitialState;
   const factory AnimeRecommendationsState.data({
-    required List<Anime> data,
+    required List<AnimeRecommendation> data,
     required ApiPagination pagination,
   }) = _AnimeRecommendationsDataState;
   const factory AnimeRecommendationsState.error(String message) =
@@ -18,7 +18,7 @@ class AnimeRecommendationsState with _$AnimeRecommendationsState {
         data: (state) => state.pagination,
       );
 
-  List<Anime> get data => maybeWhen(
+  List<AnimeRecommendation> get data => maybeWhen(
         orElse: () => [],
         data: (data, _) => data,
       );

@@ -19,13 +19,11 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
+            _Header(),
+            SizedBox(height: 30),
+            _TopAiring(),
+            SizedBox(height: 30),
             _Recommendations(),
-            SizedBox(height: 30),
-            _TopAiring(),
-            SizedBox(height: 30),
-            _TopAiring(),
-            SizedBox(height: 30),
-            _TopAiring(),
           ],
         ),
       ),
@@ -33,21 +31,21 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class _Recommendations extends StatelessWidget {
-  const _Recommendations({Key? key}) : super(key: key);
+class _Header extends StatelessWidget {
+  const _Header({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
+    return BlocBuilder<TopAiringBloc, TopAiringState>(
       builder: (context, state) {
         return state.when(
-          initial: () => const RecommendationsLoading(),
-          error: (message) => RecommendationsError(message),
+          initial: () => const HomeHeaderLoading(),
+          error: (message) => HomeHeaderError(message),
           data: (data, _) {
             final recommendations = data
                 .where((anime) => anime.images?.maxSizeImage != null)
                 .toList();
-            return RecommendationsCarousel(
+            return HomeHeaderCarousel(
               list: recommendations.sublist(0, min(8, recommendations.length)),
             );
           },
@@ -101,6 +99,21 @@ class _TopAiring extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _Recommendations extends StatelessWidget {
+  const _Recommendations({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
+      builder: (context, state) => state.when(
+        initial: () => CircularProgressIndicator(),
+        error: (message) => Text(message),
+        data: (data, pagination) => Text('${data.length}'),
       ),
     );
   }

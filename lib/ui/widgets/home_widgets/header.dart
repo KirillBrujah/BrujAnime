@@ -11,36 +11,35 @@ import 'package:intl/intl.dart';
 
 const _containerHeight = 270.0;
 
-class RecommendationsCarousel extends StatelessWidget {
-  const RecommendationsCarousel({Key? key, required this.list})
-      : super(key: key);
+class HomeHeaderCarousel extends StatelessWidget {
+  const HomeHeaderCarousel({Key? key, required this.list}) : super(key: key);
 
   final List<Anime> list;
 
   @override
   Widget build(BuildContext context) {
-    return _RecommendationsContainer(child: _Recommendations(list: list));
+    return _HeaderContainer(child: _HeaderData(list: list));
   }
 }
 
-class RecommendationsLoading extends StatelessWidget {
-  const RecommendationsLoading({Key? key}) : super(key: key);
+class HomeHeaderLoading extends StatelessWidget {
+  const HomeHeaderLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const _RecommendationsContainer(
+    return const _HeaderContainer(
         child: _ContentPlaceholder(isShimmering: true));
   }
 }
 
-class RecommendationsError extends StatelessWidget {
-  const RecommendationsError(this.error, {Key? key}) : super(key: key);
+class HomeHeaderError extends StatelessWidget {
+  const HomeHeaderError(this.error, {Key? key}) : super(key: key);
 
   final String error;
 
   @override
   Widget build(BuildContext context) {
-    return _RecommendationsContainer(
+    return _HeaderContainer(
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -61,9 +60,8 @@ class RecommendationsError extends StatelessWidget {
   }
 }
 
-class _RecommendationsContainer extends StatelessWidget {
-  const _RecommendationsContainer({Key? key, required this.child})
-      : super(key: key);
+class _HeaderContainer extends StatelessWidget {
+  const _HeaderContainer({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 
@@ -151,16 +149,16 @@ class _NeonDivider extends StatelessWidget {
   }
 }
 
-class _Recommendations extends StatefulWidget {
-  const _Recommendations({Key? key, required this.list}) : super(key: key);
+class _HeaderData extends StatefulWidget {
+  const _HeaderData({Key? key, required this.list}) : super(key: key);
 
   final List<Anime> list;
 
   @override
-  State<_Recommendations> createState() => _RecommendationsState();
+  State<_HeaderData> createState() => _HeaderDataState();
 }
 
-class _RecommendationsState extends State<_Recommendations> {
+class _HeaderDataState extends State<_HeaderData> {
   int currentIndex = 0;
 
   @override
