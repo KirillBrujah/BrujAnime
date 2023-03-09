@@ -43,20 +43,20 @@ class MainBottomNavigation extends StatelessWidget {
             ),
             _BottomNavItem(
               icon: Icons.list_alt_rounded,
-              title: s.home,
+              title: s.catalog,
               onTap: () => setActiveIndex(1),
               isSelected: activeIndex == 1,
             ),
             const _BottomSearchButton(),
             _BottomNavItem(
               icon: Icons.favorite_rounded,
-              title: s.home,
+              title: s.favorite,
               onTap: () => setActiveIndex(2),
               isSelected: activeIndex == 2,
             ),
             _BottomNavItem(
               icon: Icons.settings_rounded,
-              title: s.home,
+              title: s.settings,
               onTap: () => setActiveIndex(3),
               isSelected: activeIndex == 3,
             ),

@@ -59,11 +59,13 @@ class _TopAiring extends StatelessWidget {
   const _TopAiring();
 
   VoidCallback _handleNavigate(BuildContext context) => () {
+        print("INSIDE NAVIGATE");
+        context.tabsRouter.setActiveIndex(1);
         final catalogRouter = context.tabsRouter
             .innerRouterOf<StackRouter>(CatalogTabRoute.name)
             ?.innerRouterOf<TabsRouter>(CatalogRoute.name);
+        print("CATALOG ROUTER = $catalogRouter");
         catalogRouter?.setActiveIndex(2);
-        context.tabsRouter.setActiveIndex(1);
         /*
             final ordersRouter =
             context.tabsRouter.innerRouterOf<StackRouter>(OrdersTabRoute.name);

@@ -8,8 +8,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsRouter.tabBar(
-      physics: const NeverScrollableScrollPhysics(),
+    return AutoTabsRouter(
+      lazyLoad: false,
       routes: const [
         HomeTabRoute(),
         CatalogTabRoute(),
