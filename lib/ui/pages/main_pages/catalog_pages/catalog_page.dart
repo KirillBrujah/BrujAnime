@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/generated/l10n.dart';
+import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,26 @@ class CatalogPage extends StatelessWidget {
       builder: (context, child, _) {
         final autoTabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
+          appBar: CatalogAppBar(
+            currentIndex: autoTabsRouter.activeIndex,
+            setActiveIndex: autoTabsRouter.setActiveIndex,
+            items: [
+              CatalogNavigationBarItem(
+                label: s.schedule,
+                icon: Icons.calendar_month_rounded,
+              ),
+              CatalogNavigationBarItem(
+                label: s.genres,
+                icon: Icons.list_rounded,
+              ),
+              CatalogNavigationBarItem(
+                label: s.top,
+                icon: Icons.stacked_bar_chart_rounded,
+              ),
+            ],
+          ),
           body: child,
-          bottomNavigationBar: BottomNavigationBar(
+          /*bottomNavigationBar: BottomNavigationBar(
             onTap: autoTabsRouter.setActiveIndex,
             currentIndex: autoTabsRouter.activeIndex,
             items: [
@@ -36,7 +55,7 @@ class CatalogPage extends StatelessWidget {
                 label: s.top,
               ),
             ],
-          ),
+          ),*/
         );
       },
     );
