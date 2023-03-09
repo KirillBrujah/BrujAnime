@@ -13,7 +13,9 @@ class RecommendationsNetworkService extends NetworkService {
       },
     );
 
-    return ApiResponseList.fromJson(
-        response.data, AnimeRecommendation.converter);
+    final results =
+        ApiResponseList.fromJson(response.data, AnimeRecommendation.converter);
+
+    return results;
   }
 }

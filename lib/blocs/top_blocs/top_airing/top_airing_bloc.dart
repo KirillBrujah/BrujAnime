@@ -19,6 +19,8 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     on<_TopAiringResetEvent>(_reset);
   }
 
+  int page = 0;
+
   Future<void> _fetch(_TopAiringFetchEvent event, emit) async {
     final pagination = state.pagination;
     if (pagination?.hasNextPage == false) return;
@@ -26,7 +28,9 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     try {
       final results = await TopNetworkService().getTop(
         filter: AnimeSearchFilter.airing,
-        page: pagination != null ? pagination.currentPage + 1 : 1,
+        page: page++,
+        // TODO: Fix pagination
+        // page: pagination != null ? pagination.currentPage + 1 : 1,
       );
 
       emit(TopAiringState.data(

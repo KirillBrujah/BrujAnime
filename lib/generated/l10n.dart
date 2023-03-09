@@ -140,6 +140,16 @@ class S {
     );
   }
 
+  /// `Schedule`
+  String get schedule {
+    return Intl.message(
+      'Schedule',
+      name: 'schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Can't load Top`
   String get top_load_error {
     return Intl.message(

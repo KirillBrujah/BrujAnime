@@ -111,7 +111,7 @@ class _Recommendations extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
       builder: (context, state) => state.when(
-        initial: () => CircularProgressIndicator(),
+        initial: () => const Center(child: CircularProgressIndicator()),
         error: (message) => Text(message),
         data: (data, pagination) => Text('${data.length}'),
       ),

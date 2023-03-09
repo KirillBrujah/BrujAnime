@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -28,16 +30,6 @@ class ApiResponse<T> with _$ApiResponse<T> {
       return ApiResponse.error(exception);
     }
   }
-
-  bool get isSuccess => maybeMap(
-        orElse: () => false,
-        success: (_) => true,
-      );
-
-  bool get isError => maybeMap(
-        orElse: () => false,
-        error: (_) => true,
-      );
 }
 
 class ApiResponseList<T> {
@@ -49,16 +41,15 @@ class ApiResponseList<T> {
   factory ApiResponseList.fromJson(
     Map<String, dynamic> json,
     T Function(Map<String, dynamic>) fromJsonT,
-  ) {
-    return ApiResponseList._(
-      results: (json["data"] as List<dynamic>)
-          .map((json) => ApiResponse.fromJson(json, fromJsonT))
-          .toList(),
-      pagination: json["pagination"] != null
-          ? ApiPagination.fromJson(json["pagination"])
-          : null,
-    );
-  }
+  ) =>
+      ApiResponseList._(
+        results: (json["data"] as List<dynamic>)
+            .map((json) => ApiResponse.fromJson(json, fromJsonT))
+            .toList(),
+        pagination: json["pagination"] != null
+            ? ApiPagination.fromJson(json["pagination"])
+            : null,
+      );
 
   List<T> get successResults => results
       .whereType<_ApiResponseSuccess<T>>()
@@ -78,8 +69,9 @@ class ApiPagination with _$ApiPagination {
   const factory ApiPagination({
     @JsonKey(name: "last_visible_page") required int lastVisiblePage,
     @JsonKey(name: "has_next_page") required bool hasNextPage,
-    @JsonKey(name: "current_page") required int currentPage,
-    required ApiPaginationItems items,
+    // TODO: Remove commented fields
+    // @Default(0) @JsonKey(name: "current_page") int currentPage,
+    // ApiPaginationItems? items,
   }) = _ApiPagination;
 
   factory ApiPagination.fromJson(Map<String, dynamic> json) =>

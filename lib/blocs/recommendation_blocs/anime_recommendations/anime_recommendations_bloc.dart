@@ -27,12 +27,9 @@ class AnimeRecommendationsBloc
 
     try {
       final results = await RecommendationsNetworkService().getRecommendations(
-        page: pagination != null ? pagination.currentPage + 1 : 1,
-      );
-
-      print("RECOMMENDS = ${results.successResults.length}");
-
-      await Future.delayed(const Duration(seconds: 2));
+          // TODO: Fix pagination
+          // page: pagination != null ? pagination.currentPage + 1 : 1,
+          );
 
       emit(AnimeRecommendationsState.data(
         data: results.successResults,

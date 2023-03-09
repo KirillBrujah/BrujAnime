@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "recommendations_load_error":
             MessageLookupByLibrary.simpleMessage("Can\'t load Recommendations"),
+        "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "top": MessageLookupByLibrary.simpleMessage("Top"),
         "top_airing": MessageLookupByLibrary.simpleMessage("Top Airing"),

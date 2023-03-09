@@ -354,9 +354,6 @@ mixin _$ApiPagination {
   int get lastVisiblePage => throw _privateConstructorUsedError;
   @JsonKey(name: "has_next_page")
   bool get hasNextPage => throw _privateConstructorUsedError;
-  @JsonKey(name: "current_page")
-  int get currentPage => throw _privateConstructorUsedError;
-  ApiPaginationItems get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -372,11 +369,7 @@ abstract class $ApiPaginationCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "last_visible_page") int lastVisiblePage,
-      @JsonKey(name: "has_next_page") bool hasNextPage,
-      @JsonKey(name: "current_page") int currentPage,
-      ApiPaginationItems items});
-
-  $ApiPaginationItemsCopyWith<$Res> get items;
+      @JsonKey(name: "has_next_page") bool hasNextPage});
 }
 
 /// @nodoc
@@ -394,8 +387,6 @@ class _$ApiPaginationCopyWithImpl<$Res, $Val extends ApiPagination>
   $Res call({
     Object? lastVisiblePage = null,
     Object? hasNextPage = null,
-    Object? currentPage = null,
-    Object? items = null,
   }) {
     return _then(_value.copyWith(
       lastVisiblePage: null == lastVisiblePage
@@ -406,23 +397,7 @@ class _$ApiPaginationCopyWithImpl<$Res, $Val extends ApiPagination>
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentPage: null == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as ApiPaginationItems,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ApiPaginationItemsCopyWith<$Res> get items {
-    return $ApiPaginationItemsCopyWith<$Res>(_value.items, (value) {
-      return _then(_value.copyWith(items: value) as $Val);
-    });
   }
 }
 
@@ -436,12 +411,7 @@ abstract class _$$_ApiPaginationCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "last_visible_page") int lastVisiblePage,
-      @JsonKey(name: "has_next_page") bool hasNextPage,
-      @JsonKey(name: "current_page") int currentPage,
-      ApiPaginationItems items});
-
-  @override
-  $ApiPaginationItemsCopyWith<$Res> get items;
+      @JsonKey(name: "has_next_page") bool hasNextPage});
 }
 
 /// @nodoc
@@ -457,8 +427,6 @@ class __$$_ApiPaginationCopyWithImpl<$Res>
   $Res call({
     Object? lastVisiblePage = null,
     Object? hasNextPage = null,
-    Object? currentPage = null,
-    Object? items = null,
   }) {
     return _then(_$_ApiPagination(
       lastVisiblePage: null == lastVisiblePage
@@ -469,14 +437,6 @@ class __$$_ApiPaginationCopyWithImpl<$Res>
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentPage: null == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as ApiPaginationItems,
     ));
   }
 }
@@ -486,9 +446,7 @@ class __$$_ApiPaginationCopyWithImpl<$Res>
 class _$_ApiPagination implements _ApiPagination {
   const _$_ApiPagination(
       {@JsonKey(name: "last_visible_page") required this.lastVisiblePage,
-      @JsonKey(name: "has_next_page") required this.hasNextPage,
-      @JsonKey(name: "current_page") required this.currentPage,
-      required this.items});
+      @JsonKey(name: "has_next_page") required this.hasNextPage});
 
   factory _$_ApiPagination.fromJson(Map<String, dynamic> json) =>
       _$$_ApiPaginationFromJson(json);
@@ -499,15 +457,10 @@ class _$_ApiPagination implements _ApiPagination {
   @override
   @JsonKey(name: "has_next_page")
   final bool hasNextPage;
-  @override
-  @JsonKey(name: "current_page")
-  final int currentPage;
-  @override
-  final ApiPaginationItems items;
 
   @override
   String toString() {
-    return 'ApiPagination(lastVisiblePage: $lastVisiblePage, hasNextPage: $hasNextPage, currentPage: $currentPage, items: $items)';
+    return 'ApiPagination(lastVisiblePage: $lastVisiblePage, hasNextPage: $hasNextPage)';
   }
 
   @override
@@ -518,16 +471,12 @@ class _$_ApiPagination implements _ApiPagination {
             (identical(other.lastVisiblePage, lastVisiblePage) ||
                 other.lastVisiblePage == lastVisiblePage) &&
             (identical(other.hasNextPage, hasNextPage) ||
-                other.hasNextPage == hasNextPage) &&
-            (identical(other.currentPage, currentPage) ||
-                other.currentPage == currentPage) &&
-            (identical(other.items, items) || other.items == items));
+                other.hasNextPage == hasNextPage));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, lastVisiblePage, hasNextPage, currentPage, items);
+  int get hashCode => Object.hash(runtimeType, lastVisiblePage, hasNextPage);
 
   @JsonKey(ignore: true)
   @override
@@ -545,10 +494,10 @@ class _$_ApiPagination implements _ApiPagination {
 
 abstract class _ApiPagination implements ApiPagination {
   const factory _ApiPagination(
-      {@JsonKey(name: "last_visible_page") required final int lastVisiblePage,
-      @JsonKey(name: "has_next_page") required final bool hasNextPage,
-      @JsonKey(name: "current_page") required final int currentPage,
-      required final ApiPaginationItems items}) = _$_ApiPagination;
+      {@JsonKey(name: "last_visible_page")
+          required final int lastVisiblePage,
+      @JsonKey(name: "has_next_page")
+          required final bool hasNextPage}) = _$_ApiPagination;
 
   factory _ApiPagination.fromJson(Map<String, dynamic> json) =
       _$_ApiPagination.fromJson;
@@ -559,11 +508,6 @@ abstract class _ApiPagination implements ApiPagination {
   @override
   @JsonKey(name: "has_next_page")
   bool get hasNextPage;
-  @override
-  @JsonKey(name: "current_page")
-  int get currentPage;
-  @override
-  ApiPaginationItems get items;
   @override
   @JsonKey(ignore: true)
   _$$_ApiPaginationCopyWith<_$_ApiPagination> get copyWith =>
