@@ -99,6 +99,24 @@ class _$AppRouter extends RootStackRouter {
         child: const TopCatalogPage(),
       );
     },
+    TopAllRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const TopAllPage(),
+      );
+    },
+    TopAiringRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const TopAiringPage(),
+      );
+    },
+    TopUpcomingRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const TopUpcomingPage(),
+      );
+    },
     FavoriteRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
@@ -169,6 +187,23 @@ class _$AppRouter extends RootStackRouter {
                       TopCatalogRoute.name,
                       path: 'top-catalog-page',
                       parent: CatalogRoute.name,
+                      children: [
+                        RouteConfig(
+                          TopAllRoute.name,
+                          path: '',
+                          parent: TopCatalogRoute.name,
+                        ),
+                        RouteConfig(
+                          TopAiringRoute.name,
+                          path: 'top-airing-page',
+                          parent: TopCatalogRoute.name,
+                        ),
+                        RouteConfig(
+                          TopUpcomingRoute.name,
+                          path: 'top-upcoming-page',
+                          parent: TopCatalogRoute.name,
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -403,13 +438,50 @@ class GenresCatalogRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [TopCatalogPage]
 class TopCatalogRoute extends PageRouteInfo<void> {
-  const TopCatalogRoute()
+  const TopCatalogRoute({List<PageRouteInfo>? children})
       : super(
           TopCatalogRoute.name,
           path: 'top-catalog-page',
+          initialChildren: children,
         );
 
   static const String name = 'TopCatalogRoute';
+}
+
+/// generated route for
+/// [TopAllPage]
+class TopAllRoute extends PageRouteInfo<void> {
+  const TopAllRoute()
+      : super(
+          TopAllRoute.name,
+          path: '',
+        );
+
+  static const String name = 'TopAllRoute';
+}
+
+/// generated route for
+/// [TopAiringPage]
+class TopAiringRoute extends PageRouteInfo<void> {
+  const TopAiringRoute()
+      : super(
+          TopAiringRoute.name,
+          path: 'top-airing-page',
+        );
+
+  static const String name = 'TopAiringRoute';
+}
+
+/// generated route for
+/// [TopUpcomingPage]
+class TopUpcomingRoute extends PageRouteInfo<void> {
+  const TopUpcomingRoute()
+      : super(
+          TopUpcomingRoute.name,
+          path: 'top-upcoming-page',
+        );
+
+  static const String name = 'TopUpcomingRoute';
 }
 
 /// generated route for

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
+import 'package:brujanime/ui/widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,7 @@ class CatalogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return AutoTabsRouter.pageView(
+      physics: const NeverScrollableScrollPhysics(),
       routes: const [
         ScheduleCatalogRoute(),
         GenresCatalogRoute(),
@@ -24,7 +25,7 @@ class CatalogPage extends StatelessWidget {
             setActiveIndex: autoTabsRouter.setActiveIndex,
             items: [
               CatalogNavigationBarItem(
-                label: s.schedule,
+                label: s.daily,
                 icon: Icons.calendar_month_rounded,
               ),
               CatalogNavigationBarItem(

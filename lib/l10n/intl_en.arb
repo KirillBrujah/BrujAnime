@@ -10,9 +10,15 @@
   "settings": "Settings",
 
   "@_SUBTITLES" : {},
-  "top_airing": "Top Airing",
   "top_all": "Top All",
+  "top_airing": "Top Airing",
+  "top_upcoming": "Top Upcoming",
+  "all": "All",
+  "airing": "Airing",
+  "upcoming": "Upcoming",
   "schedule": "Schedule",
+  "daily": "Daily",
+  "today": "Today",
 
 
 

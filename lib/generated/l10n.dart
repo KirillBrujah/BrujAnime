@@ -120,16 +120,6 @@ class S {
     );
   }
 
-  /// `Top Airing`
-  String get top_airing {
-    return Intl.message(
-      'Top Airing',
-      name: 'top_airing',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Top All`
   String get top_all {
     return Intl.message(
@@ -140,11 +130,81 @@ class S {
     );
   }
 
+  /// `Top Airing`
+  String get top_airing {
+    return Intl.message(
+      'Top Airing',
+      name: 'top_airing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Upcoming`
+  String get top_upcoming {
+    return Intl.message(
+      'Top Upcoming',
+      name: 'top_upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Airing`
+  String get airing {
+    return Intl.message(
+      'Airing',
+      name: 'airing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Schedule`
   String get schedule {
     return Intl.message(
       'Schedule',
       name: 'schedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily`
+  String get daily {
+    return Intl.message(
+      'Daily',
+      name: 'daily',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
       desc: '',
       args: [],
     );

@@ -37,7 +37,11 @@ class _MainTabs {
         children: [
           AutoRoute(page: ScheduleCatalogPage),
           AutoRoute(page: GenresCatalogPage),
-          AutoRoute(page: TopCatalogPage),
+          AutoRoute(page: TopCatalogPage, children: [
+            AutoRoute(page: TopAllPage, initial: true),
+            AutoRoute(page: TopAiringPage),
+            AutoRoute(page: TopUpcomingPage),
+          ]),
         ],
       ),
       _CommonRoutes.anime,

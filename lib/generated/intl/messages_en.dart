@@ -23,7 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "BrujAnime": MessageLookupByLibrary.simpleMessage("BrujAnime"),
+        "airing": MessageLookupByLibrary.simpleMessage("Airing"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
         "catalog": MessageLookupByLibrary.simpleMessage("Catalog"),
+        "daily": MessageLookupByLibrary.simpleMessage("Daily"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -31,10 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Can\'t load Recommendations"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "today": MessageLookupByLibrary.simpleMessage("Today"),
         "top": MessageLookupByLibrary.simpleMessage("Top"),
         "top_airing": MessageLookupByLibrary.simpleMessage("Top Airing"),
         "top_all": MessageLookupByLibrary.simpleMessage("Top All"),
         "top_load_error":
-            MessageLookupByLibrary.simpleMessage("Can\'t load Top")
+            MessageLookupByLibrary.simpleMessage("Can\'t load Top"),
+        "top_upcoming": MessageLookupByLibrary.simpleMessage("Top Upcoming"),
+        "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming")
       };
 }
