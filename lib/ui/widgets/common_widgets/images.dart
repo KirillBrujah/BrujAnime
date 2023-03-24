@@ -9,6 +9,7 @@ class KNetworkImage extends StatelessWidget {
     this.imageUrl,
     this.height = double.infinity,
     this.width = double.infinity,
+    this.fit = BoxFit.fill,
     this.borderRadius,
   }) : super(key: key);
 
@@ -16,6 +17,7 @@ class KNetworkImage extends StatelessWidget {
   final double width;
   final double height;
   final BorderRadius? borderRadius;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +25,34 @@ class KNetworkImage extends StatelessWidget {
       width: width,
       height: height,
       child: ClipRRect(
-        borderRadius: borderRadius,
-        // TODO: Create placeholder widget
+        borderRadius: borderRadius ?? BorderRadius.zero,
         child: imageUrl == null
-            ? const Placeholder()
+            ? _ImagePlaceholder(borderRadius: borderRadius)
             : CachedNetworkImage(
-                fit: BoxFit.fill,
+                fit: fit,
                 imageUrl: imageUrl!,
+                errorWidget: (_, __, ___) => const _ImagePlaceholder(),
                 placeholder: (_, __) => const ImageShimmer(),
               ),
       ),
+    );
+  }
+}
+
+class _ImagePlaceholder extends StatelessWidget {
+  const _ImagePlaceholder({Key? key, this.borderRadius}) : super(key: key);
+
+  final BorderRadius? borderRadius;
+
+  @override
+  Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).colorScheme.primary.withOpacity(.5);
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: borderRadius,
+        border: Border.all(color: primaryColor),
+      ),
+      child: Placeholder(color: primaryColor),
     );
   }
 }

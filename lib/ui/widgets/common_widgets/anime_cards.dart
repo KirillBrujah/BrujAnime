@@ -3,7 +3,6 @@ import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/theme/constants.dart';
 import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -34,19 +33,12 @@ class HorizontalAnimeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              width: double.infinity,
+            KNetworkImage(
               height: 180,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(5),
-                ),
-                child: CachedNetworkImage(
-                  fit: BoxFit.fill,
-                  imageUrl: anime.images?.maxSizeImage ?? "",
-                  placeholder: (_, __) => const ImageShimmer(),
-                ),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(5),
               ),
+              imageUrl: anime.images?.maxSizeImage,
             ),
             Padding(
               padding: const EdgeInsets.all(5),
@@ -119,22 +111,36 @@ class TopFirstAnimeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final textScheme = Theme.of(context).textTheme;
-    return Container(
+    final textTheme = Theme.of(context).textTheme;
+    return SizedBox(
       height: 200,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: colorScheme.primary,
-        ),
-      ),
-      padding: EdgeInsets.all(10),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
-              // TODO: Image
-              // TODO: Top place
-              Text('1'),
+              KNetworkImage(
+                imageUrl: anime.images?.maxSizeImage,
+                height: 200,
+                width: 130,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Icon(
+                    Icons.star_rounded,
+                    color: colorScheme.primary,
+                    size: 40,
+                  ),
+                  Text(
+                    '1',
+                    style: textTheme.labelLarge?.copyWith(
+                      color: colorScheme.onPrimary,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
           const SizedBox(width: 10),
@@ -144,21 +150,47 @@ class TopFirstAnimeCard extends StatelessWidget {
               children: [
                 Text(
                   anime.simpleTitle,
-                  // TODO: Title style
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  style: textTheme.titleMedium,
                 ),
+                const SizedBox(height: 5),
                 Row(
                   children: [
-                    // TODO: Favorites icon
-                    Text('${anime.favorites}'),
-                    // TODO: Score icon
-                    Text('${anime.score}'),
+                    Icon(
+                      Icons.star_rounded,
+                      color: colorScheme.primary,
+                      size: 14,
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      '${anime.score}',
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      style: textTheme.titleSmall,
+                    ),
+                    const SizedBox(width: 20),
+                    Icon(
+                      Icons.favorite_rounded,
+                      color: colorScheme.primary,
+                      size: 14,
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      NumberFormat.compact().format(anime.favorites),
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      style: textTheme.titleSmall,
+                    ),
                   ],
                 ),
+                const SizedBox(height: 5),
                 Expanded(
                   child: Text(
-                    anime.synopsis,
-                    // TODO: Synopsys style
-                    maxLines: 3,
+                    anime.synopsis * 6,
+                    maxLines: 8,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme.bodyMedium,
                   ),
                 ),
               ],

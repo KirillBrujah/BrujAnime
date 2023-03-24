@@ -4,7 +4,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -224,7 +223,9 @@ class _Carousel extends StatelessWidget {
                           child: Stack(
                             fit: StackFit.expand,
                             children: [
-                              _Image(imageUrl: anime.images!.maxSizeImage!),
+                              KNetworkImage(
+                                imageUrl: anime.images!.maxSizeImage,
+                              ),
                               _Score(
                                 score: anime.score,
                                 favorites: anime.favorites,
@@ -330,23 +331,6 @@ class _Score extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _Image extends StatelessWidget {
-  const _Image({
-    required this.imageUrl,
-  });
-
-  final String imageUrl;
-
-  @override
-  Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      fit: BoxFit.fill,
-      imageUrl: imageUrl,
-      placeholder: (_, __) => const ImageShimmer(),
     );
   }
 }
