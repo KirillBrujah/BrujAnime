@@ -107,3 +107,65 @@ class HorizontalAnimeCard extends StatelessWidget {
     );
   }
 }
+
+class TopFirstAnimeCard extends StatelessWidget {
+  const TopFirstAnimeCard(
+    this.anime, {
+    Key? key,
+  }) : super(key: key);
+
+  final Anime anime;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textScheme = Theme.of(context).textTheme;
+    return Container(
+      height: 200,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: colorScheme.primary,
+        ),
+      ),
+      padding: EdgeInsets.all(10),
+      child: Row(
+        children: [
+          Stack(
+            children: [
+              // TODO: Image
+              // TODO: Top place
+              Text('1'),
+            ],
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  anime.simpleTitle,
+                  // TODO: Title style
+                ),
+                Row(
+                  children: [
+                    // TODO: Favorites icon
+                    Text('${anime.favorites}'),
+                    // TODO: Score icon
+                    Text('${anime.score}'),
+                  ],
+                ),
+                Expanded(
+                  child: Text(
+                    anime.synopsis,
+                    // TODO: Synopsys style
+                    maxLines: 3,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

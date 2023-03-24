@@ -63,7 +63,7 @@ class _TopAiring extends StatelessWidget {
       bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
       builder: (context, state) => HorizontalList(
         title: S.of(context).top_airing,
-        onNavigateTap: AutoRouteNavigator.navigateTop(context),
+        onNavigateTap: AutoRouteNavigator.navigateTopAiring(context),
         child: state.when(
           initial: () => const HorizontalListLoading(),
           error: (message) => HorizontalListError(message),
