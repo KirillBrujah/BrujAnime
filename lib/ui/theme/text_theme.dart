@@ -58,11 +58,11 @@ final _bodyLarge = GoogleFonts.roboto(
 );
 final _bodyMedium = GoogleFonts.roboto(
   fontSize: 14,
-  color: _onBackground,
+  color: _onBackground.withOpacity(.65),
 );
 final _bodySmall = GoogleFonts.roboto(
   fontSize: 12,
-  color: _onBackground,
+  color: _onBackground.withOpacity(.65),
 );
 
 final _textTheme = TextTheme(

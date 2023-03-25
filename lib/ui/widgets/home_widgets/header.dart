@@ -243,7 +243,10 @@ class _Carousel extends StatelessWidget {
                               anime.simpleTitle,
                               maxLines: 2,
                               textAlign: TextAlign.center,
-                              style: textTheme.titleMedium,
+                              style: textTheme.titleMedium?.copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onBackground),
                             ),
                             const SizedBox(height: 10),
                             Text(

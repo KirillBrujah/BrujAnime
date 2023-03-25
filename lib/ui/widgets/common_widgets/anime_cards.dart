@@ -47,9 +47,7 @@ class HorizontalAnimeCard extends StatelessWidget {
                 children: [
                   Text(
                     anime.type.label,
-                    style: textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onBackground.withOpacity(0.75),
-                    ),
+                    style: textTheme.bodySmall,
                   ),
                   const SizedBox(height: 5),
                   SizedBox(
