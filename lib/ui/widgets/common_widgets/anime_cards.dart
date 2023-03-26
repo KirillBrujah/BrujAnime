@@ -65,10 +65,13 @@ class HorizontalAnimeCard extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.star_rate_rounded,
-                        color: colorScheme.primary,
-                        size: 14,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 4),
+                        child: Icon(
+                          Icons.star_rate_rounded,
+                          color: colorScheme.primary,
+                          size: 14,
+                        ),
                       ),
                       Text(
                         '${anime.score}',
@@ -77,10 +80,13 @@ class HorizontalAnimeCard extends StatelessWidget {
                       const SizedBox(width: 2),
                       const Spacer(),
                       const SizedBox(width: 2),
-                      Icon(
-                        Icons.favorite_rounded,
-                        color: colorScheme.primary,
-                        size: 14,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 4),
+                        child: Icon(
+                          Icons.favorite_rounded,
+                          color: colorScheme.primary,
+                          size: 14,
+                        ),
                       ),
                       Text(
                         NumberFormat.compact().format(anime.favorites),
@@ -123,21 +129,31 @@ class TopFirstAnimeCard extends StatelessWidget {
                 width: 130,
                 borderRadius: BorderRadius.circular(5),
               ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Icon(
-                    Icons.star_rounded,
-                    color: colorScheme.primary,
-                    size: 40,
-                  ),
-                  Text(
-                    '1',
-                    style: textTheme.labelLarge?.copyWith(
-                      color: colorScheme.onPrimary,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  boxShadow: [
+                    BoxShadow(
+                      color: colorScheme.background,
+                    )
+                  ],
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Icon(
+                      Icons.star_rounded,
+                      color: colorScheme.primary,
+                      size: 40,
                     ),
-                  ),
-                ],
+                    Text(
+                      '1',
+                      style: textTheme.labelLarge?.copyWith(
+                        color: colorScheme.onPrimary,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -165,7 +181,7 @@ class TopFirstAnimeCard extends StatelessWidget {
                       '${anime.score}',
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style: textTheme.titleSmall,
+                      style: textTheme.labelMedium,
                     ),
                     const SizedBox(width: 20),
                     Icon(
@@ -178,7 +194,7 @@ class TopFirstAnimeCard extends StatelessWidget {
                       NumberFormat.compact().format(anime.favorites),
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style: textTheme.titleSmall,
+                      style: textTheme.labelMedium,
                     ),
                   ],
                 ),

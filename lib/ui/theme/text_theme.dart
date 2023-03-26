@@ -27,12 +27,12 @@ final _titleLarge = GoogleFonts.prompt(
 );
 final _titleMedium = GoogleFonts.prompt(
   fontSize: 16,
-  color: _primary,
+  color: _onBackground,
   fontWeight: FontWeight.w500,
 );
 final _titleSmall = GoogleFonts.prompt(
   fontSize: 14,
-  color: _primary,
+  color: _onBackground,
   fontWeight: FontWeight.w500,
 );
 
