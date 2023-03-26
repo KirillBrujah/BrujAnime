@@ -253,25 +253,26 @@ class _Carousel extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: Text(
-                                  // '',
                                   anime.synopsis,
-                                  maxLines: 4,
+                                  maxLines: anime.genres.isNotEmpty ? 4 : 8,
                                   overflow: TextOverflow.ellipsis,
                                   style: textTheme.bodyMedium,
                                 ),
                               ),
-                            const SizedBox(height: 10),
-                            Expanded(
-                              child: Wrap(
-                                spacing: 3,
-                                runSpacing: 4,
-                                runAlignment: WrapAlignment.start,
-                                alignment: WrapAlignment.start,
-                                children: anime.genres
-                                    .map((genre) => KChip(genre.name))
-                                    .toList(),
+                            if (anime.genres.isNotEmpty) ...[
+                              const SizedBox(height: 10),
+                              Expanded(
+                                child: Wrap(
+                                  spacing: 3,
+                                  runSpacing: 4,
+                                  runAlignment: WrapAlignment.start,
+                                  alignment: WrapAlignment.start,
+                                  children: anime.genres
+                                      .map((genre) => KChip(genre.name))
+                                      .toList(),
+                                ),
                               ),
-                            )
+                            ],
                           ],
                         ),
                       ),

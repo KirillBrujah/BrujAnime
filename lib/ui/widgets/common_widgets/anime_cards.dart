@@ -130,11 +130,14 @@ class TopFirstAnimeCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
               Container(
+                margin: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
                   boxShadow: [
                     BoxShadow(
-                      color: colorScheme.background,
+                      color: colorScheme.background.withOpacity(.7),
+                      blurRadius: 7,
+                      spreadRadius: 0,
                     )
                   ],
                 ),
@@ -161,6 +164,7 @@ class TopFirstAnimeCard extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
                   anime.simpleTitle,
@@ -198,15 +202,32 @@ class TopFirstAnimeCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
-                Expanded(
-                  child: Text(
-                    anime.synopsis * 6,
-                    maxLines: 8,
-                    overflow: TextOverflow.ellipsis,
-                    style: textTheme.bodyMedium,
+                if (anime.synopsis.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: Text(
+                      anime.synopsis * 99,
+                      maxLines: anime.genres.isNotEmpty ? 2 : 6,
+                      overflow: TextOverflow.ellipsis,
+                      style: textTheme.bodyMedium,
+                    ),
                   ),
-                ),
+                if (anime.genres.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Expanded(
+                    child: Wrap(
+                      spacing: 3,
+                      runSpacing: 4,
+                      runAlignment: WrapAlignment.start,
+                      alignment: WrapAlignment.start,
+                      children: [
+                        ...anime.genres,
+                        ...anime.genres,
+                        ...anime.genres
+                      ].map((genre) => KChip(genre.name)).toList(),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

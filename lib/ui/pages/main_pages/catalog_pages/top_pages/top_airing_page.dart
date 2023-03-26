@@ -38,13 +38,10 @@ class _TopAnimeList extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0),
-            child: TopFirstAnimeCard(list.first),
-          ),
-          // TODO: First place
-
+          TopFirstAnimeCard(list.first),
           // TODO: Others
+
+          for (Anime anime in list) TopFirstAnimeCard(anime),
         ],
       ),
     );
