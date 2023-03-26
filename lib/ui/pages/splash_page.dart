@@ -26,10 +26,8 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Replace recommendations fetch
-    context
-        .read<AnimeRecommendationsBloc>()
-        .add(const AnimeRecommendationsEvent.fetch());
+    // TODO: Replace season now fetch
+    context.read<SeasonNowBloc>().add(const SeasonNowEvent.fetch());
 
     final colorScheme = Theme.of(context).colorScheme;
 

@@ -10,6 +10,7 @@ part 'anime_recommendations_bloc.freezed.dart';
 part 'anime_recommendations_event.dart';
 part 'anime_recommendations_state.dart';
 
+@Deprecated("Maybe will not be used in final version")
 class AnimeRecommendationsBloc
     extends Bloc<AnimeRecommendationsEvent, AnimeRecommendationsState> {
   AnimeRecommendationsBloc()
@@ -32,7 +33,7 @@ class AnimeRecommendationsBloc
           );
 
       emit(AnimeRecommendationsState.data(
-        data: results.successResults,
+        list: results.successResults,
         pagination: results.pagination!,
       ));
     } catch (exc) {

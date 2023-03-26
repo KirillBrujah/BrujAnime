@@ -283,21 +283,21 @@ mixin _$TopAiringState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -383,7 +383,7 @@ class _$_TopAiringInitialState extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -393,7 +393,7 @@ class _$_TopAiringInitialState extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -403,7 +403,7 @@ class _$_TopAiringInitialState extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -459,7 +459,7 @@ abstract class _$$_TopAiringDataStateCopyWith<$Res> {
           $Res Function(_$_TopAiringDataState) then) =
       __$$_TopAiringDataStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Anime> data, ApiPagination pagination});
+  $Res call({List<Anime> list, ApiPagination pagination});
 
   $ApiPaginationCopyWith<$Res> get pagination;
 }
@@ -475,13 +475,13 @@ class __$$_TopAiringDataStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? list = null,
     Object? pagination = null,
   }) {
     return _then(_$_TopAiringDataState(
-      data: null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
+      list: null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
               as List<Anime>,
       pagination: null == pagination
           ? _value.pagination
@@ -503,16 +503,16 @@ class __$$_TopAiringDataStateCopyWithImpl<$Res>
 
 class _$_TopAiringDataState extends _TopAiringDataState {
   const _$_TopAiringDataState(
-      {required final List<Anime> data, required this.pagination})
-      : _data = data,
+      {required final List<Anime> list, required this.pagination})
+      : _list = list,
         super._();
 
-  final List<Anime> _data;
+  final List<Anime> _list;
   @override
-  List<Anime> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
+  List<Anime> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
+    return EqualUnmodifiableListView(_list);
   }
 
   @override
@@ -520,7 +520,7 @@ class _$_TopAiringDataState extends _TopAiringDataState {
 
   @override
   String toString() {
-    return 'TopAiringState.data(data: $data, pagination: $pagination)';
+    return 'TopAiringState.data(list: $list, pagination: $pagination)';
   }
 
   @override
@@ -528,14 +528,14 @@ class _$_TopAiringDataState extends _TopAiringDataState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TopAiringDataState &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_data), pagination);
+      runtimeType, const DeepCollectionEquality().hash(_list), pagination);
 
   @JsonKey(ignore: true)
   @override
@@ -548,32 +548,32 @@ class _$_TopAiringDataState extends _TopAiringDataState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
-    return data(this.data, pagination);
+    return data(list, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
-    return data?.call(this.data, pagination);
+    return data?.call(list, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(this.data, pagination);
+      return data(list, pagination);
     }
     return orElse();
   }
@@ -615,11 +615,11 @@ class _$_TopAiringDataState extends _TopAiringDataState {
 
 abstract class _TopAiringDataState extends TopAiringState {
   const factory _TopAiringDataState(
-      {required final List<Anime> data,
+      {required final List<Anime> list,
       required final ApiPagination pagination}) = _$_TopAiringDataState;
   const _TopAiringDataState._() : super._();
 
-  List<Anime> get data;
+  List<Anime> get list;
   ApiPagination get pagination;
   @JsonKey(ignore: true)
   _$$_TopAiringDataStateCopyWith<_$_TopAiringDataState> get copyWith =>
@@ -692,7 +692,7 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> data, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination) data,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -702,7 +702,7 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -712,7 +712,7 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> data, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? data,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

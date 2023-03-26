@@ -35,7 +35,7 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TopAiringBloc, TopAiringState>(
+    return BlocBuilder<SeasonNowBloc, SeasonNowState>(
       builder: (context, state) {
         return state.when(
           initial: () => const HomeHeaderLoading(),

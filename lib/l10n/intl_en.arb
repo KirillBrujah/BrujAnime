@@ -28,7 +28,8 @@
 
   "@_ERRORS": {},
   "top_load_error": "Can't load Top",
-  "recommendations_load_error": "Can't load Recommendations"
+  "recommendations_load_error": "Can't load Recommendations",
+  "season_now_load_error": "Can't load current season info"
 
 
 }

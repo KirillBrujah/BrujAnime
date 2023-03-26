@@ -237,6 +237,7 @@ class _Carousel extends StatelessWidget {
                       const SizedBox(width: 10),
                       Expanded(
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             const SizedBox(height: 10),
                             Text(
@@ -248,13 +249,29 @@ class _Carousel extends StatelessWidget {
                                       .colorScheme
                                       .onBackground),
                             ),
+                            if (anime.synopsis.isNotEmpty)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                  // '',
+                                  anime.synopsis,
+                                  maxLines: 4,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: textTheme.bodyMedium,
+                                ),
+                              ),
                             const SizedBox(height: 10),
-                            Text(
-                              anime.synopsis,
-                              maxLines: 8,
-                              overflow: TextOverflow.ellipsis,
-                              style: textTheme.bodyMedium,
-                            ),
+                            Expanded(
+                              child: Wrap(
+                                spacing: 3,
+                                runSpacing: 4,
+                                runAlignment: WrapAlignment.start,
+                                alignment: WrapAlignment.start,
+                                children: anime.genres
+                                    .map((genre) => KChip(genre.name))
+                                    .toList(),
+                              ),
+                            )
                           ],
                         ),
                       ),

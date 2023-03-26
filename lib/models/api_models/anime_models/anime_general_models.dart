@@ -36,9 +36,9 @@ class Anime with _$Anime {
     @Default(0) int popularity,
     @Default("") String synopsis,
     @Default("") String background,
+    @Default([]) List<Genre> genres,
 
     // TODO: List<AnimeStudio>
-    // TODO: List<AnimeGenre>
   }) = _Anime;
 
   factory Anime.fromJson(Map<String, dynamic> json) => _$AnimeFromJson(json);
@@ -70,72 +70,14 @@ class AnimeAired with _$AnimeAired {
       _$AnimeAiredFromJson(json);
 }
 
-/*
-@JsonSerializable()
-class Anime {
-  @JsonKey(name: "mal_id")
-  final int id;
-  // TODO: images
-  // TODO: trailer
+// TODO: Maybe I should replace it to another file
+@freezed
+class Genre with _$Genre {
+  const factory Genre({
+    @JsonKey(name: "mal_id") required int id,
+    required ArtworkTypes type,
+    required String name,
+  }) = _Genre;
 
-  // TODO: List<Title>
-  final String? title;
-  @JsonKey(name: "title_english")
-  final String? titleEnglish;
-  @JsonKey(name: "title_japanese")
-  final String? titleJapanese;
-
-  // TODO: type
-  // TODO: source
-
-  final int episodes;
-  // TODO: AnimeStatuses
-  final bool airing;
-  // TODO: Aired
-  final String duration;
-
-  // TODO: rating
-  final int score;
-  final int scoredBy;
-  final int rank;
-  final int popularity;
-
-  final String synopsis;
-  final String background;
-
-  // TODO: List<AnimeStudio>
-  // TODO: List<AnimeGenre>
-
-  Anime({
-    required this.id,
-    this.title,
-    this.titleEnglish,
-    this.titleJapanese,
-    this.episodes = 0,
-    required this.airing,
-    required this.duration,
-    this.score = 0,
-    this.scoredBy = 0,
-    this.rank = 0,
-    this.popularity = 0,
-    this.synopsis = "",
-    this.background = "",
-  });
+  factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 }
-
-@JsonSerializable()
-class AnimeTitle {
-  final String title;
-  // TODO: type
-
-  AnimeTitle(this.title);
-}
-
-@JsonSerializable()
-class AnimeAired {
-  final DateTime from;
-  final DateTime to;
-
-  AnimeAired(this.from, this.to);
-}
-*/

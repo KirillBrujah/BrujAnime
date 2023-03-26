@@ -34,7 +34,7 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
       );
 
       emit(TopAiringState.data(
-        data: results.successResults,
+        list: results.successResults,
         pagination: results.pagination!,
       ));
     } catch (exc) {

@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "recommendations_load_error":
             MessageLookupByLibrary.simpleMessage("Can\'t load Recommendations"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
+        "season_now_load_error": MessageLookupByLibrary.simpleMessage(
+            "Can\'t load current season info"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "top": MessageLookupByLibrary.simpleMessage("Top"),

@@ -25,6 +25,10 @@ _$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
       popularity: json['popularity'] as int? ?? 0,
       synopsis: json['synopsis'] as String? ?? "",
       background: json['background'] as String? ?? "",
+      genres: (json['genres'] as List<dynamic>?)
+              ?.map((e) => Genre.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$_AnimeToJson(_$_Anime instance) => <String, dynamic>{
@@ -44,6 +48,7 @@ Map<String, dynamic> _$$_AnimeToJson(_$_Anime instance) => <String, dynamic>{
       'popularity': instance.popularity,
       'synopsis': instance.synopsis,
       'background': instance.background,
+      'genres': instance.genres,
     };
 
 const _$AnimeTypeEnumMap = {
@@ -76,3 +81,20 @@ Map<String, dynamic> _$$_AnimeAiredToJson(_$_AnimeAired instance) =>
       'from': instance.from.toIso8601String(),
       'to': instance.to.toIso8601String(),
     };
+
+_$_Genre _$$_GenreFromJson(Map<String, dynamic> json) => _$_Genre(
+      id: json['mal_id'] as int,
+      type: $enumDecode(_$ArtworkTypesEnumMap, json['type']),
+      name: json['name'] as String,
+    );
+
+Map<String, dynamic> _$$_GenreToJson(_$_Genre instance) => <String, dynamic>{
+      'mal_id': instance.id,
+      'type': _$ArtworkTypesEnumMap[instance.type]!,
+      'name': instance.name,
+    };
+
+const _$ArtworkTypesEnumMap = {
+  ArtworkTypes.anime: 'anime',
+  ArtworkTypes.manga: 'manga',
+};

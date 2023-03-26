@@ -32,3 +32,11 @@ enum AnimeSearchFilter {
   @override
   String toString() => name;
 }
+
+enum ArtworkTypes {
+  anime,
+  manga;
+
+  @override
+  String toString() => name;
+}

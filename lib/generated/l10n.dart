@@ -229,6 +229,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Can't load current season info`
+  String get season_now_load_error {
+    return Intl.message(
+      'Can\'t load current season info',
+      name: 'season_now_load_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
