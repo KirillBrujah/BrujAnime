@@ -75,20 +75,20 @@ class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$_ApiResponseSuccessCopyWith<T, $Res> {
-  factory _$$_ApiResponseSuccessCopyWith(_$_ApiResponseSuccess<T> value,
-          $Res Function(_$_ApiResponseSuccess<T>) then) =
-      __$$_ApiResponseSuccessCopyWithImpl<T, $Res>;
+abstract class _$$ApiResponseSuccessImplCopyWith<T, $Res> {
+  factory _$$ApiResponseSuccessImplCopyWith(_$ApiResponseSuccessImpl<T> value,
+          $Res Function(_$ApiResponseSuccessImpl<T>) then) =
+      __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$_ApiResponseSuccessCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$_ApiResponseSuccess<T>>
-    implements _$$_ApiResponseSuccessCopyWith<T, $Res> {
-  __$$_ApiResponseSuccessCopyWithImpl(_$_ApiResponseSuccess<T> _value,
-      $Res Function(_$_ApiResponseSuccess<T>) _then)
+class __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseSuccessImpl<T>>
+    implements _$$ApiResponseSuccessImplCopyWith<T, $Res> {
+  __$$ApiResponseSuccessImplCopyWithImpl(_$ApiResponseSuccessImpl<T> _value,
+      $Res Function(_$ApiResponseSuccessImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$_ApiResponseSuccessCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_ApiResponseSuccess<T>(
+    return _then(_$ApiResponseSuccessImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ class __$$_ApiResponseSuccessCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_ApiResponseSuccess<T> extends _ApiResponseSuccess<T> {
-  const _$_ApiResponseSuccess(this.data) : super._();
+class _$ApiResponseSuccessImpl<T> extends _ApiResponseSuccess<T> {
+  const _$ApiResponseSuccessImpl(this.data) : super._();
 
   @override
   final T data;
@@ -119,10 +119,10 @@ class _$_ApiResponseSuccess<T> extends _ApiResponseSuccess<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiResponseSuccess<T> &&
+            other is _$ApiResponseSuccessImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -133,9 +133,9 @@ class _$_ApiResponseSuccess<T> extends _ApiResponseSuccess<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiResponseSuccessCopyWith<T, _$_ApiResponseSuccess<T>> get copyWith =>
-      __$$_ApiResponseSuccessCopyWithImpl<T, _$_ApiResponseSuccess<T>>(
-          this, _$identity);
+  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
+      get copyWith => __$$ApiResponseSuccessImplCopyWithImpl<T,
+          _$ApiResponseSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -201,30 +201,30 @@ class _$_ApiResponseSuccess<T> extends _ApiResponseSuccess<T> {
 }
 
 abstract class _ApiResponseSuccess<T> extends ApiResponse<T> {
-  const factory _ApiResponseSuccess(final T data) = _$_ApiResponseSuccess<T>;
+  const factory _ApiResponseSuccess(final T data) = _$ApiResponseSuccessImpl<T>;
   const _ApiResponseSuccess._() : super._();
 
   T get data;
   @JsonKey(ignore: true)
-  _$$_ApiResponseSuccessCopyWith<T, _$_ApiResponseSuccess<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ApiResponseErrorCopyWith<T, $Res> {
-  factory _$$_ApiResponseErrorCopyWith(_$_ApiResponseError<T> value,
-          $Res Function(_$_ApiResponseError<T>) then) =
-      __$$_ApiResponseErrorCopyWithImpl<T, $Res>;
+abstract class _$$ApiResponseErrorImplCopyWith<T, $Res> {
+  factory _$$ApiResponseErrorImplCopyWith(_$ApiResponseErrorImpl<T> value,
+          $Res Function(_$ApiResponseErrorImpl<T>) then) =
+      __$$ApiResponseErrorImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({Object exception});
 }
 
 /// @nodoc
-class __$$_ApiResponseErrorCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$_ApiResponseError<T>>
-    implements _$$_ApiResponseErrorCopyWith<T, $Res> {
-  __$$_ApiResponseErrorCopyWithImpl(_$_ApiResponseError<T> _value,
-      $Res Function(_$_ApiResponseError<T>) _then)
+class __$$ApiResponseErrorImplCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseErrorImpl<T>>
+    implements _$$ApiResponseErrorImplCopyWith<T, $Res> {
+  __$$ApiResponseErrorImplCopyWithImpl(_$ApiResponseErrorImpl<T> _value,
+      $Res Function(_$ApiResponseErrorImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -232,7 +232,7 @@ class __$$_ApiResponseErrorCopyWithImpl<T, $Res>
   $Res call({
     Object? exception = null,
   }) {
-    return _then(_$_ApiResponseError<T>(
+    return _then(_$ApiResponseErrorImpl<T>(
       null == exception ? _value.exception : exception,
     ));
   }
@@ -240,8 +240,8 @@ class __$$_ApiResponseErrorCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_ApiResponseError<T> extends _ApiResponseError<T> {
-  const _$_ApiResponseError(this.exception) : super._();
+class _$ApiResponseErrorImpl<T> extends _ApiResponseError<T> {
+  const _$ApiResponseErrorImpl(this.exception) : super._();
 
   @override
   final Object exception;
@@ -252,10 +252,10 @@ class _$_ApiResponseError<T> extends _ApiResponseError<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiResponseError<T> &&
+            other is _$ApiResponseErrorImpl<T> &&
             const DeepCollectionEquality().equals(other.exception, exception));
   }
 
@@ -266,8 +266,8 @@ class _$_ApiResponseError<T> extends _ApiResponseError<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiResponseErrorCopyWith<T, _$_ApiResponseError<T>> get copyWith =>
-      __$$_ApiResponseErrorCopyWithImpl<T, _$_ApiResponseError<T>>(
+  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
+      __$$ApiResponseErrorImplCopyWithImpl<T, _$ApiResponseErrorImpl<T>>(
           this, _$identity);
 
   @override
@@ -335,12 +335,12 @@ class _$_ApiResponseError<T> extends _ApiResponseError<T> {
 
 abstract class _ApiResponseError<T> extends ApiResponse<T> {
   const factory _ApiResponseError(final Object exception) =
-      _$_ApiResponseError<T>;
+      _$ApiResponseErrorImpl<T>;
   const _ApiResponseError._() : super._();
 
   Object get exception;
   @JsonKey(ignore: true)
-  _$$_ApiResponseErrorCopyWith<T, _$_ApiResponseError<T>> get copyWith =>
+  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -402,11 +402,11 @@ class _$ApiPaginationCopyWithImpl<$Res, $Val extends ApiPagination>
 }
 
 /// @nodoc
-abstract class _$$_ApiPaginationCopyWith<$Res>
+abstract class _$$ApiPaginationImplCopyWith<$Res>
     implements $ApiPaginationCopyWith<$Res> {
-  factory _$$_ApiPaginationCopyWith(
-          _$_ApiPagination value, $Res Function(_$_ApiPagination) then) =
-      __$$_ApiPaginationCopyWithImpl<$Res>;
+  factory _$$ApiPaginationImplCopyWith(
+          _$ApiPaginationImpl value, $Res Function(_$ApiPaginationImpl) then) =
+      __$$ApiPaginationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -415,11 +415,11 @@ abstract class _$$_ApiPaginationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ApiPaginationCopyWithImpl<$Res>
-    extends _$ApiPaginationCopyWithImpl<$Res, _$_ApiPagination>
-    implements _$$_ApiPaginationCopyWith<$Res> {
-  __$$_ApiPaginationCopyWithImpl(
-      _$_ApiPagination _value, $Res Function(_$_ApiPagination) _then)
+class __$$ApiPaginationImplCopyWithImpl<$Res>
+    extends _$ApiPaginationCopyWithImpl<$Res, _$ApiPaginationImpl>
+    implements _$$ApiPaginationImplCopyWith<$Res> {
+  __$$ApiPaginationImplCopyWithImpl(
+      _$ApiPaginationImpl _value, $Res Function(_$ApiPaginationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,7 +428,7 @@ class __$$_ApiPaginationCopyWithImpl<$Res>
     Object? lastVisiblePage = null,
     Object? hasNextPage = null,
   }) {
-    return _then(_$_ApiPagination(
+    return _then(_$ApiPaginationImpl(
       lastVisiblePage: null == lastVisiblePage
           ? _value.lastVisiblePage
           : lastVisiblePage // ignore: cast_nullable_to_non_nullable
@@ -443,13 +443,13 @@ class __$$_ApiPaginationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApiPagination implements _ApiPagination {
-  const _$_ApiPagination(
+class _$ApiPaginationImpl implements _ApiPagination {
+  const _$ApiPaginationImpl(
       {@JsonKey(name: "last_visible_page") required this.lastVisiblePage,
       @JsonKey(name: "has_next_page") required this.hasNextPage});
 
-  factory _$_ApiPagination.fromJson(Map<String, dynamic> json) =>
-      _$$_ApiPaginationFromJson(json);
+  factory _$ApiPaginationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApiPaginationImplFromJson(json);
 
   @override
   @JsonKey(name: "last_visible_page")
@@ -464,10 +464,10 @@ class _$_ApiPagination implements _ApiPagination {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiPagination &&
+            other is _$ApiPaginationImpl &&
             (identical(other.lastVisiblePage, lastVisiblePage) ||
                 other.lastVisiblePage == lastVisiblePage) &&
             (identical(other.hasNextPage, hasNextPage) ||
@@ -481,12 +481,12 @@ class _$_ApiPagination implements _ApiPagination {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiPaginationCopyWith<_$_ApiPagination> get copyWith =>
-      __$$_ApiPaginationCopyWithImpl<_$_ApiPagination>(this, _$identity);
+  _$$ApiPaginationImplCopyWith<_$ApiPaginationImpl> get copyWith =>
+      __$$ApiPaginationImplCopyWithImpl<_$ApiPaginationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApiPaginationToJson(
+    return _$$ApiPaginationImplToJson(
       this,
     );
   }
@@ -494,13 +494,12 @@ class _$_ApiPagination implements _ApiPagination {
 
 abstract class _ApiPagination implements ApiPagination {
   const factory _ApiPagination(
-      {@JsonKey(name: "last_visible_page")
-          required final int lastVisiblePage,
+      {@JsonKey(name: "last_visible_page") required final int lastVisiblePage,
       @JsonKey(name: "has_next_page")
-          required final bool hasNextPage}) = _$_ApiPagination;
+      required final bool hasNextPage}) = _$ApiPaginationImpl;
 
   factory _ApiPagination.fromJson(Map<String, dynamic> json) =
-      _$_ApiPagination.fromJson;
+      _$ApiPaginationImpl.fromJson;
 
   @override
   @JsonKey(name: "last_visible_page")
@@ -510,7 +509,7 @@ abstract class _ApiPagination implements ApiPagination {
   bool get hasNextPage;
   @override
   @JsonKey(ignore: true)
-  _$$_ApiPaginationCopyWith<_$_ApiPagination> get copyWith =>
+  _$$ApiPaginationImplCopyWith<_$ApiPaginationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -575,22 +574,22 @@ class _$ApiPaginationItemsCopyWithImpl<$Res, $Val extends ApiPaginationItems>
 }
 
 /// @nodoc
-abstract class _$$_ApiPaginationItemsCopyWith<$Res>
+abstract class _$$ApiPaginationItemsImplCopyWith<$Res>
     implements $ApiPaginationItemsCopyWith<$Res> {
-  factory _$$_ApiPaginationItemsCopyWith(_$_ApiPaginationItems value,
-          $Res Function(_$_ApiPaginationItems) then) =
-      __$$_ApiPaginationItemsCopyWithImpl<$Res>;
+  factory _$$ApiPaginationItemsImplCopyWith(_$ApiPaginationItemsImpl value,
+          $Res Function(_$ApiPaginationItemsImpl) then) =
+      __$$ApiPaginationItemsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int count, int total, @JsonKey(name: "per_page") int perPage});
 }
 
 /// @nodoc
-class __$$_ApiPaginationItemsCopyWithImpl<$Res>
-    extends _$ApiPaginationItemsCopyWithImpl<$Res, _$_ApiPaginationItems>
-    implements _$$_ApiPaginationItemsCopyWith<$Res> {
-  __$$_ApiPaginationItemsCopyWithImpl(
-      _$_ApiPaginationItems _value, $Res Function(_$_ApiPaginationItems) _then)
+class __$$ApiPaginationItemsImplCopyWithImpl<$Res>
+    extends _$ApiPaginationItemsCopyWithImpl<$Res, _$ApiPaginationItemsImpl>
+    implements _$$ApiPaginationItemsImplCopyWith<$Res> {
+  __$$ApiPaginationItemsImplCopyWithImpl(_$ApiPaginationItemsImpl _value,
+      $Res Function(_$ApiPaginationItemsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -600,7 +599,7 @@ class __$$_ApiPaginationItemsCopyWithImpl<$Res>
     Object? total = null,
     Object? perPage = null,
   }) {
-    return _then(_$_ApiPaginationItems(
+    return _then(_$ApiPaginationItemsImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -619,14 +618,14 @@ class __$$_ApiPaginationItemsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ApiPaginationItems implements _ApiPaginationItems {
-  const _$_ApiPaginationItems(
+class _$ApiPaginationItemsImpl implements _ApiPaginationItems {
+  const _$ApiPaginationItemsImpl(
       {this.count = 0,
       this.total = 0,
       @JsonKey(name: "per_page") this.perPage = 0});
 
-  factory _$_ApiPaginationItems.fromJson(Map<String, dynamic> json) =>
-      _$$_ApiPaginationItemsFromJson(json);
+  factory _$ApiPaginationItemsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApiPaginationItemsImplFromJson(json);
 
   @override
   @JsonKey()
@@ -644,10 +643,10 @@ class _$_ApiPaginationItems implements _ApiPaginationItems {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiPaginationItems &&
+            other is _$ApiPaginationItemsImpl &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.perPage, perPage) || other.perPage == perPage));
@@ -660,13 +659,13 @@ class _$_ApiPaginationItems implements _ApiPaginationItems {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiPaginationItemsCopyWith<_$_ApiPaginationItems> get copyWith =>
-      __$$_ApiPaginationItemsCopyWithImpl<_$_ApiPaginationItems>(
+  _$$ApiPaginationItemsImplCopyWith<_$ApiPaginationItemsImpl> get copyWith =>
+      __$$ApiPaginationItemsImplCopyWithImpl<_$ApiPaginationItemsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApiPaginationItemsToJson(
+    return _$$ApiPaginationItemsImplToJson(
       this,
     );
   }
@@ -676,10 +675,10 @@ abstract class _ApiPaginationItems implements ApiPaginationItems {
   const factory _ApiPaginationItems(
       {final int count,
       final int total,
-      @JsonKey(name: "per_page") final int perPage}) = _$_ApiPaginationItems;
+      @JsonKey(name: "per_page") final int perPage}) = _$ApiPaginationItemsImpl;
 
   factory _ApiPaginationItems.fromJson(Map<String, dynamic> json) =
-      _$_ApiPaginationItems.fromJson;
+      _$ApiPaginationItemsImpl.fromJson;
 
   @override
   int get count;
@@ -690,6 +689,6 @@ abstract class _ApiPaginationItems implements ApiPaginationItems {
   int get perPage;
   @override
   @JsonKey(ignore: true)
-  _$$_ApiPaginationItemsCopyWith<_$_ApiPaginationItems> get copyWith =>
+  _$$ApiPaginationItemsImplCopyWith<_$ApiPaginationItemsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

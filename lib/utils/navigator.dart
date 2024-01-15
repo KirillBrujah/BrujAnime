@@ -7,7 +7,7 @@ class AutoRouteNavigator {
   static VoidCallback navigateTopAiring(BuildContext context) => () {
         context.tabsRouter.setActiveIndex(1);
         final catalogRouter = context.tabsRouter
-            .innerRouterOf<StackRouter>(CatalogTabRoute.name)
+            .innerRouterOf<StackRouter>(CatalogTab.name)
             ?.innerRouterOf<TabsRouter>(CatalogRoute.name);
 
         print('CATALOG ROUTER $catalogRouter');

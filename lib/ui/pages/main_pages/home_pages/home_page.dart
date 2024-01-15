@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:auto_route/annotations.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
@@ -8,8 +9,9 @@ import 'package:brujanime/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({Key? key}) : super(key: key);
+  const _Header({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class _TopAiring extends StatelessWidget {
 }
 
 class _Recommendations extends StatelessWidget {
-  const _Recommendations({Key? key}) : super(key: key);
+  const _Recommendations({super.key});
 
   @override
   Widget build(BuildContext context) {

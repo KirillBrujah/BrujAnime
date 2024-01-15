@@ -75,25 +75,25 @@ class _$TopAiringEventCopyWithImpl<$Res, $Val extends TopAiringEvent>
 }
 
 /// @nodoc
-abstract class _$$_TopAiringFetchEventCopyWith<$Res> {
-  factory _$$_TopAiringFetchEventCopyWith(_$_TopAiringFetchEvent value,
-          $Res Function(_$_TopAiringFetchEvent) then) =
-      __$$_TopAiringFetchEventCopyWithImpl<$Res>;
+abstract class _$$TopAiringFetchEventImplCopyWith<$Res> {
+  factory _$$TopAiringFetchEventImplCopyWith(_$TopAiringFetchEventImpl value,
+          $Res Function(_$TopAiringFetchEventImpl) then) =
+      __$$TopAiringFetchEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TopAiringFetchEventCopyWithImpl<$Res>
-    extends _$TopAiringEventCopyWithImpl<$Res, _$_TopAiringFetchEvent>
-    implements _$$_TopAiringFetchEventCopyWith<$Res> {
-  __$$_TopAiringFetchEventCopyWithImpl(_$_TopAiringFetchEvent _value,
-      $Res Function(_$_TopAiringFetchEvent) _then)
+class __$$TopAiringFetchEventImplCopyWithImpl<$Res>
+    extends _$TopAiringEventCopyWithImpl<$Res, _$TopAiringFetchEventImpl>
+    implements _$$TopAiringFetchEventImplCopyWith<$Res> {
+  __$$TopAiringFetchEventImplCopyWithImpl(_$TopAiringFetchEventImpl _value,
+      $Res Function(_$TopAiringFetchEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_TopAiringFetchEvent implements _TopAiringFetchEvent {
-  const _$_TopAiringFetchEvent();
+class _$TopAiringFetchEventImpl implements _TopAiringFetchEvent {
+  const _$TopAiringFetchEventImpl();
 
   @override
   String toString() {
@@ -101,9 +101,10 @@ class _$_TopAiringFetchEvent implements _TopAiringFetchEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_TopAiringFetchEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$TopAiringFetchEventImpl);
   }
 
   @override
@@ -173,29 +174,29 @@ class _$_TopAiringFetchEvent implements _TopAiringFetchEvent {
 }
 
 abstract class _TopAiringFetchEvent implements TopAiringEvent {
-  const factory _TopAiringFetchEvent() = _$_TopAiringFetchEvent;
+  const factory _TopAiringFetchEvent() = _$TopAiringFetchEventImpl;
 }
 
 /// @nodoc
-abstract class _$$_TopAiringResetEventCopyWith<$Res> {
-  factory _$$_TopAiringResetEventCopyWith(_$_TopAiringResetEvent value,
-          $Res Function(_$_TopAiringResetEvent) then) =
-      __$$_TopAiringResetEventCopyWithImpl<$Res>;
+abstract class _$$TopAiringResetEventImplCopyWith<$Res> {
+  factory _$$TopAiringResetEventImplCopyWith(_$TopAiringResetEventImpl value,
+          $Res Function(_$TopAiringResetEventImpl) then) =
+      __$$TopAiringResetEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TopAiringResetEventCopyWithImpl<$Res>
-    extends _$TopAiringEventCopyWithImpl<$Res, _$_TopAiringResetEvent>
-    implements _$$_TopAiringResetEventCopyWith<$Res> {
-  __$$_TopAiringResetEventCopyWithImpl(_$_TopAiringResetEvent _value,
-      $Res Function(_$_TopAiringResetEvent) _then)
+class __$$TopAiringResetEventImplCopyWithImpl<$Res>
+    extends _$TopAiringEventCopyWithImpl<$Res, _$TopAiringResetEventImpl>
+    implements _$$TopAiringResetEventImplCopyWith<$Res> {
+  __$$TopAiringResetEventImplCopyWithImpl(_$TopAiringResetEventImpl _value,
+      $Res Function(_$TopAiringResetEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_TopAiringResetEvent implements _TopAiringResetEvent {
-  const _$_TopAiringResetEvent();
+class _$TopAiringResetEventImpl implements _TopAiringResetEvent {
+  const _$TopAiringResetEventImpl();
 
   @override
   String toString() {
@@ -203,9 +204,10 @@ class _$_TopAiringResetEvent implements _TopAiringResetEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_TopAiringResetEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$TopAiringResetEventImpl);
   }
 
   @override
@@ -275,7 +277,7 @@ class _$_TopAiringResetEvent implements _TopAiringResetEvent {
 }
 
 abstract class _TopAiringResetEvent implements TopAiringEvent {
-  const factory _TopAiringResetEvent() = _$_TopAiringResetEvent;
+  const factory _TopAiringResetEvent() = _$TopAiringResetEventImpl;
 }
 
 /// @nodoc
@@ -345,25 +347,26 @@ class _$TopAiringStateCopyWithImpl<$Res, $Val extends TopAiringState>
 }
 
 /// @nodoc
-abstract class _$$_TopAiringInitialStateCopyWith<$Res> {
-  factory _$$_TopAiringInitialStateCopyWith(_$_TopAiringInitialState value,
-          $Res Function(_$_TopAiringInitialState) then) =
-      __$$_TopAiringInitialStateCopyWithImpl<$Res>;
+abstract class _$$TopAiringInitialStateImplCopyWith<$Res> {
+  factory _$$TopAiringInitialStateImplCopyWith(
+          _$TopAiringInitialStateImpl value,
+          $Res Function(_$TopAiringInitialStateImpl) then) =
+      __$$TopAiringInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TopAiringInitialStateCopyWithImpl<$Res>
-    extends _$TopAiringStateCopyWithImpl<$Res, _$_TopAiringInitialState>
-    implements _$$_TopAiringInitialStateCopyWith<$Res> {
-  __$$_TopAiringInitialStateCopyWithImpl(_$_TopAiringInitialState _value,
-      $Res Function(_$_TopAiringInitialState) _then)
+class __$$TopAiringInitialStateImplCopyWithImpl<$Res>
+    extends _$TopAiringStateCopyWithImpl<$Res, _$TopAiringInitialStateImpl>
+    implements _$$TopAiringInitialStateImplCopyWith<$Res> {
+  __$$TopAiringInitialStateImplCopyWithImpl(_$TopAiringInitialStateImpl _value,
+      $Res Function(_$TopAiringInitialStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_TopAiringInitialState extends _TopAiringInitialState {
-  const _$_TopAiringInitialState() : super._();
+class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
+  const _$TopAiringInitialStateImpl() : super._();
 
   @override
   String toString() {
@@ -371,9 +374,10 @@ class _$_TopAiringInitialState extends _TopAiringInitialState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_TopAiringInitialState);
+        (other.runtimeType == runtimeType &&
+            other is _$TopAiringInitialStateImpl);
   }
 
   @override
@@ -449,15 +453,15 @@ class _$_TopAiringInitialState extends _TopAiringInitialState {
 }
 
 abstract class _TopAiringInitialState extends TopAiringState {
-  const factory _TopAiringInitialState() = _$_TopAiringInitialState;
+  const factory _TopAiringInitialState() = _$TopAiringInitialStateImpl;
   const _TopAiringInitialState._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_TopAiringDataStateCopyWith<$Res> {
-  factory _$$_TopAiringDataStateCopyWith(_$_TopAiringDataState value,
-          $Res Function(_$_TopAiringDataState) then) =
-      __$$_TopAiringDataStateCopyWithImpl<$Res>;
+abstract class _$$TopAiringDataStateImplCopyWith<$Res> {
+  factory _$$TopAiringDataStateImplCopyWith(_$TopAiringDataStateImpl value,
+          $Res Function(_$TopAiringDataStateImpl) then) =
+      __$$TopAiringDataStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Anime> list, ApiPagination pagination});
 
@@ -465,11 +469,11 @@ abstract class _$$_TopAiringDataStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TopAiringDataStateCopyWithImpl<$Res>
-    extends _$TopAiringStateCopyWithImpl<$Res, _$_TopAiringDataState>
-    implements _$$_TopAiringDataStateCopyWith<$Res> {
-  __$$_TopAiringDataStateCopyWithImpl(
-      _$_TopAiringDataState _value, $Res Function(_$_TopAiringDataState) _then)
+class __$$TopAiringDataStateImplCopyWithImpl<$Res>
+    extends _$TopAiringStateCopyWithImpl<$Res, _$TopAiringDataStateImpl>
+    implements _$$TopAiringDataStateImplCopyWith<$Res> {
+  __$$TopAiringDataStateImplCopyWithImpl(_$TopAiringDataStateImpl _value,
+      $Res Function(_$TopAiringDataStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -478,7 +482,7 @@ class __$$_TopAiringDataStateCopyWithImpl<$Res>
     Object? list = null,
     Object? pagination = null,
   }) {
-    return _then(_$_TopAiringDataState(
+    return _then(_$TopAiringDataStateImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -501,8 +505,8 @@ class __$$_TopAiringDataStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TopAiringDataState extends _TopAiringDataState {
-  const _$_TopAiringDataState(
+class _$TopAiringDataStateImpl extends _TopAiringDataState {
+  const _$TopAiringDataStateImpl(
       {required final List<Anime> list, required this.pagination})
       : _list = list,
         super._();
@@ -524,10 +528,10 @@ class _$_TopAiringDataState extends _TopAiringDataState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TopAiringDataState &&
+            other is _$TopAiringDataStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
@@ -540,8 +544,8 @@ class _$_TopAiringDataState extends _TopAiringDataState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopAiringDataStateCopyWith<_$_TopAiringDataState> get copyWith =>
-      __$$_TopAiringDataStateCopyWithImpl<_$_TopAiringDataState>(
+  _$$TopAiringDataStateImplCopyWith<_$TopAiringDataStateImpl> get copyWith =>
+      __$$TopAiringDataStateImplCopyWithImpl<_$TopAiringDataStateImpl>(
           this, _$identity);
 
   @override
@@ -616,31 +620,31 @@ class _$_TopAiringDataState extends _TopAiringDataState {
 abstract class _TopAiringDataState extends TopAiringState {
   const factory _TopAiringDataState(
       {required final List<Anime> list,
-      required final ApiPagination pagination}) = _$_TopAiringDataState;
+      required final ApiPagination pagination}) = _$TopAiringDataStateImpl;
   const _TopAiringDataState._() : super._();
 
   List<Anime> get list;
   ApiPagination get pagination;
   @JsonKey(ignore: true)
-  _$$_TopAiringDataStateCopyWith<_$_TopAiringDataState> get copyWith =>
+  _$$TopAiringDataStateImplCopyWith<_$TopAiringDataStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_TopAiringErrorStateCopyWith<$Res> {
-  factory _$$_TopAiringErrorStateCopyWith(_$_TopAiringErrorState value,
-          $Res Function(_$_TopAiringErrorState) then) =
-      __$$_TopAiringErrorStateCopyWithImpl<$Res>;
+abstract class _$$TopAiringErrorStateImplCopyWith<$Res> {
+  factory _$$TopAiringErrorStateImplCopyWith(_$TopAiringErrorStateImpl value,
+          $Res Function(_$TopAiringErrorStateImpl) then) =
+      __$$TopAiringErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_TopAiringErrorStateCopyWithImpl<$Res>
-    extends _$TopAiringStateCopyWithImpl<$Res, _$_TopAiringErrorState>
-    implements _$$_TopAiringErrorStateCopyWith<$Res> {
-  __$$_TopAiringErrorStateCopyWithImpl(_$_TopAiringErrorState _value,
-      $Res Function(_$_TopAiringErrorState) _then)
+class __$$TopAiringErrorStateImplCopyWithImpl<$Res>
+    extends _$TopAiringStateCopyWithImpl<$Res, _$TopAiringErrorStateImpl>
+    implements _$$TopAiringErrorStateImplCopyWith<$Res> {
+  __$$TopAiringErrorStateImplCopyWithImpl(_$TopAiringErrorStateImpl _value,
+      $Res Function(_$TopAiringErrorStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -648,7 +652,7 @@ class __$$_TopAiringErrorStateCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_TopAiringErrorState(
+    return _then(_$TopAiringErrorStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -659,8 +663,8 @@ class __$$_TopAiringErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TopAiringErrorState extends _TopAiringErrorState {
-  const _$_TopAiringErrorState(this.message) : super._();
+class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
+  const _$TopAiringErrorStateImpl(this.message) : super._();
 
   @override
   final String message;
@@ -671,10 +675,10 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TopAiringErrorState &&
+            other is _$TopAiringErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -684,8 +688,8 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopAiringErrorStateCopyWith<_$_TopAiringErrorState> get copyWith =>
-      __$$_TopAiringErrorStateCopyWithImpl<_$_TopAiringErrorState>(
+  _$$TopAiringErrorStateImplCopyWith<_$TopAiringErrorStateImpl> get copyWith =>
+      __$$TopAiringErrorStateImplCopyWithImpl<_$TopAiringErrorStateImpl>(
           this, _$identity);
 
   @override
@@ -759,11 +763,11 @@ class _$_TopAiringErrorState extends _TopAiringErrorState {
 
 abstract class _TopAiringErrorState extends TopAiringState {
   const factory _TopAiringErrorState(final String message) =
-      _$_TopAiringErrorState;
+      _$TopAiringErrorStateImpl;
   const _TopAiringErrorState._() : super._();
 
   String get message;
   @JsonKey(ignore: true)
-  _$$_TopAiringErrorStateCopyWith<_$_TopAiringErrorState> get copyWith =>
+  _$$TopAiringErrorStateImplCopyWith<_$TopAiringErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

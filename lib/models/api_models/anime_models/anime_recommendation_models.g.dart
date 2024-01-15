@@ -6,9 +6,9 @@ part of 'anime_recommendation_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AnimeRecommendation _$$_AnimeRecommendationFromJson(
+_$AnimeRecommendationImpl _$$AnimeRecommendationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AnimeRecommendation(
+    _$AnimeRecommendationImpl(
       id: json['mal_id'] as String,
       entry: (json['entry'] as List<dynamic>)
           .map((e) =>
@@ -19,8 +19,8 @@ _$_AnimeRecommendation _$$_AnimeRecommendationFromJson(
       user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AnimeRecommendationToJson(
-        _$_AnimeRecommendation instance) =>
+Map<String, dynamic> _$$AnimeRecommendationImplToJson(
+        _$AnimeRecommendationImpl instance) =>
     <String, dynamic>{
       'mal_id': instance.id,
       'entry': instance.entry,
@@ -29,9 +29,9 @@ Map<String, dynamic> _$$_AnimeRecommendationToJson(
       'user': instance.user,
     };
 
-_$_AnimeRecommendationEntry _$$_AnimeRecommendationEntryFromJson(
+_$AnimeRecommendationEntryImpl _$$AnimeRecommendationEntryImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AnimeRecommendationEntry(
+    _$AnimeRecommendationEntryImpl(
       id: json['mal_id'] as int,
       images: json['images'] == null
           ? null
@@ -39,8 +39,8 @@ _$_AnimeRecommendationEntry _$$_AnimeRecommendationEntryFromJson(
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$_AnimeRecommendationEntryToJson(
-        _$_AnimeRecommendationEntry instance) =>
+Map<String, dynamic> _$$AnimeRecommendationEntryImplToJson(
+        _$AnimeRecommendationEntryImpl instance) =>
     <String, dynamic>{
       'mal_id': instance.id,
       'images': instance.images,

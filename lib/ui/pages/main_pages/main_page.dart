@@ -3,20 +3,21 @@ import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
       lazyLoad: false,
       routes: const [
-        HomeTabRoute(),
-        CatalogTabRoute(),
-        FavoriteTabRoute(),
-        SettingsTabRoute(),
+        HomeTab(),
+        CatalogTab(),
+        FavoriteTab(),
+        SettingsTab(),
       ],
-      builder: (context, child, controller) {
+      builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           body: Column(

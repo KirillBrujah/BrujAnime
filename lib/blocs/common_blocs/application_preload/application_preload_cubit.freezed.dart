@@ -96,25 +96,25 @@ class _$ApplicationPreloadStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ApplicationPreloadLoadingStateCopyWith<$Res>
+abstract class _$$ApplicationPreloadLoadingStateImplCopyWith<$Res>
     implements $ApplicationPreloadStateCopyWith<$Res> {
-  factory _$$_ApplicationPreloadLoadingStateCopyWith(
-          _$_ApplicationPreloadLoadingState value,
-          $Res Function(_$_ApplicationPreloadLoadingState) then) =
-      __$$_ApplicationPreloadLoadingStateCopyWithImpl<$Res>;
+  factory _$$ApplicationPreloadLoadingStateImplCopyWith(
+          _$ApplicationPreloadLoadingStateImpl value,
+          $Res Function(_$ApplicationPreloadLoadingStateImpl) then) =
+      __$$ApplicationPreloadLoadingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double progress});
 }
 
 /// @nodoc
-class __$$_ApplicationPreloadLoadingStateCopyWithImpl<$Res>
+class __$$ApplicationPreloadLoadingStateImplCopyWithImpl<$Res>
     extends _$ApplicationPreloadStateCopyWithImpl<$Res,
-        _$_ApplicationPreloadLoadingState>
-    implements _$$_ApplicationPreloadLoadingStateCopyWith<$Res> {
-  __$$_ApplicationPreloadLoadingStateCopyWithImpl(
-      _$_ApplicationPreloadLoadingState _value,
-      $Res Function(_$_ApplicationPreloadLoadingState) _then)
+        _$ApplicationPreloadLoadingStateImpl>
+    implements _$$ApplicationPreloadLoadingStateImplCopyWith<$Res> {
+  __$$ApplicationPreloadLoadingStateImplCopyWithImpl(
+      _$ApplicationPreloadLoadingStateImpl _value,
+      $Res Function(_$ApplicationPreloadLoadingStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,7 +122,7 @@ class __$$_ApplicationPreloadLoadingStateCopyWithImpl<$Res>
   $Res call({
     Object? progress = null,
   }) {
-    return _then(_$_ApplicationPreloadLoadingState(
+    return _then(_$ApplicationPreloadLoadingStateImpl(
       progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
@@ -133,9 +133,9 @@ class __$$_ApplicationPreloadLoadingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApplicationPreloadLoadingState
+class _$ApplicationPreloadLoadingStateImpl
     implements _ApplicationPreloadLoadingState {
-  const _$_ApplicationPreloadLoadingState({required this.progress});
+  const _$ApplicationPreloadLoadingStateImpl({required this.progress});
 
   @override
   final double progress;
@@ -146,10 +146,10 @@ class _$_ApplicationPreloadLoadingState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApplicationPreloadLoadingState &&
+            other is _$ApplicationPreloadLoadingStateImpl &&
             (identical(other.progress, progress) ||
                 other.progress == progress));
   }
@@ -160,9 +160,10 @@ class _$_ApplicationPreloadLoadingState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApplicationPreloadLoadingStateCopyWith<_$_ApplicationPreloadLoadingState>
-      get copyWith => __$$_ApplicationPreloadLoadingStateCopyWithImpl<
-          _$_ApplicationPreloadLoadingState>(this, _$identity);
+  _$$ApplicationPreloadLoadingStateImplCopyWith<
+          _$ApplicationPreloadLoadingStateImpl>
+      get copyWith => __$$ApplicationPreloadLoadingStateImplCopyWithImpl<
+          _$ApplicationPreloadLoadingStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -230,36 +231,37 @@ class _$_ApplicationPreloadLoadingState
 abstract class _ApplicationPreloadLoadingState
     implements ApplicationPreloadState {
   const factory _ApplicationPreloadLoadingState(
-      {required final double progress}) = _$_ApplicationPreloadLoadingState;
+      {required final double progress}) = _$ApplicationPreloadLoadingStateImpl;
 
   @override
   double get progress;
   @override
   @JsonKey(ignore: true)
-  _$$_ApplicationPreloadLoadingStateCopyWith<_$_ApplicationPreloadLoadingState>
+  _$$ApplicationPreloadLoadingStateImplCopyWith<
+          _$ApplicationPreloadLoadingStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ApplicationPreloadCompleteStateCopyWith<$Res>
+abstract class _$$ApplicationPreloadCompleteStateImplCopyWith<$Res>
     implements $ApplicationPreloadStateCopyWith<$Res> {
-  factory _$$_ApplicationPreloadCompleteStateCopyWith(
-          _$_ApplicationPreloadCompleteState value,
-          $Res Function(_$_ApplicationPreloadCompleteState) then) =
-      __$$_ApplicationPreloadCompleteStateCopyWithImpl<$Res>;
+  factory _$$ApplicationPreloadCompleteStateImplCopyWith(
+          _$ApplicationPreloadCompleteStateImpl value,
+          $Res Function(_$ApplicationPreloadCompleteStateImpl) then) =
+      __$$ApplicationPreloadCompleteStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double progress});
 }
 
 /// @nodoc
-class __$$_ApplicationPreloadCompleteStateCopyWithImpl<$Res>
+class __$$ApplicationPreloadCompleteStateImplCopyWithImpl<$Res>
     extends _$ApplicationPreloadStateCopyWithImpl<$Res,
-        _$_ApplicationPreloadCompleteState>
-    implements _$$_ApplicationPreloadCompleteStateCopyWith<$Res> {
-  __$$_ApplicationPreloadCompleteStateCopyWithImpl(
-      _$_ApplicationPreloadCompleteState _value,
-      $Res Function(_$_ApplicationPreloadCompleteState) _then)
+        _$ApplicationPreloadCompleteStateImpl>
+    implements _$$ApplicationPreloadCompleteStateImplCopyWith<$Res> {
+  __$$ApplicationPreloadCompleteStateImplCopyWithImpl(
+      _$ApplicationPreloadCompleteStateImpl _value,
+      $Res Function(_$ApplicationPreloadCompleteStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -267,7 +269,7 @@ class __$$_ApplicationPreloadCompleteStateCopyWithImpl<$Res>
   $Res call({
     Object? progress = null,
   }) {
-    return _then(_$_ApplicationPreloadCompleteState(
+    return _then(_$ApplicationPreloadCompleteStateImpl(
       progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
@@ -278,9 +280,9 @@ class __$$_ApplicationPreloadCompleteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApplicationPreloadCompleteState
+class _$ApplicationPreloadCompleteStateImpl
     implements _ApplicationPreloadCompleteState {
-  const _$_ApplicationPreloadCompleteState({this.progress = 1.0});
+  const _$ApplicationPreloadCompleteStateImpl({this.progress = 1.0});
 
   @override
   @JsonKey()
@@ -292,10 +294,10 @@ class _$_ApplicationPreloadCompleteState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApplicationPreloadCompleteState &&
+            other is _$ApplicationPreloadCompleteStateImpl &&
             (identical(other.progress, progress) ||
                 other.progress == progress));
   }
@@ -306,10 +308,10 @@ class _$_ApplicationPreloadCompleteState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApplicationPreloadCompleteStateCopyWith<
-          _$_ApplicationPreloadCompleteState>
-      get copyWith => __$$_ApplicationPreloadCompleteStateCopyWithImpl<
-          _$_ApplicationPreloadCompleteState>(this, _$identity);
+  _$$ApplicationPreloadCompleteStateImplCopyWith<
+          _$ApplicationPreloadCompleteStateImpl>
+      get copyWith => __$$ApplicationPreloadCompleteStateImplCopyWithImpl<
+          _$ApplicationPreloadCompleteStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -377,13 +379,13 @@ class _$_ApplicationPreloadCompleteState
 abstract class _ApplicationPreloadCompleteState
     implements ApplicationPreloadState {
   const factory _ApplicationPreloadCompleteState({final double progress}) =
-      _$_ApplicationPreloadCompleteState;
+      _$ApplicationPreloadCompleteStateImpl;
 
   @override
   double get progress;
   @override
   @JsonKey(ignore: true)
-  _$$_ApplicationPreloadCompleteStateCopyWith<
-          _$_ApplicationPreloadCompleteState>
+  _$$ApplicationPreloadCompleteStateImplCopyWith<
+          _$ApplicationPreloadCompleteStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

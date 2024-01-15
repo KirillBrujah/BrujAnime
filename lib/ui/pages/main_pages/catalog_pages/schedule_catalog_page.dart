@@ -1,7 +1,9 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class ScheduleCatalogPage extends StatelessWidget {
-  const ScheduleCatalogPage({Key? key}) : super(key: key);
+  const ScheduleCatalogPage({super.key});
 
   @override
   Widget build(BuildContext context) {

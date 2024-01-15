@@ -1,9 +1,11 @@
+import 'package:auto_route/annotations.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class AnimePage extends StatelessWidget {
-  const AnimePage({Key? key, required this.anime}) : super(key: key);
+  const AnimePage({super.key, required this.anime});
 
   final Anime anime;
 

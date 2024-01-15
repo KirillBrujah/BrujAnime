@@ -4,8 +4,9 @@ import 'package:brujanime/ui/widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class CatalogPage extends StatelessWidget {
-  const CatalogPage({Key? key}) : super(key: key);
+  const CatalogPage({super.key});
 
   @override
   Widget build(BuildContext context) {

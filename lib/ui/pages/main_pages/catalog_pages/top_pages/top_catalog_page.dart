@@ -4,8 +4,9 @@ import 'package:brujanime/ui/widgets/common_widgets/app_bars/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class TopCatalogPage extends StatelessWidget {
-  const TopCatalogPage({Key? key}) : super(key: key);
+  const TopCatalogPage({super.key});
 
   @override
   Widget build(BuildContext context) {

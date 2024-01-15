@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/empty_router_widgets.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/pages/main_pages/pages.dart';
 import 'package:brujanime/ui/pages/splash_page.dart';
@@ -7,19 +6,33 @@ import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
 
-class _CommonRoutes {
-  static const anime = AutoRoute(page: AnimePage);
-  static const search = AutoRoute(page: SearchPage);
+
+
+@AutoRouterConfig(replaceInRouteName: 'Route.page,Route')
+class AppRouter extends _$AppRouter {
+
+  @override
+  List<AutoRoute> get routes => [
+    AutoRoute(page: SplashRoute.page, initial: true),
+    _mainRoute,
+  ];
 }
 
+
+
+class _CommonRoutes {
+  static final anime = AutoRoute(page: AnimeRoute.page);
+  static final search = AutoRoute(page: SearchRoute.page);
+}
+
+
 class _MainTabs {
-  static const home = AutoRoute(
-    name: "HomeTabRoute",
+  static final home = AutoRoute(
     initial: true,
-    page: EmptyRouterPage,
+    page: HomeTab.page,
     children: [
       AutoRoute(
-        page: HomePage,
+        page: HomeRoute.page,
         initial: true,
       ),
       _CommonRoutes.anime,
@@ -27,20 +40,19 @@ class _MainTabs {
     ],
   );
 
-  static const catalog = AutoRoute(
-    name: "CatalogTabRoute",
-    page: EmptyRouterPage,
+  static final catalog = AutoRoute(
+    page: CatalogTab.page,
     children: [
       AutoRoute(
-        page: CatalogPage,
+        page: CatalogRoute.page,
         initial: true,
         children: [
-          AutoRoute(page: ScheduleCatalogPage),
-          AutoRoute(page: GenresCatalogPage),
-          AutoRoute(page: TopCatalogPage, children: [
-            AutoRoute(page: TopAllPage, initial: true),
-            AutoRoute(page: TopAiringPage),
-            AutoRoute(page: TopUpcomingPage),
+          AutoRoute(page: ScheduleCatalogRoute.page),
+          AutoRoute(page: GenresCatalogRoute.page),
+          AutoRoute(page: TopCatalogRoute.page, children: [
+            AutoRoute(page: TopAllRoute.page, initial: true),
+            AutoRoute(page: TopAiringRoute.page),
+            AutoRoute(page: TopUpcomingRoute.page),
           ]),
         ],
       ),
@@ -49,12 +61,11 @@ class _MainTabs {
     ],
   );
 
-  static const favorite = AutoRoute(
-    name: "FavoriteTabRoute",
-    page: EmptyRouterPage,
+  static final favorite = AutoRoute(
+    page: FavoriteTab.page,
     children: [
       AutoRoute(
-        page: FavoritePage,
+        page: FavoriteRoute.page,
         initial: true,
       ),
       _CommonRoutes.anime,
@@ -62,31 +73,33 @@ class _MainTabs {
     ],
   );
 
-  static const settings = AutoRoute(
-    name: "SettingsTabRoute",
-    page: EmptyRouterPage,
+  static final settings = AutoRoute(
+    page: SettingsTab.page,
     children: [
       AutoRoute(
-        page: SettingsPage,
+        page: SettingsRoute.page,
         initial: true,
       ),
       _CommonRoutes.search,
     ],
   );
 
-  static const List<AutoRoute> tabs = [home, catalog, favorite, settings];
+  static final List<AutoRoute> tabs = [home, catalog, favorite, settings];
 }
 
-const _mainRoute = AutoRoute(
-  page: MainPage,
+final _mainRoute = AutoRoute(
+  page: MainRoute.page,
   children: _MainTabs.tabs,
 );
+/*
 
 @MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
+  replaceInRouteName: 'Route.page,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: SplashPage, initial: true),
+    AutoRoute(page: SplashRoute.page, initial: true),
     _mainRoute,
   ],
 )
 class AppRouter extends _$AppRouter {}
+
+*/

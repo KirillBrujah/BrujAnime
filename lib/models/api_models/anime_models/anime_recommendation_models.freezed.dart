@@ -103,11 +103,11 @@ class _$AnimeRecommendationCopyWithImpl<$Res, $Val extends AnimeRecommendation>
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationCopyWith<$Res>
+abstract class _$$AnimeRecommendationImplCopyWith<$Res>
     implements $AnimeRecommendationCopyWith<$Res> {
-  factory _$$_AnimeRecommendationCopyWith(_$_AnimeRecommendation value,
-          $Res Function(_$_AnimeRecommendation) then) =
-      __$$_AnimeRecommendationCopyWithImpl<$Res>;
+  factory _$$AnimeRecommendationImplCopyWith(_$AnimeRecommendationImpl value,
+          $Res Function(_$AnimeRecommendationImpl) then) =
+      __$$AnimeRecommendationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -122,11 +122,11 @@ abstract class _$$_AnimeRecommendationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationCopyWithImpl<$Res>
-    extends _$AnimeRecommendationCopyWithImpl<$Res, _$_AnimeRecommendation>
-    implements _$$_AnimeRecommendationCopyWith<$Res> {
-  __$$_AnimeRecommendationCopyWithImpl(_$_AnimeRecommendation _value,
-      $Res Function(_$_AnimeRecommendation) _then)
+class __$$AnimeRecommendationImplCopyWithImpl<$Res>
+    extends _$AnimeRecommendationCopyWithImpl<$Res, _$AnimeRecommendationImpl>
+    implements _$$AnimeRecommendationImplCopyWith<$Res> {
+  __$$AnimeRecommendationImplCopyWithImpl(_$AnimeRecommendationImpl _value,
+      $Res Function(_$AnimeRecommendationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +138,7 @@ class __$$_AnimeRecommendationCopyWithImpl<$Res>
     Object? date = null,
     Object? user = null,
   }) {
-    return _then(_$_AnimeRecommendation(
+    return _then(_$AnimeRecommendationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -165,8 +165,8 @@ class __$$_AnimeRecommendationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnimeRecommendation implements _AnimeRecommendation {
-  const _$_AnimeRecommendation(
+class _$AnimeRecommendationImpl implements _AnimeRecommendation {
+  const _$AnimeRecommendationImpl(
       {@JsonKey(name: "mal_id") required this.id,
       required final List<AnimeRecommendationEntry> entry,
       required this.content,
@@ -174,8 +174,8 @@ class _$_AnimeRecommendation implements _AnimeRecommendation {
       required this.user})
       : _entry = entry;
 
-  factory _$_AnimeRecommendation.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeRecommendationFromJson(json);
+  factory _$AnimeRecommendationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeRecommendationImplFromJson(json);
 
   @override
   @JsonKey(name: "mal_id")
@@ -201,10 +201,10 @@ class _$_AnimeRecommendation implements _AnimeRecommendation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendation &&
+            other is _$AnimeRecommendationImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._entry, _entry) &&
             (identical(other.content, content) || other.content == content) &&
@@ -220,13 +220,13 @@ class _$_AnimeRecommendation implements _AnimeRecommendation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeRecommendationCopyWith<_$_AnimeRecommendation> get copyWith =>
-      __$$_AnimeRecommendationCopyWithImpl<_$_AnimeRecommendation>(
+  _$$AnimeRecommendationImplCopyWith<_$AnimeRecommendationImpl> get copyWith =>
+      __$$AnimeRecommendationImplCopyWithImpl<_$AnimeRecommendationImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeRecommendationToJson(
+    return _$$AnimeRecommendationImplToJson(
       this,
     );
   }
@@ -238,10 +238,10 @@ abstract class _AnimeRecommendation implements AnimeRecommendation {
       required final List<AnimeRecommendationEntry> entry,
       required final String content,
       required final DateTime date,
-      required final User user}) = _$_AnimeRecommendation;
+      required final User user}) = _$AnimeRecommendationImpl;
 
   factory _AnimeRecommendation.fromJson(Map<String, dynamic> json) =
-      _$_AnimeRecommendation.fromJson;
+      _$AnimeRecommendationImpl.fromJson;
 
   @override
   @JsonKey(name: "mal_id")
@@ -256,7 +256,7 @@ abstract class _AnimeRecommendation implements AnimeRecommendation {
   User get user;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeRecommendationCopyWith<_$_AnimeRecommendation> get copyWith =>
+  _$$AnimeRecommendationImplCopyWith<_$AnimeRecommendationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -338,12 +338,12 @@ class _$AnimeRecommendationEntryCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationEntryCopyWith<$Res>
+abstract class _$$AnimeRecommendationEntryImplCopyWith<$Res>
     implements $AnimeRecommendationEntryCopyWith<$Res> {
-  factory _$$_AnimeRecommendationEntryCopyWith(
-          _$_AnimeRecommendationEntry value,
-          $Res Function(_$_AnimeRecommendationEntry) then) =
-      __$$_AnimeRecommendationEntryCopyWithImpl<$Res>;
+  factory _$$AnimeRecommendationEntryImplCopyWith(
+          _$AnimeRecommendationEntryImpl value,
+          $Res Function(_$AnimeRecommendationEntryImpl) then) =
+      __$$AnimeRecommendationEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -354,12 +354,13 @@ abstract class _$$_AnimeRecommendationEntryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationEntryCopyWithImpl<$Res>
+class __$$AnimeRecommendationEntryImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationEntryCopyWithImpl<$Res,
-        _$_AnimeRecommendationEntry>
-    implements _$$_AnimeRecommendationEntryCopyWith<$Res> {
-  __$$_AnimeRecommendationEntryCopyWithImpl(_$_AnimeRecommendationEntry _value,
-      $Res Function(_$_AnimeRecommendationEntry) _then)
+        _$AnimeRecommendationEntryImpl>
+    implements _$$AnimeRecommendationEntryImplCopyWith<$Res> {
+  __$$AnimeRecommendationEntryImplCopyWithImpl(
+      _$AnimeRecommendationEntryImpl _value,
+      $Res Function(_$AnimeRecommendationEntryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -369,7 +370,7 @@ class __$$_AnimeRecommendationEntryCopyWithImpl<$Res>
     Object? images = freezed,
     Object? title = null,
   }) {
-    return _then(_$_AnimeRecommendationEntry(
+    return _then(_$AnimeRecommendationEntryImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -388,14 +389,14 @@ class __$$_AnimeRecommendationEntryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnimeRecommendationEntry implements _AnimeRecommendationEntry {
-  const _$_AnimeRecommendationEntry(
+class _$AnimeRecommendationEntryImpl implements _AnimeRecommendationEntry {
+  const _$AnimeRecommendationEntryImpl(
       {@JsonKey(name: "mal_id") required this.id,
       this.images,
       required this.title});
 
-  factory _$_AnimeRecommendationEntry.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeRecommendationEntryFromJson(json);
+  factory _$AnimeRecommendationEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeRecommendationEntryImplFromJson(json);
 
   @override
   @JsonKey(name: "mal_id")
@@ -411,10 +412,10 @@ class _$_AnimeRecommendationEntry implements _AnimeRecommendationEntry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationEntry &&
+            other is _$AnimeRecommendationEntryImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.images, images) || other.images == images) &&
             (identical(other.title, title) || other.title == title));
@@ -427,13 +428,13 @@ class _$_AnimeRecommendationEntry implements _AnimeRecommendationEntry {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeRecommendationEntryCopyWith<_$_AnimeRecommendationEntry>
-      get copyWith => __$$_AnimeRecommendationEntryCopyWithImpl<
-          _$_AnimeRecommendationEntry>(this, _$identity);
+  _$$AnimeRecommendationEntryImplCopyWith<_$AnimeRecommendationEntryImpl>
+      get copyWith => __$$AnimeRecommendationEntryImplCopyWithImpl<
+          _$AnimeRecommendationEntryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeRecommendationEntryToJson(
+    return _$$AnimeRecommendationEntryImplToJson(
       this,
     );
   }
@@ -443,10 +444,10 @@ abstract class _AnimeRecommendationEntry implements AnimeRecommendationEntry {
   const factory _AnimeRecommendationEntry(
       {@JsonKey(name: "mal_id") required final int id,
       final ImagesWrapper? images,
-      required final String title}) = _$_AnimeRecommendationEntry;
+      required final String title}) = _$AnimeRecommendationEntryImpl;
 
   factory _AnimeRecommendationEntry.fromJson(Map<String, dynamic> json) =
-      _$_AnimeRecommendationEntry.fromJson;
+      _$AnimeRecommendationEntryImpl.fromJson;
 
   @override
   @JsonKey(name: "mal_id")
@@ -457,6 +458,6 @@ abstract class _AnimeRecommendationEntry implements AnimeRecommendationEntry {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeRecommendationEntryCopyWith<_$_AnimeRecommendationEntry>
+  _$$AnimeRecommendationEntryImplCopyWith<_$AnimeRecommendationEntryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

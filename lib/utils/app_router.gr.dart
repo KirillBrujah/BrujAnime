@@ -1,67 +1,23 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'app_router.dart';
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const SplashPage(),
-      );
-    },
-    MainRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const MainPage(),
-      );
-    },
-    HomeTabRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const EmptyRouterPage(),
-      );
-    },
-    CatalogTabRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const EmptyRouterPage(),
-      );
-    },
-    FavoriteTabRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const EmptyRouterPage(),
-      );
-    },
-    SettingsTabRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const EmptyRouterPage(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HomePage(),
-      );
-    },
     AnimeRoute.name: (routeData) {
       final args = routeData.argsAs<AnimeRouteArgs>();
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: AnimePage(
           key: args.key,
@@ -69,287 +25,109 @@ class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    SearchRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const SearchPage(),
-      );
-    },
     CatalogRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const CatalogPage(),
       );
     },
-    ScheduleCatalogRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    CatalogTab.name: (routeData) {
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ScheduleCatalogPage(),
-      );
-    },
-    GenresCatalogRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const GenresCatalogPage(),
-      );
-    },
-    TopCatalogRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const TopCatalogPage(),
-      );
-    },
-    TopAllRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const TopAllPage(),
-      );
-    },
-    TopAiringRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const TopAiringPage(),
-      );
-    },
-    TopUpcomingRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const TopUpcomingPage(),
+        child: const CatalogTabPage(),
       );
     },
     FavoriteRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const FavoritePage(),
       );
     },
+    FavoriteTab.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FavoriteTabPage(),
+      );
+    },
+    GenresCatalogRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GenresCatalogPage(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
+    HomeTab.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeTabPage(),
+      );
+    },
+    MainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MainPage(),
+      );
+    },
+    ScheduleCatalogRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ScheduleCatalogPage(),
+      );
+    },
+    SearchRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SearchPage(),
+      );
+    },
     SettingsRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SettingsPage(),
       );
     },
+    SettingsTab.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsTabPage(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashPage(),
+      );
+    },
+    TopAiringRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TopAiringPage(),
+      );
+    },
+    TopAllRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TopAllPage(),
+      );
+    },
+    TopCatalogRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TopCatalogPage(),
+      );
+    },
+    TopUpcomingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TopUpcomingPage(),
+      );
+    },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          SplashRoute.name,
-          path: '/',
-        ),
-        RouteConfig(
-          MainRoute.name,
-          path: '/main-page',
-          children: [
-            RouteConfig(
-              HomeTabRoute.name,
-              path: '',
-              parent: MainRoute.name,
-              children: [
-                RouteConfig(
-                  HomeRoute.name,
-                  path: '',
-                  parent: HomeTabRoute.name,
-                ),
-                RouteConfig(
-                  AnimeRoute.name,
-                  path: 'anime-page',
-                  parent: HomeTabRoute.name,
-                ),
-                RouteConfig(
-                  SearchRoute.name,
-                  path: 'search-page',
-                  parent: HomeTabRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              CatalogTabRoute.name,
-              path: 'empty-router-page',
-              parent: MainRoute.name,
-              children: [
-                RouteConfig(
-                  CatalogRoute.name,
-                  path: '',
-                  parent: CatalogTabRoute.name,
-                  children: [
-                    RouteConfig(
-                      ScheduleCatalogRoute.name,
-                      path: 'schedule-catalog-page',
-                      parent: CatalogRoute.name,
-                    ),
-                    RouteConfig(
-                      GenresCatalogRoute.name,
-                      path: 'genres-catalog-page',
-                      parent: CatalogRoute.name,
-                    ),
-                    RouteConfig(
-                      TopCatalogRoute.name,
-                      path: 'top-catalog-page',
-                      parent: CatalogRoute.name,
-                      children: [
-                        RouteConfig(
-                          TopAllRoute.name,
-                          path: '',
-                          parent: TopCatalogRoute.name,
-                        ),
-                        RouteConfig(
-                          TopAiringRoute.name,
-                          path: 'top-airing-page',
-                          parent: TopCatalogRoute.name,
-                        ),
-                        RouteConfig(
-                          TopUpcomingRoute.name,
-                          path: 'top-upcoming-page',
-                          parent: TopCatalogRoute.name,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                RouteConfig(
-                  AnimeRoute.name,
-                  path: 'anime-page',
-                  parent: CatalogTabRoute.name,
-                ),
-                RouteConfig(
-                  SearchRoute.name,
-                  path: 'search-page',
-                  parent: CatalogTabRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              FavoriteTabRoute.name,
-              path: 'empty-router-page',
-              parent: MainRoute.name,
-              children: [
-                RouteConfig(
-                  FavoriteRoute.name,
-                  path: '',
-                  parent: FavoriteTabRoute.name,
-                ),
-                RouteConfig(
-                  AnimeRoute.name,
-                  path: 'anime-page',
-                  parent: FavoriteTabRoute.name,
-                ),
-                RouteConfig(
-                  SearchRoute.name,
-                  path: 'search-page',
-                  parent: FavoriteTabRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              SettingsTabRoute.name,
-              path: 'empty-router-page',
-              parent: MainRoute.name,
-              children: [
-                RouteConfig(
-                  SettingsRoute.name,
-                  path: '',
-                  parent: SettingsTabRoute.name,
-                ),
-                RouteConfig(
-                  SearchRoute.name,
-                  path: 'search-page',
-                  parent: SettingsTabRoute.name,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ];
-}
-
-/// generated route for
-/// [SplashPage]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute()
-      : super(
-          SplashRoute.name,
-          path: '/',
-        );
-
-  static const String name = 'SplashRoute';
-}
-
-/// generated route for
-/// [MainPage]
-class MainRoute extends PageRouteInfo<void> {
-  const MainRoute({List<PageRouteInfo>? children})
-      : super(
-          MainRoute.name,
-          path: '/main-page',
-          initialChildren: children,
-        );
-
-  static const String name = 'MainRoute';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class HomeTabRoute extends PageRouteInfo<void> {
-  const HomeTabRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeTabRoute.name,
-          path: '',
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeTabRoute';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class CatalogTabRoute extends PageRouteInfo<void> {
-  const CatalogTabRoute({List<PageRouteInfo>? children})
-      : super(
-          CatalogTabRoute.name,
-          path: 'empty-router-page',
-          initialChildren: children,
-        );
-
-  static const String name = 'CatalogTabRoute';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class FavoriteTabRoute extends PageRouteInfo<void> {
-  const FavoriteTabRoute({List<PageRouteInfo>? children})
-      : super(
-          FavoriteTabRoute.name,
-          path: 'empty-router-page',
-          initialChildren: children,
-        );
-
-  static const String name = 'FavoriteTabRoute';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class SettingsTabRoute extends PageRouteInfo<void> {
-  const SettingsTabRoute({List<PageRouteInfo>? children})
-      : super(
-          SettingsTabRoute.name,
-          path: 'empty-router-page',
-          initialChildren: children,
-        );
-
-  static const String name = 'SettingsTabRoute';
-}
-
-/// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
-      : super(
-          HomeRoute.name,
-          path: '',
-        );
-
-  static const String name = 'HomeRoute';
 }
 
 /// generated route for
@@ -358,16 +136,19 @@ class AnimeRoute extends PageRouteInfo<AnimeRouteArgs> {
   AnimeRoute({
     Key? key,
     required Anime anime,
+    List<PageRouteInfo>? children,
   }) : super(
           AnimeRoute.name,
-          path: 'anime-page',
           args: AnimeRouteArgs(
             key: key,
             anime: anime,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'AnimeRoute';
+
+  static const PageInfo<AnimeRouteArgs> page = PageInfo<AnimeRouteArgs>(name);
 }
 
 class AnimeRouteArgs {
@@ -387,52 +168,213 @@ class AnimeRouteArgs {
 }
 
 /// generated route for
-/// [SearchPage]
-class SearchRoute extends PageRouteInfo<void> {
-  const SearchRoute()
-      : super(
-          SearchRoute.name,
-          path: 'search-page',
-        );
-
-  static const String name = 'SearchRoute';
-}
-
-/// generated route for
 /// [CatalogPage]
 class CatalogRoute extends PageRouteInfo<void> {
   const CatalogRoute({List<PageRouteInfo>? children})
       : super(
           CatalogRoute.name,
-          path: '',
           initialChildren: children,
         );
 
   static const String name = 'CatalogRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [ScheduleCatalogPage]
-class ScheduleCatalogRoute extends PageRouteInfo<void> {
-  const ScheduleCatalogRoute()
+/// [CatalogTabPage]
+class CatalogTab extends PageRouteInfo<void> {
+  const CatalogTab({List<PageRouteInfo>? children})
       : super(
-          ScheduleCatalogRoute.name,
-          path: 'schedule-catalog-page',
+          CatalogTab.name,
+          initialChildren: children,
         );
 
-  static const String name = 'ScheduleCatalogRoute';
+  static const String name = 'CatalogTab';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FavoritePage]
+class FavoriteRoute extends PageRouteInfo<void> {
+  const FavoriteRoute({List<PageRouteInfo>? children})
+      : super(
+          FavoriteRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoriteRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FavoriteTabPage]
+class FavoriteTab extends PageRouteInfo<void> {
+  const FavoriteTab({List<PageRouteInfo>? children})
+      : super(
+          FavoriteTab.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoriteTab';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [GenresCatalogPage]
 class GenresCatalogRoute extends PageRouteInfo<void> {
-  const GenresCatalogRoute()
+  const GenresCatalogRoute({List<PageRouteInfo>? children})
       : super(
           GenresCatalogRoute.name,
-          path: 'genres-catalog-page',
+          initialChildren: children,
         );
 
   static const String name = 'GenresCatalogRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomeTabPage]
+class HomeTab extends PageRouteInfo<void> {
+  const HomeTab({List<PageRouteInfo>? children})
+      : super(
+          HomeTab.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeTab';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MainPage]
+class MainRoute extends PageRouteInfo<void> {
+  const MainRoute({List<PageRouteInfo>? children})
+      : super(
+          MainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MainRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ScheduleCatalogPage]
+class ScheduleCatalogRoute extends PageRouteInfo<void> {
+  const ScheduleCatalogRoute({List<PageRouteInfo>? children})
+      : super(
+          ScheduleCatalogRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ScheduleCatalogRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchPage]
+class SearchRoute extends PageRouteInfo<void> {
+  const SearchRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsPage]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+      : super(
+          SettingsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsTabPage]
+class SettingsTab extends PageRouteInfo<void> {
+  const SettingsTab({List<PageRouteInfo>? children})
+      : super(
+          SettingsTab.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsTab';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SplashPage]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TopAiringPage]
+class TopAiringRoute extends PageRouteInfo<void> {
+  const TopAiringRoute({List<PageRouteInfo>? children})
+      : super(
+          TopAiringRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TopAiringRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TopAllPage]
+class TopAllRoute extends PageRouteInfo<void> {
+  const TopAllRoute({List<PageRouteInfo>? children})
+      : super(
+          TopAllRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TopAllRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -441,69 +383,24 @@ class TopCatalogRoute extends PageRouteInfo<void> {
   const TopCatalogRoute({List<PageRouteInfo>? children})
       : super(
           TopCatalogRoute.name,
-          path: 'top-catalog-page',
           initialChildren: children,
         );
 
   static const String name = 'TopCatalogRoute';
-}
 
-/// generated route for
-/// [TopAllPage]
-class TopAllRoute extends PageRouteInfo<void> {
-  const TopAllRoute()
-      : super(
-          TopAllRoute.name,
-          path: '',
-        );
-
-  static const String name = 'TopAllRoute';
-}
-
-/// generated route for
-/// [TopAiringPage]
-class TopAiringRoute extends PageRouteInfo<void> {
-  const TopAiringRoute()
-      : super(
-          TopAiringRoute.name,
-          path: 'top-airing-page',
-        );
-
-  static const String name = 'TopAiringRoute';
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [TopUpcomingPage]
 class TopUpcomingRoute extends PageRouteInfo<void> {
-  const TopUpcomingRoute()
+  const TopUpcomingRoute({List<PageRouteInfo>? children})
       : super(
           TopUpcomingRoute.name,
-          path: 'top-upcoming-page',
+          initialChildren: children,
         );
 
   static const String name = 'TopUpcomingRoute';
-}
 
-/// generated route for
-/// [FavoritePage]
-class FavoriteRoute extends PageRouteInfo<void> {
-  const FavoriteRoute()
-      : super(
-          FavoriteRoute.name,
-          path: '',
-        );
-
-  static const String name = 'FavoriteRoute';
-}
-
-/// generated route for
-/// [SettingsPage]
-class SettingsRoute extends PageRouteInfo<void> {
-  const SettingsRoute()
-      : super(
-          SettingsRoute.name,
-          path: '',
-        );
-
-  static const String name = 'SettingsRoute';
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

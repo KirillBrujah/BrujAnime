@@ -95,11 +95,11 @@ class _$ImagesWrapperCopyWithImpl<$Res, $Val extends ImagesWrapper>
 }
 
 /// @nodoc
-abstract class _$$_ImagesWrapperCopyWith<$Res>
+abstract class _$$ImagesWrapperImplCopyWith<$Res>
     implements $ImagesWrapperCopyWith<$Res> {
-  factory _$$_ImagesWrapperCopyWith(
-          _$_ImagesWrapper value, $Res Function(_$_ImagesWrapper) then) =
-      __$$_ImagesWrapperCopyWithImpl<$Res>;
+  factory _$$ImagesWrapperImplCopyWith(
+          _$ImagesWrapperImpl value, $Res Function(_$ImagesWrapperImpl) then) =
+      __$$ImagesWrapperImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ImageModel? jpg, ImageModel? webp});
@@ -111,11 +111,11 @@ abstract class _$$_ImagesWrapperCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ImagesWrapperCopyWithImpl<$Res>
-    extends _$ImagesWrapperCopyWithImpl<$Res, _$_ImagesWrapper>
-    implements _$$_ImagesWrapperCopyWith<$Res> {
-  __$$_ImagesWrapperCopyWithImpl(
-      _$_ImagesWrapper _value, $Res Function(_$_ImagesWrapper) _then)
+class __$$ImagesWrapperImplCopyWithImpl<$Res>
+    extends _$ImagesWrapperCopyWithImpl<$Res, _$ImagesWrapperImpl>
+    implements _$$ImagesWrapperImplCopyWith<$Res> {
+  __$$ImagesWrapperImplCopyWithImpl(
+      _$ImagesWrapperImpl _value, $Res Function(_$ImagesWrapperImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +124,7 @@ class __$$_ImagesWrapperCopyWithImpl<$Res>
     Object? jpg = freezed,
     Object? webp = freezed,
   }) {
-    return _then(_$_ImagesWrapper(
+    return _then(_$ImagesWrapperImpl(
       jpg: freezed == jpg
           ? _value.jpg
           : jpg // ignore: cast_nullable_to_non_nullable
@@ -139,11 +139,11 @@ class __$$_ImagesWrapperCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ImagesWrapper extends _ImagesWrapper {
-  const _$_ImagesWrapper({this.jpg, this.webp}) : super._();
+class _$ImagesWrapperImpl extends _ImagesWrapper {
+  const _$ImagesWrapperImpl({this.jpg, this.webp}) : super._();
 
-  factory _$_ImagesWrapper.fromJson(Map<String, dynamic> json) =>
-      _$$_ImagesWrapperFromJson(json);
+  factory _$ImagesWrapperImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ImagesWrapperImplFromJson(json);
 
   @override
   final ImageModel? jpg;
@@ -156,10 +156,10 @@ class _$_ImagesWrapper extends _ImagesWrapper {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImagesWrapper &&
+            other is _$ImagesWrapperImpl &&
             (identical(other.jpg, jpg) || other.jpg == jpg) &&
             (identical(other.webp, webp) || other.webp == webp));
   }
@@ -171,12 +171,12 @@ class _$_ImagesWrapper extends _ImagesWrapper {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImagesWrapperCopyWith<_$_ImagesWrapper> get copyWith =>
-      __$$_ImagesWrapperCopyWithImpl<_$_ImagesWrapper>(this, _$identity);
+  _$$ImagesWrapperImplCopyWith<_$ImagesWrapperImpl> get copyWith =>
+      __$$ImagesWrapperImplCopyWithImpl<_$ImagesWrapperImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImagesWrapperToJson(
+    return _$$ImagesWrapperImplToJson(
       this,
     );
   }
@@ -184,11 +184,11 @@ class _$_ImagesWrapper extends _ImagesWrapper {
 
 abstract class _ImagesWrapper extends ImagesWrapper {
   const factory _ImagesWrapper(
-      {final ImageModel? jpg, final ImageModel? webp}) = _$_ImagesWrapper;
+      {final ImageModel? jpg, final ImageModel? webp}) = _$ImagesWrapperImpl;
   const _ImagesWrapper._() : super._();
 
   factory _ImagesWrapper.fromJson(Map<String, dynamic> json) =
-      _$_ImagesWrapper.fromJson;
+      _$ImagesWrapperImpl.fromJson;
 
   @override
   ImageModel? get jpg;
@@ -196,7 +196,7 @@ abstract class _ImagesWrapper extends ImagesWrapper {
   ImageModel? get webp;
   @override
   @JsonKey(ignore: true)
-  _$$_ImagesWrapperCopyWith<_$_ImagesWrapper> get copyWith =>
+  _$$ImagesWrapperImplCopyWith<_$ImagesWrapperImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -282,11 +282,11 @@ class _$ImageModelCopyWithImpl<$Res, $Val extends ImageModel>
 }
 
 /// @nodoc
-abstract class _$$_ImageModelCopyWith<$Res>
+abstract class _$$ImageModelImplCopyWith<$Res>
     implements $ImageModelCopyWith<$Res> {
-  factory _$$_ImageModelCopyWith(
-          _$_ImageModel value, $Res Function(_$_ImageModel) then) =
-      __$$_ImageModelCopyWithImpl<$Res>;
+  factory _$$ImageModelImplCopyWith(
+          _$ImageModelImpl value, $Res Function(_$ImageModelImpl) then) =
+      __$$ImageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -298,11 +298,11 @@ abstract class _$$_ImageModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ImageModelCopyWithImpl<$Res>
-    extends _$ImageModelCopyWithImpl<$Res, _$_ImageModel>
-    implements _$$_ImageModelCopyWith<$Res> {
-  __$$_ImageModelCopyWithImpl(
-      _$_ImageModel _value, $Res Function(_$_ImageModel) _then)
+class __$$ImageModelImplCopyWithImpl<$Res>
+    extends _$ImageModelCopyWithImpl<$Res, _$ImageModelImpl>
+    implements _$$ImageModelImplCopyWith<$Res> {
+  __$$ImageModelImplCopyWithImpl(
+      _$ImageModelImpl _value, $Res Function(_$ImageModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -314,7 +314,7 @@ class __$$_ImageModelCopyWithImpl<$Res>
     Object? largeImageUrl = freezed,
     Object? maximumImageUrl = freezed,
   }) {
-    return _then(_$_ImageModel(
+    return _then(_$ImageModelImpl(
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -341,16 +341,16 @@ class __$$_ImageModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ImageModel implements _ImageModel {
-  const _$_ImageModel(
+class _$ImageModelImpl implements _ImageModel {
+  const _$ImageModelImpl(
       {@JsonKey(name: "image_url") required this.imageUrl,
       @JsonKey(name: "small_image_url") this.smallImageUrl,
       @JsonKey(name: "medium_image_url") this.mediumImageUrl,
       @JsonKey(name: "large_image_url") this.largeImageUrl,
       @JsonKey(name: "maximum_image_url") this.maximumImageUrl});
 
-  factory _$_ImageModel.fromJson(Map<String, dynamic> json) =>
-      _$$_ImageModelFromJson(json);
+  factory _$ImageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ImageModelImplFromJson(json);
 
   @override
   @JsonKey(name: "image_url")
@@ -374,10 +374,10 @@ class _$_ImageModel implements _ImageModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ImageModel &&
+            other is _$ImageModelImpl &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.smallImageUrl, smallImageUrl) ||
@@ -398,12 +398,12 @@ class _$_ImageModel implements _ImageModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ImageModelCopyWith<_$_ImageModel> get copyWith =>
-      __$$_ImageModelCopyWithImpl<_$_ImageModel>(this, _$identity);
+  _$$ImageModelImplCopyWith<_$ImageModelImpl> get copyWith =>
+      __$$ImageModelImplCopyWithImpl<_$ImageModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImageModelToJson(
+    return _$$ImageModelImplToJson(
       this,
     );
   }
@@ -416,10 +416,10 @@ abstract class _ImageModel implements ImageModel {
           @JsonKey(name: "medium_image_url") final String? mediumImageUrl,
           @JsonKey(name: "large_image_url") final String? largeImageUrl,
           @JsonKey(name: "maximum_image_url") final String? maximumImageUrl}) =
-      _$_ImageModel;
+      _$ImageModelImpl;
 
   factory _ImageModel.fromJson(Map<String, dynamic> json) =
-      _$_ImageModel.fromJson;
+      _$ImageModelImpl.fromJson;
 
   @override
   @JsonKey(name: "image_url")
@@ -438,6 +438,6 @@ abstract class _ImageModel implements ImageModel {
   String? get maximumImageUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_ImageModelCopyWith<_$_ImageModel> get copyWith =>
+  _$$ImageModelImplCopyWith<_$ImageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

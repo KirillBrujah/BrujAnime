@@ -6,7 +6,7 @@ part of 'anime_general_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
+_$AnimeImpl _$$AnimeImplFromJson(Map<String, dynamic> json) => _$AnimeImpl(
       id: json['mal_id'] as int,
       images: json['images'] == null
           ? null
@@ -31,7 +31,8 @@ _$_Anime _$$_AnimeFromJson(Map<String, dynamic> json) => _$_Anime(
           const [],
     );
 
-Map<String, dynamic> _$$_AnimeToJson(_$_Anime instance) => <String, dynamic>{
+Map<String, dynamic> _$$AnimeImplToJson(_$AnimeImpl instance) =>
+    <String, dynamic>{
       'mal_id': instance.id,
       'images': instance.images,
       'title': instance.title,
@@ -60,35 +61,36 @@ const _$AnimeTypeEnumMap = {
   AnimeType.music: 'Music',
 };
 
-_$_AnimeTitle _$$_AnimeTitleFromJson(Map<String, dynamic> json) =>
-    _$_AnimeTitle(
+_$AnimeTitleImpl _$$AnimeTitleImplFromJson(Map<String, dynamic> json) =>
+    _$AnimeTitleImpl(
       json['title'] as String,
     );
 
-Map<String, dynamic> _$$_AnimeTitleToJson(_$_AnimeTitle instance) =>
+Map<String, dynamic> _$$AnimeTitleImplToJson(_$AnimeTitleImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
     };
 
-_$_AnimeAired _$$_AnimeAiredFromJson(Map<String, dynamic> json) =>
-    _$_AnimeAired(
+_$AnimeAiredImpl _$$AnimeAiredImplFromJson(Map<String, dynamic> json) =>
+    _$AnimeAiredImpl(
       DateTime.parse(json['from'] as String),
       DateTime.parse(json['to'] as String),
     );
 
-Map<String, dynamic> _$$_AnimeAiredToJson(_$_AnimeAired instance) =>
+Map<String, dynamic> _$$AnimeAiredImplToJson(_$AnimeAiredImpl instance) =>
     <String, dynamic>{
       'from': instance.from.toIso8601String(),
       'to': instance.to.toIso8601String(),
     };
 
-_$_Genre _$$_GenreFromJson(Map<String, dynamic> json) => _$_Genre(
+_$GenreImpl _$$GenreImplFromJson(Map<String, dynamic> json) => _$GenreImpl(
       id: json['mal_id'] as int,
       type: $enumDecode(_$ArtworkTypesEnumMap, json['type']),
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_GenreToJson(_$_Genre instance) => <String, dynamic>{
+Map<String, dynamic> _$$GenreImplToJson(_$GenreImpl instance) =>
+    <String, dynamic>{
       'mal_id': instance.id,
       'type': _$ArtworkTypesEnumMap[instance.type]!,
       'name': instance.name,

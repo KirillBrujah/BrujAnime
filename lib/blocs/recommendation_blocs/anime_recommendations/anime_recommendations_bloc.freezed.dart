@@ -76,29 +76,29 @@ class _$AnimeRecommendationsEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationsFetchEventCopyWith<$Res> {
-  factory _$$_AnimeRecommendationsFetchEventCopyWith(
-          _$_AnimeRecommendationsFetchEvent value,
-          $Res Function(_$_AnimeRecommendationsFetchEvent) then) =
-      __$$_AnimeRecommendationsFetchEventCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsFetchEventImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsFetchEventImplCopyWith(
+          _$AnimeRecommendationsFetchEventImpl value,
+          $Res Function(_$AnimeRecommendationsFetchEventImpl) then) =
+      __$$AnimeRecommendationsFetchEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationsFetchEventCopyWithImpl<$Res>
+class __$$AnimeRecommendationsFetchEventImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsEventCopyWithImpl<$Res,
-        _$_AnimeRecommendationsFetchEvent>
-    implements _$$_AnimeRecommendationsFetchEventCopyWith<$Res> {
-  __$$_AnimeRecommendationsFetchEventCopyWithImpl(
-      _$_AnimeRecommendationsFetchEvent _value,
-      $Res Function(_$_AnimeRecommendationsFetchEvent) _then)
+        _$AnimeRecommendationsFetchEventImpl>
+    implements _$$AnimeRecommendationsFetchEventImplCopyWith<$Res> {
+  __$$AnimeRecommendationsFetchEventImplCopyWithImpl(
+      _$AnimeRecommendationsFetchEventImpl _value,
+      $Res Function(_$AnimeRecommendationsFetchEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AnimeRecommendationsFetchEvent
+class _$AnimeRecommendationsFetchEventImpl
     implements _AnimeRecommendationsFetchEvent {
-  const _$_AnimeRecommendationsFetchEvent();
+  const _$AnimeRecommendationsFetchEventImpl();
 
   @override
   String toString() {
@@ -106,10 +106,10 @@ class _$_AnimeRecommendationsFetchEvent
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationsFetchEvent);
+            other is _$AnimeRecommendationsFetchEventImpl);
   }
 
   @override
@@ -181,33 +181,33 @@ class _$_AnimeRecommendationsFetchEvent
 abstract class _AnimeRecommendationsFetchEvent
     implements AnimeRecommendationsEvent {
   const factory _AnimeRecommendationsFetchEvent() =
-      _$_AnimeRecommendationsFetchEvent;
+      _$AnimeRecommendationsFetchEventImpl;
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationsResetEventCopyWith<$Res> {
-  factory _$$_AnimeRecommendationsResetEventCopyWith(
-          _$_AnimeRecommendationsResetEvent value,
-          $Res Function(_$_AnimeRecommendationsResetEvent) then) =
-      __$$_AnimeRecommendationsResetEventCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsResetEventImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsResetEventImplCopyWith(
+          _$AnimeRecommendationsResetEventImpl value,
+          $Res Function(_$AnimeRecommendationsResetEventImpl) then) =
+      __$$AnimeRecommendationsResetEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationsResetEventCopyWithImpl<$Res>
+class __$$AnimeRecommendationsResetEventImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsEventCopyWithImpl<$Res,
-        _$_AnimeRecommendationsResetEvent>
-    implements _$$_AnimeRecommendationsResetEventCopyWith<$Res> {
-  __$$_AnimeRecommendationsResetEventCopyWithImpl(
-      _$_AnimeRecommendationsResetEvent _value,
-      $Res Function(_$_AnimeRecommendationsResetEvent) _then)
+        _$AnimeRecommendationsResetEventImpl>
+    implements _$$AnimeRecommendationsResetEventImplCopyWith<$Res> {
+  __$$AnimeRecommendationsResetEventImplCopyWithImpl(
+      _$AnimeRecommendationsResetEventImpl _value,
+      $Res Function(_$AnimeRecommendationsResetEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AnimeRecommendationsResetEvent
+class _$AnimeRecommendationsResetEventImpl
     implements _AnimeRecommendationsResetEvent {
-  const _$_AnimeRecommendationsResetEvent();
+  const _$AnimeRecommendationsResetEventImpl();
 
   @override
   String toString() {
@@ -215,10 +215,10 @@ class _$_AnimeRecommendationsResetEvent
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationsResetEvent);
+            other is _$AnimeRecommendationsResetEventImpl);
   }
 
   @override
@@ -290,7 +290,7 @@ class _$_AnimeRecommendationsResetEvent
 abstract class _AnimeRecommendationsResetEvent
     implements AnimeRecommendationsEvent {
   const factory _AnimeRecommendationsResetEvent() =
-      _$_AnimeRecommendationsResetEvent;
+      _$AnimeRecommendationsResetEventImpl;
 }
 
 /// @nodoc
@@ -365,29 +365,29 @@ class _$AnimeRecommendationsStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationsInitialStateCopyWith<$Res> {
-  factory _$$_AnimeRecommendationsInitialStateCopyWith(
-          _$_AnimeRecommendationsInitialState value,
-          $Res Function(_$_AnimeRecommendationsInitialState) then) =
-      __$$_AnimeRecommendationsInitialStateCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsInitialStateImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsInitialStateImplCopyWith(
+          _$AnimeRecommendationsInitialStateImpl value,
+          $Res Function(_$AnimeRecommendationsInitialStateImpl) then) =
+      __$$AnimeRecommendationsInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationsInitialStateCopyWithImpl<$Res>
+class __$$AnimeRecommendationsInitialStateImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsStateCopyWithImpl<$Res,
-        _$_AnimeRecommendationsInitialState>
-    implements _$$_AnimeRecommendationsInitialStateCopyWith<$Res> {
-  __$$_AnimeRecommendationsInitialStateCopyWithImpl(
-      _$_AnimeRecommendationsInitialState _value,
-      $Res Function(_$_AnimeRecommendationsInitialState) _then)
+        _$AnimeRecommendationsInitialStateImpl>
+    implements _$$AnimeRecommendationsInitialStateImplCopyWith<$Res> {
+  __$$AnimeRecommendationsInitialStateImplCopyWithImpl(
+      _$AnimeRecommendationsInitialStateImpl _value,
+      $Res Function(_$AnimeRecommendationsInitialStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AnimeRecommendationsInitialState
+class _$AnimeRecommendationsInitialStateImpl
     extends _AnimeRecommendationsInitialState {
-  const _$_AnimeRecommendationsInitialState() : super._();
+  const _$AnimeRecommendationsInitialStateImpl() : super._();
 
   @override
   String toString() {
@@ -395,10 +395,10 @@ class _$_AnimeRecommendationsInitialState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationsInitialState);
+            other is _$AnimeRecommendationsInitialStateImpl);
   }
 
   @override
@@ -480,16 +480,16 @@ class _$_AnimeRecommendationsInitialState
 abstract class _AnimeRecommendationsInitialState
     extends AnimeRecommendationsState {
   const factory _AnimeRecommendationsInitialState() =
-      _$_AnimeRecommendationsInitialState;
+      _$AnimeRecommendationsInitialStateImpl;
   const _AnimeRecommendationsInitialState._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationsDataStateCopyWith<$Res> {
-  factory _$$_AnimeRecommendationsDataStateCopyWith(
-          _$_AnimeRecommendationsDataState value,
-          $Res Function(_$_AnimeRecommendationsDataState) then) =
-      __$$_AnimeRecommendationsDataStateCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsDataStateImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsDataStateImplCopyWith(
+          _$AnimeRecommendationsDataStateImpl value,
+          $Res Function(_$AnimeRecommendationsDataStateImpl) then) =
+      __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AnimeRecommendation> list, ApiPagination pagination});
 
@@ -497,13 +497,13 @@ abstract class _$$_AnimeRecommendationsDataStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationsDataStateCopyWithImpl<$Res>
+class __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsStateCopyWithImpl<$Res,
-        _$_AnimeRecommendationsDataState>
-    implements _$$_AnimeRecommendationsDataStateCopyWith<$Res> {
-  __$$_AnimeRecommendationsDataStateCopyWithImpl(
-      _$_AnimeRecommendationsDataState _value,
-      $Res Function(_$_AnimeRecommendationsDataState) _then)
+        _$AnimeRecommendationsDataStateImpl>
+    implements _$$AnimeRecommendationsDataStateImplCopyWith<$Res> {
+  __$$AnimeRecommendationsDataStateImplCopyWithImpl(
+      _$AnimeRecommendationsDataStateImpl _value,
+      $Res Function(_$AnimeRecommendationsDataStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -512,7 +512,7 @@ class __$$_AnimeRecommendationsDataStateCopyWithImpl<$Res>
     Object? list = null,
     Object? pagination = null,
   }) {
-    return _then(_$_AnimeRecommendationsDataState(
+    return _then(_$AnimeRecommendationsDataStateImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -535,8 +535,9 @@ class __$$_AnimeRecommendationsDataStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AnimeRecommendationsDataState extends _AnimeRecommendationsDataState {
-  const _$_AnimeRecommendationsDataState(
+class _$AnimeRecommendationsDataStateImpl
+    extends _AnimeRecommendationsDataState {
+  const _$AnimeRecommendationsDataStateImpl(
       {required final List<AnimeRecommendation> list, required this.pagination})
       : _list = list,
         super._();
@@ -558,10 +559,10 @@ class _$_AnimeRecommendationsDataState extends _AnimeRecommendationsDataState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationsDataState &&
+            other is _$AnimeRecommendationsDataStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
@@ -574,9 +575,10 @@ class _$_AnimeRecommendationsDataState extends _AnimeRecommendationsDataState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeRecommendationsDataStateCopyWith<_$_AnimeRecommendationsDataState>
-      get copyWith => __$$_AnimeRecommendationsDataStateCopyWithImpl<
-          _$_AnimeRecommendationsDataState>(this, _$identity);
+  _$$AnimeRecommendationsDataStateImplCopyWith<
+          _$AnimeRecommendationsDataStateImpl>
+      get copyWith => __$$AnimeRecommendationsDataStateImplCopyWithImpl<
+          _$AnimeRecommendationsDataStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -656,34 +658,35 @@ abstract class _AnimeRecommendationsDataState
   const factory _AnimeRecommendationsDataState(
           {required final List<AnimeRecommendation> list,
           required final ApiPagination pagination}) =
-      _$_AnimeRecommendationsDataState;
+      _$AnimeRecommendationsDataStateImpl;
   const _AnimeRecommendationsDataState._() : super._();
 
   List<AnimeRecommendation> get list;
   ApiPagination get pagination;
   @JsonKey(ignore: true)
-  _$$_AnimeRecommendationsDataStateCopyWith<_$_AnimeRecommendationsDataState>
+  _$$AnimeRecommendationsDataStateImplCopyWith<
+          _$AnimeRecommendationsDataStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AnimeRecommendationsErrorStateCopyWith<$Res> {
-  factory _$$_AnimeRecommendationsErrorStateCopyWith(
-          _$_AnimeRecommendationsErrorState value,
-          $Res Function(_$_AnimeRecommendationsErrorState) then) =
-      __$$_AnimeRecommendationsErrorStateCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsErrorStateImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsErrorStateImplCopyWith(
+          _$AnimeRecommendationsErrorStateImpl value,
+          $Res Function(_$AnimeRecommendationsErrorStateImpl) then) =
+      __$$AnimeRecommendationsErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_AnimeRecommendationsErrorStateCopyWithImpl<$Res>
+class __$$AnimeRecommendationsErrorStateImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsStateCopyWithImpl<$Res,
-        _$_AnimeRecommendationsErrorState>
-    implements _$$_AnimeRecommendationsErrorStateCopyWith<$Res> {
-  __$$_AnimeRecommendationsErrorStateCopyWithImpl(
-      _$_AnimeRecommendationsErrorState _value,
-      $Res Function(_$_AnimeRecommendationsErrorState) _then)
+        _$AnimeRecommendationsErrorStateImpl>
+    implements _$$AnimeRecommendationsErrorStateImplCopyWith<$Res> {
+  __$$AnimeRecommendationsErrorStateImplCopyWithImpl(
+      _$AnimeRecommendationsErrorStateImpl _value,
+      $Res Function(_$AnimeRecommendationsErrorStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -691,7 +694,7 @@ class __$$_AnimeRecommendationsErrorStateCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_AnimeRecommendationsErrorState(
+    return _then(_$AnimeRecommendationsErrorStateImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -702,9 +705,9 @@ class __$$_AnimeRecommendationsErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AnimeRecommendationsErrorState
+class _$AnimeRecommendationsErrorStateImpl
     extends _AnimeRecommendationsErrorState {
-  const _$_AnimeRecommendationsErrorState(this.message) : super._();
+  const _$AnimeRecommendationsErrorStateImpl(this.message) : super._();
 
   @override
   final String message;
@@ -715,10 +718,10 @@ class _$_AnimeRecommendationsErrorState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeRecommendationsErrorState &&
+            other is _$AnimeRecommendationsErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -728,9 +731,10 @@ class _$_AnimeRecommendationsErrorState
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeRecommendationsErrorStateCopyWith<_$_AnimeRecommendationsErrorState>
-      get copyWith => __$$_AnimeRecommendationsErrorStateCopyWithImpl<
-          _$_AnimeRecommendationsErrorState>(this, _$identity);
+  _$$AnimeRecommendationsErrorStateImplCopyWith<
+          _$AnimeRecommendationsErrorStateImpl>
+      get copyWith => __$$AnimeRecommendationsErrorStateImplCopyWithImpl<
+          _$AnimeRecommendationsErrorStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -808,11 +812,12 @@ class _$_AnimeRecommendationsErrorState
 abstract class _AnimeRecommendationsErrorState
     extends AnimeRecommendationsState {
   const factory _AnimeRecommendationsErrorState(final String message) =
-      _$_AnimeRecommendationsErrorState;
+      _$AnimeRecommendationsErrorStateImpl;
   const _AnimeRecommendationsErrorState._() : super._();
 
   String get message;
   @JsonKey(ignore: true)
-  _$$_AnimeRecommendationsErrorStateCopyWith<_$_AnimeRecommendationsErrorState>
+  _$$AnimeRecommendationsErrorStateImplCopyWith<
+          _$AnimeRecommendationsErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

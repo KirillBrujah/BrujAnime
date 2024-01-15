@@ -16,7 +16,7 @@ class DioClient {
     // ));
     _dio.options.headers["Content-Type"] = "application/json";
     _dio.options.headers["Accept"] = "application/json";
-    _dio.options.connectTimeout = 10000;
+    _dio.options.connectTimeout = const Duration(seconds: 10);
     _dio.options.baseUrl = 'https://api.jikan.moe/v4/';
   }
 

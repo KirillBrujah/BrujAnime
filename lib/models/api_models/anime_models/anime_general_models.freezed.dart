@@ -192,9 +192,10 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
 }
 
 /// @nodoc
-abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
-  factory _$$_AnimeCopyWith(_$_Anime value, $Res Function(_$_Anime) then) =
-      __$$_AnimeCopyWithImpl<$Res>;
+abstract class _$$AnimeImplCopyWith<$Res> implements $AnimeCopyWith<$Res> {
+  factory _$$AnimeImplCopyWith(
+          _$AnimeImpl value, $Res Function(_$AnimeImpl) then) =
+      __$$AnimeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -221,9 +222,11 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
-    implements _$$_AnimeCopyWith<$Res> {
-  __$$_AnimeCopyWithImpl(_$_Anime _value, $Res Function(_$_Anime) _then)
+class __$$AnimeImplCopyWithImpl<$Res>
+    extends _$AnimeCopyWithImpl<$Res, _$AnimeImpl>
+    implements _$$AnimeImplCopyWith<$Res> {
+  __$$AnimeImplCopyWithImpl(
+      _$AnimeImpl _value, $Res Function(_$AnimeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -247,7 +250,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
     Object? background = null,
     Object? genres = null,
   }) {
-    return _then(_$_Anime(
+    return _then(_$AnimeImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -322,8 +325,8 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Anime extends _Anime {
-  const _$_Anime(
+class _$AnimeImpl extends _Anime {
+  const _$AnimeImpl(
       {@JsonKey(name: "mal_id") required this.id,
       this.images,
       this.title,
@@ -344,8 +347,8 @@ class _$_Anime extends _Anime {
       : _genres = genres,
         super._();
 
-  factory _$_Anime.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeFromJson(json);
+  factory _$AnimeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeImplFromJson(json);
 
   @override
   @JsonKey(name: "mal_id")
@@ -411,10 +414,10 @@ class _$_Anime extends _Anime {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Anime &&
+            other is _$AnimeImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.images, images) || other.images == images) &&
             (identical(other.title, title) || other.title == title) &&
@@ -468,12 +471,12 @@ class _$_Anime extends _Anime {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeCopyWith<_$_Anime> get copyWith =>
-      __$$_AnimeCopyWithImpl<_$_Anime>(this, _$identity);
+  _$$AnimeImplCopyWith<_$AnimeImpl> get copyWith =>
+      __$$AnimeImplCopyWithImpl<_$AnimeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeToJson(
+    return _$$AnimeImplToJson(
       this,
     );
   }
@@ -497,10 +500,10 @@ abstract class _Anime extends Anime {
       final int popularity,
       final String synopsis,
       final String background,
-      final List<Genre> genres}) = _$_Anime;
+      final List<Genre> genres}) = _$AnimeImpl;
   const _Anime._() : super._();
 
-  factory _Anime.fromJson(Map<String, dynamic> json) = _$_Anime.fromJson;
+  factory _Anime.fromJson(Map<String, dynamic> json) = _$AnimeImpl.fromJson;
 
   @override
   @JsonKey(name: "mal_id")
@@ -542,7 +545,7 @@ abstract class _Anime extends Anime {
   List<Genre> get genres;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeCopyWith<_$_Anime> get copyWith =>
+  _$$AnimeImplCopyWith<_$AnimeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -594,22 +597,22 @@ class _$AnimeTitleCopyWithImpl<$Res, $Val extends AnimeTitle>
 }
 
 /// @nodoc
-abstract class _$$_AnimeTitleCopyWith<$Res>
+abstract class _$$AnimeTitleImplCopyWith<$Res>
     implements $AnimeTitleCopyWith<$Res> {
-  factory _$$_AnimeTitleCopyWith(
-          _$_AnimeTitle value, $Res Function(_$_AnimeTitle) then) =
-      __$$_AnimeTitleCopyWithImpl<$Res>;
+  factory _$$AnimeTitleImplCopyWith(
+          _$AnimeTitleImpl value, $Res Function(_$AnimeTitleImpl) then) =
+      __$$AnimeTitleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title});
 }
 
 /// @nodoc
-class __$$_AnimeTitleCopyWithImpl<$Res>
-    extends _$AnimeTitleCopyWithImpl<$Res, _$_AnimeTitle>
-    implements _$$_AnimeTitleCopyWith<$Res> {
-  __$$_AnimeTitleCopyWithImpl(
-      _$_AnimeTitle _value, $Res Function(_$_AnimeTitle) _then)
+class __$$AnimeTitleImplCopyWithImpl<$Res>
+    extends _$AnimeTitleCopyWithImpl<$Res, _$AnimeTitleImpl>
+    implements _$$AnimeTitleImplCopyWith<$Res> {
+  __$$AnimeTitleImplCopyWithImpl(
+      _$AnimeTitleImpl _value, $Res Function(_$AnimeTitleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -617,7 +620,7 @@ class __$$_AnimeTitleCopyWithImpl<$Res>
   $Res call({
     Object? title = null,
   }) {
-    return _then(_$_AnimeTitle(
+    return _then(_$AnimeTitleImpl(
       null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -628,11 +631,11 @@ class __$$_AnimeTitleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnimeTitle implements _AnimeTitle {
-  const _$_AnimeTitle(this.title);
+class _$AnimeTitleImpl implements _AnimeTitle {
+  const _$AnimeTitleImpl(this.title);
 
-  factory _$_AnimeTitle.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeTitleFromJson(json);
+  factory _$AnimeTitleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeTitleImplFromJson(json);
 
   @override
   final String title;
@@ -643,10 +646,10 @@ class _$_AnimeTitle implements _AnimeTitle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeTitle &&
+            other is _$AnimeTitleImpl &&
             (identical(other.title, title) || other.title == title));
   }
 
@@ -657,28 +660,28 @@ class _$_AnimeTitle implements _AnimeTitle {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeTitleCopyWith<_$_AnimeTitle> get copyWith =>
-      __$$_AnimeTitleCopyWithImpl<_$_AnimeTitle>(this, _$identity);
+  _$$AnimeTitleImplCopyWith<_$AnimeTitleImpl> get copyWith =>
+      __$$AnimeTitleImplCopyWithImpl<_$AnimeTitleImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeTitleToJson(
+    return _$$AnimeTitleImplToJson(
       this,
     );
   }
 }
 
 abstract class _AnimeTitle implements AnimeTitle {
-  const factory _AnimeTitle(final String title) = _$_AnimeTitle;
+  const factory _AnimeTitle(final String title) = _$AnimeTitleImpl;
 
   factory _AnimeTitle.fromJson(Map<String, dynamic> json) =
-      _$_AnimeTitle.fromJson;
+      _$AnimeTitleImpl.fromJson;
 
   @override
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeTitleCopyWith<_$_AnimeTitle> get copyWith =>
+  _$$AnimeTitleImplCopyWith<_$AnimeTitleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -736,22 +739,22 @@ class _$AnimeAiredCopyWithImpl<$Res, $Val extends AnimeAired>
 }
 
 /// @nodoc
-abstract class _$$_AnimeAiredCopyWith<$Res>
+abstract class _$$AnimeAiredImplCopyWith<$Res>
     implements $AnimeAiredCopyWith<$Res> {
-  factory _$$_AnimeAiredCopyWith(
-          _$_AnimeAired value, $Res Function(_$_AnimeAired) then) =
-      __$$_AnimeAiredCopyWithImpl<$Res>;
+  factory _$$AnimeAiredImplCopyWith(
+          _$AnimeAiredImpl value, $Res Function(_$AnimeAiredImpl) then) =
+      __$$AnimeAiredImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({DateTime from, DateTime to});
 }
 
 /// @nodoc
-class __$$_AnimeAiredCopyWithImpl<$Res>
-    extends _$AnimeAiredCopyWithImpl<$Res, _$_AnimeAired>
-    implements _$$_AnimeAiredCopyWith<$Res> {
-  __$$_AnimeAiredCopyWithImpl(
-      _$_AnimeAired _value, $Res Function(_$_AnimeAired) _then)
+class __$$AnimeAiredImplCopyWithImpl<$Res>
+    extends _$AnimeAiredCopyWithImpl<$Res, _$AnimeAiredImpl>
+    implements _$$AnimeAiredImplCopyWith<$Res> {
+  __$$AnimeAiredImplCopyWithImpl(
+      _$AnimeAiredImpl _value, $Res Function(_$AnimeAiredImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -760,7 +763,7 @@ class __$$_AnimeAiredCopyWithImpl<$Res>
     Object? from = null,
     Object? to = null,
   }) {
-    return _then(_$_AnimeAired(
+    return _then(_$AnimeAiredImpl(
       null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -775,11 +778,11 @@ class __$$_AnimeAiredCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnimeAired implements _AnimeAired {
-  const _$_AnimeAired(this.from, this.to);
+class _$AnimeAiredImpl implements _AnimeAired {
+  const _$AnimeAiredImpl(this.from, this.to);
 
-  factory _$_AnimeAired.fromJson(Map<String, dynamic> json) =>
-      _$$_AnimeAiredFromJson(json);
+  factory _$AnimeAiredImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeAiredImplFromJson(json);
 
   @override
   final DateTime from;
@@ -792,10 +795,10 @@ class _$_AnimeAired implements _AnimeAired {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnimeAired &&
+            other is _$AnimeAiredImpl &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to));
   }
@@ -807,12 +810,12 @@ class _$_AnimeAired implements _AnimeAired {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnimeAiredCopyWith<_$_AnimeAired> get copyWith =>
-      __$$_AnimeAiredCopyWithImpl<_$_AnimeAired>(this, _$identity);
+  _$$AnimeAiredImplCopyWith<_$AnimeAiredImpl> get copyWith =>
+      __$$AnimeAiredImplCopyWithImpl<_$AnimeAiredImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnimeAiredToJson(
+    return _$$AnimeAiredImplToJson(
       this,
     );
   }
@@ -820,10 +823,10 @@ class _$_AnimeAired implements _AnimeAired {
 
 abstract class _AnimeAired implements AnimeAired {
   const factory _AnimeAired(final DateTime from, final DateTime to) =
-      _$_AnimeAired;
+      _$AnimeAiredImpl;
 
   factory _AnimeAired.fromJson(Map<String, dynamic> json) =
-      _$_AnimeAired.fromJson;
+      _$AnimeAiredImpl.fromJson;
 
   @override
   DateTime get from;
@@ -831,7 +834,7 @@ abstract class _AnimeAired implements AnimeAired {
   DateTime get to;
   @override
   @JsonKey(ignore: true)
-  _$$_AnimeAiredCopyWith<_$_AnimeAired> get copyWith =>
+  _$$AnimeAiredImplCopyWith<_$AnimeAiredImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -894,18 +897,21 @@ class _$GenreCopyWithImpl<$Res, $Val extends Genre>
 }
 
 /// @nodoc
-abstract class _$$_GenreCopyWith<$Res> implements $GenreCopyWith<$Res> {
-  factory _$$_GenreCopyWith(_$_Genre value, $Res Function(_$_Genre) then) =
-      __$$_GenreCopyWithImpl<$Res>;
+abstract class _$$GenreImplCopyWith<$Res> implements $GenreCopyWith<$Res> {
+  factory _$$GenreImplCopyWith(
+          _$GenreImpl value, $Res Function(_$GenreImpl) then) =
+      __$$GenreImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: "mal_id") int id, ArtworkTypes type, String name});
 }
 
 /// @nodoc
-class __$$_GenreCopyWithImpl<$Res> extends _$GenreCopyWithImpl<$Res, _$_Genre>
-    implements _$$_GenreCopyWith<$Res> {
-  __$$_GenreCopyWithImpl(_$_Genre _value, $Res Function(_$_Genre) _then)
+class __$$GenreImplCopyWithImpl<$Res>
+    extends _$GenreCopyWithImpl<$Res, _$GenreImpl>
+    implements _$$GenreImplCopyWith<$Res> {
+  __$$GenreImplCopyWithImpl(
+      _$GenreImpl _value, $Res Function(_$GenreImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -915,7 +921,7 @@ class __$$_GenreCopyWithImpl<$Res> extends _$GenreCopyWithImpl<$Res, _$_Genre>
     Object? type = null,
     Object? name = null,
   }) {
-    return _then(_$_Genre(
+    return _then(_$GenreImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -934,14 +940,14 @@ class __$$_GenreCopyWithImpl<$Res> extends _$GenreCopyWithImpl<$Res, _$_Genre>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Genre implements _Genre {
-  const _$_Genre(
+class _$GenreImpl implements _Genre {
+  const _$GenreImpl(
       {@JsonKey(name: "mal_id") required this.id,
       required this.type,
       required this.name});
 
-  factory _$_Genre.fromJson(Map<String, dynamic> json) =>
-      _$$_GenreFromJson(json);
+  factory _$GenreImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GenreImplFromJson(json);
 
   @override
   @JsonKey(name: "mal_id")
@@ -957,10 +963,10 @@ class _$_Genre implements _Genre {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Genre &&
+            other is _$GenreImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.name, name) || other.name == name));
@@ -973,12 +979,12 @@ class _$_Genre implements _Genre {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GenreCopyWith<_$_Genre> get copyWith =>
-      __$$_GenreCopyWithImpl<_$_Genre>(this, _$identity);
+  _$$GenreImplCopyWith<_$GenreImpl> get copyWith =>
+      __$$GenreImplCopyWithImpl<_$GenreImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GenreToJson(
+    return _$$GenreImplToJson(
       this,
     );
   }
@@ -988,9 +994,9 @@ abstract class _Genre implements Genre {
   const factory _Genre(
       {@JsonKey(name: "mal_id") required final int id,
       required final ArtworkTypes type,
-      required final String name}) = _$_Genre;
+      required final String name}) = _$GenreImpl;
 
-  factory _Genre.fromJson(Map<String, dynamic> json) = _$_Genre.fromJson;
+  factory _Genre.fromJson(Map<String, dynamic> json) = _$GenreImpl.fromJson;
 
   @override
   @JsonKey(name: "mal_id")
@@ -1001,6 +1007,6 @@ abstract class _Genre implements Genre {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_GenreCopyWith<_$_Genre> get copyWith =>
+  _$$GenreImplCopyWith<_$GenreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
