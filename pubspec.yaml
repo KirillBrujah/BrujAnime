@@ -30,6 +30,7 @@ dependencies:
   shimmer: ^3.0.0
   carousel_slider: ^4.2.1
   cached_network_image: ^3.2.3
+  retrofit: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -41,6 +42,7 @@ dev_dependencies:
   auto_route_generator: ^7.3.2
   freezed: ^2.3.2
   flutter_gen_runner: ^5.2.0
+  retrofit_generator: ^8.0.6
 
 
 flutter_gen:
