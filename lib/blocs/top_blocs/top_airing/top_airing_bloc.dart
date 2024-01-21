@@ -1,6 +1,6 @@
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
-import 'package:brujanime/services/network/network.dart';
+import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:brujanime/utils/stream_transformers.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,15 +26,16 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     if (pagination?.hasNextPage == false) return;
 
     try {
-      final results = await TopNetworkService().getTop(
-        filter: AnimeSearchFilter.airing,
-        page: page++,
+      final results = await TopRepository().getAll(
+        // filter: AnimeSearchFilter.airing,
+        // page: page++,
         // TODO: Fix pagination
         // page: pagination != null ? pagination.currentPage + 1 : 1,
       );
 
+      // TODO: return emit
       emit(TopAiringState.data(
-        list: results.successResults,
+        list: results.data,
         pagination: results.pagination!,
       ));
     } catch (exc) {

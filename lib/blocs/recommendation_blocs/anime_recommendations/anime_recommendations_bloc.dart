@@ -1,6 +1,5 @@
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
-import 'package:brujanime/services/network/network.dart';
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:brujanime/utils/stream_transformers.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,15 +26,15 @@ class AnimeRecommendationsBloc
     if (pagination?.hasNextPage == false) return;
 
     try {
-      final results = await RecommendationsNetworkService().getRecommendations(
-          // TODO: Fix pagination
-          // page: pagination != null ? pagination.currentPage + 1 : 1,
-          );
-
-      emit(AnimeRecommendationsState.data(
-        list: results.successResults,
-        pagination: results.pagination!,
-      ));
+      // final results = await RecommendationsNetworkService().getRecommendations(
+      //     // TODO: Fix pagination
+      //     // page: pagination != null ? pagination.currentPage + 1 : 1,
+      //     );
+      //
+      // emit(AnimeRecommendationsState.data(
+      //   list: results.successResults,
+      //   pagination: results.pagination!,
+      // ));
     } catch (exc) {
       reportError(
         exception: exc,

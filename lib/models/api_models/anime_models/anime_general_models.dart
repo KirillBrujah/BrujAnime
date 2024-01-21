@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'anime_general_models.freezed.dart';
 part 'anime_general_models.g.dart';
 
+
 @freezed
 class Anime with _$Anime {
   const Anime._();

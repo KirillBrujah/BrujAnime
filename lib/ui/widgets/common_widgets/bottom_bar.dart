@@ -3,7 +3,7 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
-const _bottomAppBarHeight = 50.0;
+const _bottomAppBarHeight = 52.0;
 const _padding = 4.0;
 
 class MainBottomNavigation extends StatelessWidget {

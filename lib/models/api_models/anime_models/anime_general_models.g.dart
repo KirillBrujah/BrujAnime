@@ -54,6 +54,7 @@ Map<String, dynamic> _$$AnimeImplToJson(_$AnimeImpl instance) =>
 
 const _$AnimeTypeEnumMap = {
   AnimeType.tv: 'TV',
+  AnimeType.tvSpecial: 'TV Special',
   AnimeType.movie: 'Movie',
   AnimeType.ova: 'OVA',
   AnimeType.special: 'Special',

@@ -6,6 +6,23 @@ part of 'response_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$AnimeResponseListImpl _$$AnimeResponseListImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnimeResponseListImpl(
+      pagination:
+          ApiPagination.fromJson(json['pagination'] as Map<String, dynamic>),
+      data: (json['data'] as List<dynamic>)
+          .map((e) => Anime.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$AnimeResponseListImplToJson(
+        _$AnimeResponseListImpl instance) =>
+    <String, dynamic>{
+      'pagination': instance.pagination,
+      'data': instance.data,
+    };
+
 _$ApiPaginationImpl _$$ApiPaginationImplFromJson(Map<String, dynamic> json) =>
     _$ApiPaginationImpl(
       lastVisiblePage: json['last_visible_page'] as int,

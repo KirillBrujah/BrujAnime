@@ -3,7 +3,10 @@
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../models.dart';
+
 part 'response_models.freezed.dart';
+
 part 'response_models.g.dart';
 
 @Freezed(
@@ -15,6 +18,7 @@ class ApiResponse<T> with _$ApiResponse<T> {
   const ApiResponse._();
 
   const factory ApiResponse.success(T data) = _ApiResponseSuccess;
+
   const factory ApiResponse.error(Object exception) = _ApiResponseError;
 
   factory ApiResponse.fromJson(
@@ -32,36 +36,47 @@ class ApiResponse<T> with _$ApiResponse<T> {
   }
 }
 
-class ApiResponseList<T> {
-  final List<ApiResponse<T>> results;
-  final ApiPagination? pagination;
+// class ApiResponseList<T> {
+//   final List<ApiResponse<T>> results;
+//   final ApiPagination? pagination;
+//
+//   ApiResponseList._({required this.results, this.pagination});
+//
+//   factory ApiResponseList.fromJson(
+//     Map<String, dynamic> json,
+//     T Function(Map<String, dynamic>) fromJsonT,
+//   ) =>
+//       ApiResponseList._(
+//         results: (json["data"] as List<dynamic>)
+//             .map((json) => ApiResponse.fromJson(json, fromJsonT))
+//             .toList(),
+//         pagination: json["pagination"] != null
+//             ? ApiPagination.fromJson(json["pagination"])
+//             : null,
+//       );
+//
+//   List<T> get successResults => results
+//       .whereType<_ApiResponseSuccess<T>>()
+//       .map((success) => success.data)
+//       .toList();
+//
+//   List<Object> get errorResults => results
+//       .whereType<_ApiResponseError<T>>()
+//       .map((error) => error.exception)
+//       .toList();
+//
+//   bool get hasErrors => errorResults.isNotEmpty;
+// }
 
-  ApiResponseList._({required this.results, this.pagination});
+@freezed
+class AnimeResponseList with _$AnimeResponseList {
+  const factory AnimeResponseList({
+    required ApiPagination pagination,
+    required List<Anime> data,
+  }) = _AnimeResponseList;
 
-  factory ApiResponseList.fromJson(
-    Map<String, dynamic> json,
-    T Function(Map<String, dynamic>) fromJsonT,
-  ) =>
-      ApiResponseList._(
-        results: (json["data"] as List<dynamic>)
-            .map((json) => ApiResponse.fromJson(json, fromJsonT))
-            .toList(),
-        pagination: json["pagination"] != null
-            ? ApiPagination.fromJson(json["pagination"])
-            : null,
-      );
-
-  List<T> get successResults => results
-      .whereType<_ApiResponseSuccess<T>>()
-      .map((success) => success.data)
-      .toList();
-
-  List<Object> get errorResults => results
-      .whereType<_ApiResponseError<T>>()
-      .map((error) => error.exception)
-      .toList();
-
-  bool get hasErrors => errorResults.isNotEmpty;
+  factory AnimeResponseList.fromJson(Map<String, dynamic> json) =>
+      _$AnimeResponseListFromJson(json);
 }
 
 @freezed

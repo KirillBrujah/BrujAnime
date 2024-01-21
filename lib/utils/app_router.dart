@@ -8,7 +8,7 @@ part 'app_router.gr.dart';
 
 
 
-@AutoRouterConfig(replaceInRouteName: 'Route.page,Route')
+@AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends _$AppRouter {
 
   @override

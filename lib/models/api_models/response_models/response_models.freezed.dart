@@ -344,6 +344,183 @@ abstract class _ApiResponseError<T> extends ApiResponse<T> {
       throw _privateConstructorUsedError;
 }
 
+AnimeResponseList _$AnimeResponseListFromJson(Map<String, dynamic> json) {
+  return _AnimeResponseList.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AnimeResponseList {
+  ApiPagination get pagination => throw _privateConstructorUsedError;
+  List<Anime> get data => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnimeResponseListCopyWith<AnimeResponseList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnimeResponseListCopyWith<$Res> {
+  factory $AnimeResponseListCopyWith(
+          AnimeResponseList value, $Res Function(AnimeResponseList) then) =
+      _$AnimeResponseListCopyWithImpl<$Res, AnimeResponseList>;
+  @useResult
+  $Res call({ApiPagination pagination, List<Anime> data});
+
+  $ApiPaginationCopyWith<$Res> get pagination;
+}
+
+/// @nodoc
+class _$AnimeResponseListCopyWithImpl<$Res, $Val extends AnimeResponseList>
+    implements $AnimeResponseListCopyWith<$Res> {
+  _$AnimeResponseListCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pagination = null,
+    Object? data = null,
+  }) {
+    return _then(_value.copyWith(
+      pagination: null == pagination
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as ApiPagination,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Anime>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiPaginationCopyWith<$Res> get pagination {
+    return $ApiPaginationCopyWith<$Res>(_value.pagination, (value) {
+      return _then(_value.copyWith(pagination: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AnimeResponseListImplCopyWith<$Res>
+    implements $AnimeResponseListCopyWith<$Res> {
+  factory _$$AnimeResponseListImplCopyWith(_$AnimeResponseListImpl value,
+          $Res Function(_$AnimeResponseListImpl) then) =
+      __$$AnimeResponseListImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({ApiPagination pagination, List<Anime> data});
+
+  @override
+  $ApiPaginationCopyWith<$Res> get pagination;
+}
+
+/// @nodoc
+class __$$AnimeResponseListImplCopyWithImpl<$Res>
+    extends _$AnimeResponseListCopyWithImpl<$Res, _$AnimeResponseListImpl>
+    implements _$$AnimeResponseListImplCopyWith<$Res> {
+  __$$AnimeResponseListImplCopyWithImpl(_$AnimeResponseListImpl _value,
+      $Res Function(_$AnimeResponseListImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pagination = null,
+    Object? data = null,
+  }) {
+    return _then(_$AnimeResponseListImpl(
+      pagination: null == pagination
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as ApiPagination,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Anime>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AnimeResponseListImpl implements _AnimeResponseList {
+  const _$AnimeResponseListImpl(
+      {required this.pagination, required final List<Anime> data})
+      : _data = data;
+
+  factory _$AnimeResponseListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnimeResponseListImplFromJson(json);
+
+  @override
+  final ApiPagination pagination;
+  final List<Anime> _data;
+  @override
+  List<Anime> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'AnimeResponseList(pagination: $pagination, data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AnimeResponseListImpl &&
+            (identical(other.pagination, pagination) ||
+                other.pagination == pagination) &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, pagination, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AnimeResponseListImplCopyWith<_$AnimeResponseListImpl> get copyWith =>
+      __$$AnimeResponseListImplCopyWithImpl<_$AnimeResponseListImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AnimeResponseListImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AnimeResponseList implements AnimeResponseList {
+  const factory _AnimeResponseList(
+      {required final ApiPagination pagination,
+      required final List<Anime> data}) = _$AnimeResponseListImpl;
+
+  factory _AnimeResponseList.fromJson(Map<String, dynamic> json) =
+      _$AnimeResponseListImpl.fromJson;
+
+  @override
+  ApiPagination get pagination;
+  @override
+  List<Anime> get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$AnimeResponseListImplCopyWith<_$AnimeResponseListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ApiPagination _$ApiPaginationFromJson(Map<String, dynamic> json) {
   return _ApiPagination.fromJson(json);
 }

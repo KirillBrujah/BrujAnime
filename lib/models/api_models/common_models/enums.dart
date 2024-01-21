@@ -4,6 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 enum AnimeType {
   @JsonValue("TV")
   tv("TV"),
+  @JsonValue("TV Special")
+  tvSpecial("TV Special"),
   @JsonValue("Movie")
   movie("Movie"),
   @JsonValue("OVA")
@@ -36,6 +38,13 @@ enum AnimeSearchFilter {
 enum ArtworkTypes {
   anime,
   manga;
+
+  @override
+  String toString() => name;
+}
+
+enum SeasonType {
+  now;
 
   @override
   String toString() => name;

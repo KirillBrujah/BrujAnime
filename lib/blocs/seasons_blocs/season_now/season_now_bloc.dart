@@ -1,8 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
-import 'package:brujanime/services/network/network.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'season_now_bloc.freezed.dart';
@@ -17,11 +16,11 @@ class SeasonNowBloc extends Bloc<SeasonNowEvent, SeasonNowState> {
   Future<void> _handleFetch(_fetch event, emit) async {
     emit(const SeasonNowState.initial());
     try {
-      final result = await SeasonsService().now();
-      emit(SeasonNowState.data(
-        list: result.successResults,
-        pagination: result.pagination,
-      ));
+      // final result = await SeasonsService().now();
+      // emit(SeasonNowState.data(
+      //   list: result.successResults,
+      //   pagination: result.pagination,
+      // ));
       // TODO: Load season
     } catch (e) {
       reportError(
