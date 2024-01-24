@@ -2,12 +2,15 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/utils/getit.dart';
 import 'package:brujanime/utils/stream_transformers.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'top_airing_bloc.freezed.dart';
+
 part 'top_airing_event.dart';
+
 part 'top_airing_state.dart';
 
 class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
@@ -17,7 +20,11 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
       transformer: debounceTransformer(debounceDuration),
     );
     on<_TopAiringResetEvent>(_reset);
+
+    topRepository = getIt.get<TopRepository>();
   }
+
+  late final TopRepository topRepository;
 
   int page = 0;
 
@@ -26,14 +33,12 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
     if (pagination?.hasNextPage == false) return;
 
     try {
-      final results = await TopRepository().getAll(
-        // filter: AnimeSearchFilter.airing,
-        // page: page++,
-        // TODO: Fix pagination
-        // page: pagination != null ? pagination.currentPage + 1 : 1,
-      );
+      final results = await topRepository.getAiring(
+          // page: page++,
+          // TODO: Fix pagination
+          // page: pagination != null ? pagination.currentPage + 1 : 1,
+          );
 
-      // TODO: return emit
       emit(TopAiringState.data(
         list: results.data,
         pagination: results.pagination!,

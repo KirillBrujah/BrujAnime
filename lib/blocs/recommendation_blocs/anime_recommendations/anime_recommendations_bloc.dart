@@ -26,6 +26,7 @@ class AnimeRecommendationsBloc
     if (pagination?.hasNextPage == false) return;
 
     try {
+      // final recommendations = await
       // final results = await RecommendationsNetworkService().getRecommendations(
       //     // TODO: Fix pagination
       //     // page: pagination != null ? pagination.currentPage + 1 : 1,

@@ -3,8 +3,14 @@ import 'package:brujanime/models/models.dart';
 import 'package:brujanime/utils/getit.dart';
 
 class TopRepository {
-  Future<AnimeResponseList> getAll() async {
-    final results = getIt.get<RestClient>().getTop();
-    return results;
+  late final RestClient restClient;
+
+  TopRepository() {
+    restClient = getIt.get<RestClient>();
   }
+
+  Future<AnimeResponseList> getAll() => restClient.getTop();
+
+  Future<AnimeResponseList> getAiring() =>
+      restClient.getTop(filter: AnimeSearchFilter.airing);
 }
