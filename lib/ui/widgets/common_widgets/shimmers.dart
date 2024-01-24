@@ -96,8 +96,8 @@ class HorizontalCardShimmerPlaceholder extends StatelessWidget {
         color: _plugColor,
         borderRadius: BorderRadius.circular(5),
       ),
-      width: SizeConstants.horizontalCardSize.width,
-      height: SizeConstants.horizontalCardSize.height,
+      width: CardConstants.horizontalCardSize.width,
+      height: CardConstants.horizontalCardSize.height,
     );
   }
 }
@@ -113,8 +113,8 @@ class HorizontalCardPlaceholder extends StatelessWidget {
         color: colorScheme.primary.withOpacity(.1),
         borderRadius: BorderRadius.circular(5),
       ),
-      width: SizeConstants.horizontalCardSize.width,
-      height: SizeConstants.horizontalCardSize.height,
+      width: CardConstants.horizontalCardSize.width,
+      height: CardConstants.horizontalCardSize.height,
     );
   }
 }

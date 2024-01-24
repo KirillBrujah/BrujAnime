@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HorizontalAnimeCard extends StatelessWidget {
-  const HorizontalAnimeCard({Key? key, required this.anime}) : super(key: key);
+  const HorizontalAnimeCard({super.key, required this.anime});
 
   final Anime anime;
 
@@ -24,10 +24,10 @@ class HorizontalAnimeCard extends StatelessWidget {
         border: Border.all(
           color: colorScheme.primary.withOpacity(0.6),
         ),
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: const BorderRadius.all(CardConstants.borderRadius),
       ),
-      width: SizeConstants.horizontalCardSize.width,
-      height: SizeConstants.horizontalCardSize.height,
+      width: CardConstants.horizontalCardSize.width,
+      height: CardConstants.horizontalCardSize.height,
       child: InkWell(
         onTap: _handleTap(context),
         child: Column(
@@ -36,7 +36,7 @@ class HorizontalAnimeCard extends StatelessWidget {
             KNetworkImage(
               height: 180,
               borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(5),
+                top: CardConstants.borderRadius,
               ),
               imageUrl: anime.images?.maxSizeImage,
             ),
@@ -107,8 +107,8 @@ class HorizontalAnimeCard extends StatelessWidget {
 class TopFirstAnimeCard extends StatelessWidget {
   const TopFirstAnimeCard(
     this.anime, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Anime anime;
 
