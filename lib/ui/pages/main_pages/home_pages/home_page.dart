@@ -15,11 +15,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
+          children: [
             _Header(),
             SizedBox(height: 30),
             _TopAiring(),
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({super.key});
+  const _Header();
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class _TopAiring extends StatelessWidget {
 }
 
 class _Recommendations extends StatelessWidget {
-  const _Recommendations({super.key});
+  const _Recommendations();
 
   @override
   Widget build(BuildContext context) {

@@ -1,16 +1,16 @@
-import 'package:brujanime/data/source/network/rest_client.dart';
+import 'package:brujanime/data/source/network/network.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/utils/getit.dart';
 
 class TopRepository {
-  late final RestClient restClient;
+  late final TopNetwork _topNetwork;
 
   TopRepository() {
-    restClient = getIt.get<RestClient>();
+    _topNetwork = getIt.get<TopNetwork>();
   }
 
-  Future<AnimeResponseList> getAll() => restClient.getTop();
+  Future<AnimeResponseList> getAll() => _topNetwork.getTop();
 
   Future<AnimeResponseList> getAiring() =>
-      restClient.getTop(filter: AnimeSearchFilter.airing);
+      _topNetwork.getTop(filter: AnimeSearchFilter.airing);
 }

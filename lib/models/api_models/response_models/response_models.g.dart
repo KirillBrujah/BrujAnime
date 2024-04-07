@@ -9,8 +9,9 @@ part of 'response_models.dart';
 _$AnimeResponseListImpl _$$AnimeResponseListImplFromJson(
         Map<String, dynamic> json) =>
     _$AnimeResponseListImpl(
-      pagination:
-          ApiPagination.fromJson(json['pagination'] as Map<String, dynamic>),
+      pagination: json['pagination'] == null
+          ? null
+          : ApiPagination.fromJson(json['pagination'] as Map<String, dynamic>),
       data: (json['data'] as List<dynamic>)
           .map((e) => Anime.fromJson(e as Map<String, dynamic>))
           .toList(),

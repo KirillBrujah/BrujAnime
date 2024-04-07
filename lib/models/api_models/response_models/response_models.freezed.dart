@@ -350,7 +350,7 @@ AnimeResponseList _$AnimeResponseListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AnimeResponseList {
-  ApiPagination get pagination => throw _privateConstructorUsedError;
+  ApiPagination? get pagination => throw _privateConstructorUsedError;
   List<Anime> get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -365,9 +365,9 @@ abstract class $AnimeResponseListCopyWith<$Res> {
           AnimeResponseList value, $Res Function(AnimeResponseList) then) =
       _$AnimeResponseListCopyWithImpl<$Res, AnimeResponseList>;
   @useResult
-  $Res call({ApiPagination pagination, List<Anime> data});
+  $Res call({ApiPagination? pagination, List<Anime> data});
 
-  $ApiPaginationCopyWith<$Res> get pagination;
+  $ApiPaginationCopyWith<$Res>? get pagination;
 }
 
 /// @nodoc
@@ -383,14 +383,14 @@ class _$AnimeResponseListCopyWithImpl<$Res, $Val extends AnimeResponseList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pagination = null,
+    Object? pagination = freezed,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
-      pagination: null == pagination
+      pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
-              as ApiPagination,
+              as ApiPagination?,
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -400,8 +400,12 @@ class _$AnimeResponseListCopyWithImpl<$Res, $Val extends AnimeResponseList>
 
   @override
   @pragma('vm:prefer-inline')
-  $ApiPaginationCopyWith<$Res> get pagination {
-    return $ApiPaginationCopyWith<$Res>(_value.pagination, (value) {
+  $ApiPaginationCopyWith<$Res>? get pagination {
+    if (_value.pagination == null) {
+      return null;
+    }
+
+    return $ApiPaginationCopyWith<$Res>(_value.pagination!, (value) {
       return _then(_value.copyWith(pagination: value) as $Val);
     });
   }
@@ -415,10 +419,10 @@ abstract class _$$AnimeResponseListImplCopyWith<$Res>
       __$$AnimeResponseListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiPagination pagination, List<Anime> data});
+  $Res call({ApiPagination? pagination, List<Anime> data});
 
   @override
-  $ApiPaginationCopyWith<$Res> get pagination;
+  $ApiPaginationCopyWith<$Res>? get pagination;
 }
 
 /// @nodoc
@@ -432,14 +436,14 @@ class __$$AnimeResponseListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pagination = null,
+    Object? pagination = freezed,
     Object? data = null,
   }) {
     return _then(_$AnimeResponseListImpl(
-      pagination: null == pagination
+      pagination: freezed == pagination
           ? _value.pagination
           : pagination // ignore: cast_nullable_to_non_nullable
-              as ApiPagination,
+              as ApiPagination?,
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -452,14 +456,14 @@ class __$$AnimeResponseListImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AnimeResponseListImpl implements _AnimeResponseList {
   const _$AnimeResponseListImpl(
-      {required this.pagination, required final List<Anime> data})
+      {this.pagination, required final List<Anime> data})
       : _data = data;
 
   factory _$AnimeResponseListImpl.fromJson(Map<String, dynamic> json) =>
       _$$AnimeResponseListImplFromJson(json);
 
   @override
-  final ApiPagination pagination;
+  final ApiPagination? pagination;
   final List<Anime> _data;
   @override
   List<Anime> get data {
@@ -505,14 +509,14 @@ class _$AnimeResponseListImpl implements _AnimeResponseList {
 
 abstract class _AnimeResponseList implements AnimeResponseList {
   const factory _AnimeResponseList(
-      {required final ApiPagination pagination,
+      {final ApiPagination? pagination,
       required final List<Anime> data}) = _$AnimeResponseListImpl;
 
   factory _AnimeResponseList.fromJson(Map<String, dynamic> json) =
       _$AnimeResponseListImpl.fromJson;
 
   @override
-  ApiPagination get pagination;
+  ApiPagination? get pagination;
   @override
   List<Anime> get data;
   @override

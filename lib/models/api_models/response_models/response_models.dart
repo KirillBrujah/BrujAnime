@@ -71,7 +71,7 @@ class ApiResponse<T> with _$ApiResponse<T> {
 @freezed
 class AnimeResponseList with _$AnimeResponseList {
   const factory AnimeResponseList({
-    required ApiPagination pagination,
+    ApiPagination? pagination,
     required List<Anime> data,
   }) = _AnimeResponseList;
 
