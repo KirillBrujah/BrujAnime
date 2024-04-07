@@ -1,13 +1,14 @@
 import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/data/source/network/network.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 final getIt = GetIt.instance;
 
 Dio _buildDioClient() => Dio()
-  ..options.baseUrl = "https://api.jikan.moe/v4/"
+  ..options.baseUrl = dotenv.env["API_URL"]!
   ..options.headers["Content-Type"] = "application/json"
   ..options.headers["Accept"] = "application/json"
   ..options.connectTimeout = const Duration(seconds: 10)
