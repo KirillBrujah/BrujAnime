@@ -12,7 +12,7 @@ Dio _buildDioClient() => Dio()
   ..options.headers["Content-Type"] = "application/json"
   ..options.headers["Accept"] = "application/json"
   ..options.connectTimeout = const Duration(seconds: 10)
-  ..interceptors.add(PrettyDioLogger(
+/* ..interceptors.add(PrettyDioLogger(
     requestHeader: true,
     requestBody: true,
     responseBody: true,
@@ -20,7 +20,8 @@ Dio _buildDioClient() => Dio()
     error: true,
     compact: true,
     maxWidth: 90,
-  ));
+  ))*/
+    ;
 
 void setupLocator() {
   final dio = _buildDioClient();
