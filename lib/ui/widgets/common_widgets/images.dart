@@ -5,13 +5,13 @@ import 'shimmers.dart';
 
 class KNetworkImage extends StatelessWidget {
   const KNetworkImage({
-    Key? key,
+    super.key,
     this.imageUrl,
     this.height = double.infinity,
     this.width = double.infinity,
     this.fit = BoxFit.fill,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   final String? imageUrl;
   final double width;
@@ -40,7 +40,7 @@ class KNetworkImage extends StatelessWidget {
 }
 
 class _ImagePlaceholder extends StatelessWidget {
-  const _ImagePlaceholder({Key? key, this.borderRadius}) : super(key: key);
+  const _ImagePlaceholder({this.borderRadius});
 
   final BorderRadius? borderRadius;
 

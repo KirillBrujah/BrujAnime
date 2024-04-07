@@ -4,12 +4,12 @@ import 'package:retrofit/http.dart';
 
 part 'recommendations_network.g.dart';
 
-@RestApi(baseUrl: '/recommendations')
+@RestApi(baseUrl: 'recommendations')
 abstract class RecommendationsNetwork {
   factory RecommendationsNetwork(Dio dio) = _RecommendationsNetwork;
 
-  @GET("/recommendations/anime")
-  Future<AnimeResponseList> getRecommendations({
+  @GET("/anime")
+  Future<AnimeRecommendationsList> getRecommendations({
     @Query("page") int? page,
   });
 //

@@ -9,7 +9,7 @@ abstract class SeasonsNetwork {
   factory SeasonsNetwork(Dio dio) = _SeasonsNetwork;
 
   @GET("/{type}")
-  Future<AnimeResponseList> getSeason({
+  Future<AnimeList> getSeason({
     @Path("type") required String type,
     @Query("page") int? page,
   });

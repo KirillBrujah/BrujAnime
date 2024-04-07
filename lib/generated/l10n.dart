@@ -210,6 +210,16 @@ class S {
     );
   }
 
+  /// `List is empty`
+  String get list_is_empty {
+    return Intl.message(
+      'List is empty',
+      name: 'list_is_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Can't load Top`
   String get top_load_error {
     return Intl.message(

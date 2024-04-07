@@ -1,6 +1,8 @@
+import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/utils/getit.dart';
 import 'package:brujanime/utils/stream_transformers.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -9,7 +11,6 @@ part 'anime_recommendations_bloc.freezed.dart';
 part 'anime_recommendations_event.dart';
 part 'anime_recommendations_state.dart';
 
-@Deprecated("Maybe will not be used in final version")
 class AnimeRecommendationsBloc
     extends Bloc<AnimeRecommendationsEvent, AnimeRecommendationsState> {
   AnimeRecommendationsBloc()
@@ -26,16 +27,13 @@ class AnimeRecommendationsBloc
     if (pagination?.hasNextPage == false) return;
 
     try {
-      // final recommendations = await
-      // final results = await RecommendationsNetworkService().getRecommendations(
-      //     // TODO: Fix pagination
-      //     // page: pagination != null ? pagination.currentPage + 1 : 1,
-      //     );
-      //
-      // emit(AnimeRecommendationsState.data(
-      //   list: results.successResults,
-      //   pagination: results.pagination!,
-      // ));
+      final results = await getIt<RecommendationsRepository>().getAll();
+
+
+      emit(AnimeRecommendationsState.loaded(
+        list: results.data,
+        pagination: results.pagination!,
+      ));
     } catch (exc) {
       reportError(
         exception: exc,

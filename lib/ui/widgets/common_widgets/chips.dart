@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KChip extends StatelessWidget {
-  const KChip(this.label, {Key? key}) : super(key: key);
+  const KChip(this.label, {super.key});
 
   final String label;
 

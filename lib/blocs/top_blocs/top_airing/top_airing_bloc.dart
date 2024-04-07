@@ -39,7 +39,7 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
           // page: pagination != null ? pagination.currentPage + 1 : 1,
           );
 
-      emit(TopAiringState.data(
+      emit(TopAiringState.loaded(
         list: results.data,
         pagination: results.pagination!,
       ));

@@ -9,7 +9,7 @@ abstract class TopNetwork {
   factory TopNetwork(Dio dio) = _TopNetwork;
 
   @GET('/anime')
-  Future<AnimeResponseList> getTop({
+  Future<AnimeList> getTop({
     @Query("page") int? page,
     @Query("limit") int? limit,
     @Query("filter") AnimeSearchFilter? filter,

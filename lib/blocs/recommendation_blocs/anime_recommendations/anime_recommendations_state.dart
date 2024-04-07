@@ -6,21 +6,21 @@ class AnimeRecommendationsState with _$AnimeRecommendationsState {
 
   const factory AnimeRecommendationsState.initial() =
       _AnimeRecommendationsInitialState;
-  const factory AnimeRecommendationsState.data({
+  const factory AnimeRecommendationsState.loaded({
     required List<AnimeRecommendation> list,
     required ApiPagination pagination,
-  }) = _AnimeRecommendationsDataState;
+  }) = _AnimeRecommendationsLoadedState;
   const factory AnimeRecommendationsState.error(String message) =
       _AnimeRecommendationsErrorState;
 
   ApiPagination? get pagination => maybeMap(
         orElse: () => null,
-        data: (state) => state.pagination,
+        loaded: (state) => state.pagination,
       );
 
   List<AnimeRecommendation> get list => maybeWhen(
         orElse: () => [],
-        data: (list, _) => list,
+        loaded: (list, _) => list,
       );
 
   bool get isLoading => maybeWhen(

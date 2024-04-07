@@ -4,7 +4,7 @@ import 'package:brujanime/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class ProgressLogo extends StatelessWidget {
-  const ProgressLogo({Key? key, this.progress = 0.0}) : super(key: key);
+  const ProgressLogo({super.key, this.progress = 0.0});
 
   final double progress;
 
@@ -34,10 +34,9 @@ class ProgressLogo extends StatelessWidget {
 
 class _ProgressArc extends StatefulWidget {
   const _ProgressArc({
-    Key? key,
     required this.progress,
     this.duration = const Duration(milliseconds: 300),
-  }) : super(key: key);
+  });
   final double progress;
   final Duration duration;
 

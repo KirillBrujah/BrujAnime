@@ -285,21 +285,22 @@ mixin _$TopAiringState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> list, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination)
+        loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -307,21 +308,21 @@ mixin _$TopAiringState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TopAiringInitialState value) initial,
-    required TResult Function(_TopAiringDataState value) data,
+    required TResult Function(_TopAiringLoadedState value) loaded,
     required TResult Function(_TopAiringErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TopAiringInitialState value)? initial,
-    TResult? Function(_TopAiringDataState value)? data,
+    TResult? Function(_TopAiringLoadedState value)? loaded,
     TResult? Function(_TopAiringErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TopAiringInitialState value)? initial,
-    TResult Function(_TopAiringDataState value)? data,
+    TResult Function(_TopAiringLoadedState value)? loaded,
     TResult Function(_TopAiringErrorState value)? error,
     required TResult orElse(),
   }) =>
@@ -387,7 +388,8 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> list, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination)
+        loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -397,7 +399,7 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -407,7 +409,7 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -421,7 +423,7 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TopAiringInitialState value) initial,
-    required TResult Function(_TopAiringDataState value) data,
+    required TResult Function(_TopAiringLoadedState value) loaded,
     required TResult Function(_TopAiringErrorState value) error,
   }) {
     return initial(this);
@@ -431,7 +433,7 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TopAiringInitialState value)? initial,
-    TResult? Function(_TopAiringDataState value)? data,
+    TResult? Function(_TopAiringLoadedState value)? loaded,
     TResult? Function(_TopAiringErrorState value)? error,
   }) {
     return initial?.call(this);
@@ -441,7 +443,7 @@ class _$TopAiringInitialStateImpl extends _TopAiringInitialState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TopAiringInitialState value)? initial,
-    TResult Function(_TopAiringDataState value)? data,
+    TResult Function(_TopAiringLoadedState value)? loaded,
     TResult Function(_TopAiringErrorState value)? error,
     required TResult orElse(),
   }) {
@@ -458,10 +460,10 @@ abstract class _TopAiringInitialState extends TopAiringState {
 }
 
 /// @nodoc
-abstract class _$$TopAiringDataStateImplCopyWith<$Res> {
-  factory _$$TopAiringDataStateImplCopyWith(_$TopAiringDataStateImpl value,
-          $Res Function(_$TopAiringDataStateImpl) then) =
-      __$$TopAiringDataStateImplCopyWithImpl<$Res>;
+abstract class _$$TopAiringLoadedStateImplCopyWith<$Res> {
+  factory _$$TopAiringLoadedStateImplCopyWith(_$TopAiringLoadedStateImpl value,
+          $Res Function(_$TopAiringLoadedStateImpl) then) =
+      __$$TopAiringLoadedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Anime> list, ApiPagination pagination});
 
@@ -469,11 +471,11 @@ abstract class _$$TopAiringDataStateImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TopAiringDataStateImplCopyWithImpl<$Res>
-    extends _$TopAiringStateCopyWithImpl<$Res, _$TopAiringDataStateImpl>
-    implements _$$TopAiringDataStateImplCopyWith<$Res> {
-  __$$TopAiringDataStateImplCopyWithImpl(_$TopAiringDataStateImpl _value,
-      $Res Function(_$TopAiringDataStateImpl) _then)
+class __$$TopAiringLoadedStateImplCopyWithImpl<$Res>
+    extends _$TopAiringStateCopyWithImpl<$Res, _$TopAiringLoadedStateImpl>
+    implements _$$TopAiringLoadedStateImplCopyWith<$Res> {
+  __$$TopAiringLoadedStateImplCopyWithImpl(_$TopAiringLoadedStateImpl _value,
+      $Res Function(_$TopAiringLoadedStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -482,7 +484,7 @@ class __$$TopAiringDataStateImplCopyWithImpl<$Res>
     Object? list = null,
     Object? pagination = null,
   }) {
-    return _then(_$TopAiringDataStateImpl(
+    return _then(_$TopAiringLoadedStateImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -505,8 +507,8 @@ class __$$TopAiringDataStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TopAiringDataStateImpl extends _TopAiringDataState {
-  const _$TopAiringDataStateImpl(
+class _$TopAiringLoadedStateImpl extends _TopAiringLoadedState {
+  const _$TopAiringLoadedStateImpl(
       {required final List<Anime> list, required this.pagination})
       : _list = list,
         super._();
@@ -524,14 +526,14 @@ class _$TopAiringDataStateImpl extends _TopAiringDataState {
 
   @override
   String toString() {
-    return 'TopAiringState.data(list: $list, pagination: $pagination)';
+    return 'TopAiringState.loaded(list: $list, pagination: $pagination)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TopAiringDataStateImpl &&
+            other is _$TopAiringLoadedStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
@@ -544,40 +546,42 @@ class _$TopAiringDataStateImpl extends _TopAiringDataState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TopAiringDataStateImplCopyWith<_$TopAiringDataStateImpl> get copyWith =>
-      __$$TopAiringDataStateImplCopyWithImpl<_$TopAiringDataStateImpl>(
-          this, _$identity);
+  _$$TopAiringLoadedStateImplCopyWith<_$TopAiringLoadedStateImpl>
+      get copyWith =>
+          __$$TopAiringLoadedStateImplCopyWithImpl<_$TopAiringLoadedStateImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> list, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination)
+        loaded,
     required TResult Function(String message) error,
   }) {
-    return data(list, pagination);
+    return loaded(list, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult? Function(String message)? error,
   }) {
-    return data?.call(list, pagination);
+    return loaded?.call(list, pagination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(list, pagination);
+    if (loaded != null) {
+      return loaded(list, pagination);
     }
     return orElse();
   }
@@ -586,48 +590,48 @@ class _$TopAiringDataStateImpl extends _TopAiringDataState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TopAiringInitialState value) initial,
-    required TResult Function(_TopAiringDataState value) data,
+    required TResult Function(_TopAiringLoadedState value) loaded,
     required TResult Function(_TopAiringErrorState value) error,
   }) {
-    return data(this);
+    return loaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TopAiringInitialState value)? initial,
-    TResult? Function(_TopAiringDataState value)? data,
+    TResult? Function(_TopAiringLoadedState value)? loaded,
     TResult? Function(_TopAiringErrorState value)? error,
   }) {
-    return data?.call(this);
+    return loaded?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TopAiringInitialState value)? initial,
-    TResult Function(_TopAiringDataState value)? data,
+    TResult Function(_TopAiringLoadedState value)? loaded,
     TResult Function(_TopAiringErrorState value)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _TopAiringDataState extends TopAiringState {
-  const factory _TopAiringDataState(
+abstract class _TopAiringLoadedState extends TopAiringState {
+  const factory _TopAiringLoadedState(
       {required final List<Anime> list,
-      required final ApiPagination pagination}) = _$TopAiringDataStateImpl;
-  const _TopAiringDataState._() : super._();
+      required final ApiPagination pagination}) = _$TopAiringLoadedStateImpl;
+  const _TopAiringLoadedState._() : super._();
 
   List<Anime> get list;
   ApiPagination get pagination;
   @JsonKey(ignore: true)
-  _$$TopAiringDataStateImplCopyWith<_$TopAiringDataStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TopAiringLoadedStateImplCopyWith<_$TopAiringLoadedStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -696,7 +700,8 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<Anime> list, ApiPagination pagination) data,
+    required TResult Function(List<Anime> list, ApiPagination pagination)
+        loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -706,7 +711,7 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult? Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -716,7 +721,7 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<Anime> list, ApiPagination pagination)? data,
+    TResult Function(List<Anime> list, ApiPagination pagination)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -730,7 +735,7 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TopAiringInitialState value) initial,
-    required TResult Function(_TopAiringDataState value) data,
+    required TResult Function(_TopAiringLoadedState value) loaded,
     required TResult Function(_TopAiringErrorState value) error,
   }) {
     return error(this);
@@ -740,7 +745,7 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TopAiringInitialState value)? initial,
-    TResult? Function(_TopAiringDataState value)? data,
+    TResult? Function(_TopAiringLoadedState value)? loaded,
     TResult? Function(_TopAiringErrorState value)? error,
   }) {
     return error?.call(this);
@@ -750,7 +755,7 @@ class _$TopAiringErrorStateImpl extends _TopAiringErrorState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TopAiringInitialState value)? initial,
-    TResult Function(_TopAiringDataState value)? data,
+    TResult Function(_TopAiringLoadedState value)? loaded,
     TResult Function(_TopAiringErrorState value)? error,
     required TResult orElse(),
   }) {

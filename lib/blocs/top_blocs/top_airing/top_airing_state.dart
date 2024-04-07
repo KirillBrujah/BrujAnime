@@ -5,14 +5,14 @@ class TopAiringState with _$TopAiringState {
   const TopAiringState._();
 
   const factory TopAiringState.initial() = _TopAiringInitialState;
-  const factory TopAiringState.data({
+  const factory TopAiringState.loaded({
     required List<Anime> list,
     required ApiPagination pagination,
-  }) = _TopAiringDataState;
+  }) = _TopAiringLoadedState;
   const factory TopAiringState.error(String message) = _TopAiringErrorState;
 
   ApiPagination? get pagination => maybeMap(
         orElse: () => null,
-        data: (state) => state.pagination,
+        loaded: (state) => state.pagination,
       );
 }

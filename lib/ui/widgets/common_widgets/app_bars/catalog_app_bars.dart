@@ -12,11 +12,11 @@ class CatalogNavigationBarItem {
 
 class CatalogAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CatalogAppBar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.setActiveIndex,
     required this.items,
-  }) : super(key: key);
+  });
 
   final int currentIndex;
   final void Function(int index) setActiveIndex;
@@ -60,11 +60,10 @@ class CatalogAppBar extends StatelessWidget implements PreferredSizeWidget {
 
 class _CatalogNavigationAppBarItem extends StatelessWidget {
   const _CatalogNavigationAppBarItem({
-    Key? key,
     required this.item,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final CatalogNavigationBarItem item;
   final bool isSelected;
@@ -108,11 +107,10 @@ class _CatalogNavigationAppBarItem extends StatelessWidget {
 
 class CatalogSubAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CatalogSubAppBar(
-      {Key? key,
+      {super.key,
       required this.currentIndex,
       required this.setActiveIndex,
-      required this.items})
-      : super(key: key);
+      required this.items});
 
   final int currentIndex;
   final void Function(int index) setActiveIndex;
@@ -182,12 +180,11 @@ class CatalogSubAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _CatalogNavigationSubAppBarItem extends StatelessWidget {
-  const _CatalogNavigationSubAppBarItem(
-      {Key? key,
-      required this.item,
-      required this.isSelected,
-      required this.onTap})
-      : super(key: key);
+  const _CatalogNavigationSubAppBarItem({
+    required this.item,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   final CatalogNavigationBarItem item;
   final bool isSelected;

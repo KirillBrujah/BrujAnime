@@ -43,11 +43,11 @@ class _Header extends StatelessWidget {
           initial: () => const HomeHeaderLoading(),
           error: (message) => HomeHeaderError(message),
           data: (data, _) {
-            final recommendations = data
+            final season = data
                 .where((anime) => anime.images?.maxSizeImage != null)
                 .toList();
             return HomeHeaderCarousel(
-              list: recommendations.sublist(0, min(8, recommendations.length)),
+              list: season.sublist(0, min(8, season.length)),
             );
           },
         );
@@ -69,7 +69,7 @@ class _TopAiring extends StatelessWidget {
         child: state.when(
           initial: () => const HorizontalListLoading(),
           error: (message) => HorizontalListError(message),
-          data: (data, _) => HorizontalListData(
+          loaded: (data, _) => HorizontalListData(
             data: data.sublist(
               0,
               min(10, data.length),
@@ -90,7 +90,7 @@ class _Recommendations extends StatelessWidget {
       builder: (context, state) => state.when(
         initial: () => const Center(child: CircularProgressIndicator()),
         error: (message) => Text(message),
-        data: (data, pagination) => Text('${data.length}'),
+        loaded: (data, pagination) => Text('${data.length}'),
       ),
     );
   }

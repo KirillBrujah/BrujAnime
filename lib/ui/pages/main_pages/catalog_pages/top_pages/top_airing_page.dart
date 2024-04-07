@@ -17,33 +17,31 @@ class TopAiringPage extends StatelessWidget {
         initial: () => CircularProgressIndicator(),
         // TODO: Top error
         error: (message) => Text(message),
-        data: (data, _) => _TopAnimeList(list: data),
+        loaded: (data, _) => _TopAnimeList(list: data),
       ),
     );
   }
 }
 
 class _TopAnimeList extends StatelessWidget {
-  const _TopAnimeList({super.key, required this.list});
+  const _TopAnimeList({required this.list});
 
   final List<Anime> list;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Empty list message
-    if (list.isEmpty)
-      return Center(
-        child: Text("Empty"),
-      );
+    if (list.isEmpty) {
+      return const EmptyListMessage();
+    }
 
     return SingleChildScrollView(
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
           TopFirstAnimeCard(list.first),
-          // TODO: Others
 
-          for (Anime anime in list) TopFirstAnimeCard(anime),
+          // TODO: Others
+          for (Anime anime in list.sublist(1)) TopFirstAnimeCard(anime),
         ],
       ),
     );

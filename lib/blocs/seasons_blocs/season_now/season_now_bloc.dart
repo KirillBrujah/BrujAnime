@@ -1,11 +1,15 @@
+import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/utils/getit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'season_now_bloc.freezed.dart';
+
 part 'season_now_event.dart';
+
 part 'season_now_state.dart';
 
 class SeasonNowBloc extends Bloc<SeasonNowEvent, SeasonNowState> {
@@ -16,12 +20,11 @@ class SeasonNowBloc extends Bloc<SeasonNowEvent, SeasonNowState> {
   Future<void> _handleFetch(_fetch event, emit) async {
     emit(const SeasonNowState.initial());
     try {
-      // final result = await SeasonsService().now();
-      // emit(SeasonNowState.data(
-      //   list: result.successResults,
-      //   pagination: result.pagination,
-      // ));
-      // TODO: Load season
+      final result = await getIt.get<SeasonsRepository>().now();
+      emit(SeasonNowState.data(
+        list: result.data,
+        pagination: result.pagination,
+      ));
     } catch (e) {
       reportError(
         exception: e,

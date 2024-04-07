@@ -9,8 +9,8 @@ class TopRepository {
     _topNetwork = getIt.get<TopNetwork>();
   }
 
-  Future<AnimeResponseList> getAll() => _topNetwork.getTop();
+  Future<AnimeList> getAll() => _topNetwork.getTop();
 
-  Future<AnimeResponseList> getAiring() =>
+  Future<AnimeList> getAiring() =>
       _topNetwork.getTop(filter: AnimeSearchFilter.airing);
 }

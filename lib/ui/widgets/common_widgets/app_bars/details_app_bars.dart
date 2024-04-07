@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const _detailsAppBarHeight = 40.0;
 
 class DetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DetailsAppBar({Key? key, required this.title}) : super(key: key);
+  const DetailsAppBar({super.key, required this.title});
 
   final String title;
 

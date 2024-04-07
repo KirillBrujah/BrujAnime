@@ -11,7 +11,7 @@ import 'package:intl/intl.dart';
 const _containerHeight = 270.0;
 
 class HomeHeaderCarousel extends StatelessWidget {
-  const HomeHeaderCarousel({Key? key, required this.list}) : super(key: key);
+  const HomeHeaderCarousel({super.key, required this.list});
 
   final List<Anime> list;
 
@@ -22,7 +22,7 @@ class HomeHeaderCarousel extends StatelessWidget {
 }
 
 class HomeHeaderLoading extends StatelessWidget {
-  const HomeHeaderLoading({Key? key}) : super(key: key);
+  const HomeHeaderLoading({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class HomeHeaderLoading extends StatelessWidget {
 }
 
 class HomeHeaderError extends StatelessWidget {
-  const HomeHeaderError(this.error, {Key? key}) : super(key: key);
+  const HomeHeaderError(this.error, {super.key});
 
   final String error;
 
@@ -60,7 +60,7 @@ class HomeHeaderError extends StatelessWidget {
 }
 
 class _HeaderContainer extends StatelessWidget {
-  const _HeaderContainer({Key? key, required this.child}) : super(key: key);
+  const _HeaderContainer({required this.child});
 
   final Widget child;
 
@@ -77,7 +77,7 @@ class _HeaderContainer extends StatelessWidget {
 }
 
 class _ContentContainer extends StatelessWidget {
-  const _ContentContainer({Key? key, required this.child}) : super(key: key);
+  const _ContentContainer({required this.child});
 
   final Widget child;
 
@@ -149,7 +149,7 @@ class _NeonDivider extends StatelessWidget {
 }
 
 class _HeaderData extends StatefulWidget {
-  const _HeaderData({Key? key, required this.list}) : super(key: key);
+  const _HeaderData({required this.list});
 
   final List<Anime> list;
 
@@ -183,8 +183,7 @@ class _HeaderDataState extends State<_HeaderData> {
 }
 
 class _Carousel extends StatelessWidget {
-  const _Carousel({Key? key, required this.list, required this.onPageChanged})
-      : super(key: key);
+  const _Carousel({required this.list, required this.onPageChanged});
 
   final List<Anime> list;
   final void Function(int, CarouselPageChangedReason) onPageChanged;
@@ -358,8 +357,7 @@ class _Score extends StatelessWidget {
 
 class _PageIndicator extends StatelessWidget {
   const _PageIndicator(
-      {Key? key, required this.currentIndex, required this.count})
-      : super(key: key);
+      {required this.currentIndex, required this.count});
 
   final int currentIndex;
   final int count;
@@ -399,9 +397,8 @@ class _PageIndicator extends StatelessWidget {
 
 class _ContentPlaceholder extends StatelessWidget {
   const _ContentPlaceholder({
-    Key? key,
     this.isShimmering = false,
-  }) : super(key: key);
+  });
 
   final bool isShimmering;
 
@@ -434,9 +431,9 @@ class _ContentPlaceholder extends StatelessWidget {
   }
 
   Widget _textShimmerContent() {
-    return ShimmerContainer(
+    return const ShimmerContainer(
       child: Column(
-        children: const [
+        children: [
           SizedBox(height: 10),
           TextShimmerPlaceholder(height: 24, width: 130),
           SizedBox(height: 10),
@@ -450,8 +447,8 @@ class _ContentPlaceholder extends StatelessWidget {
   }
 
   Column _textContent() {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         SizedBox(height: 10),
         TextPlaceholder(height: 24, width: 130),
         SizedBox(height: 10),

@@ -26,10 +26,14 @@ void setupLocator() {
   final dio = _buildDioClient();
 
   getIt
+
+    /// Services
     ..registerLazySingleton(() => TopNetwork(dio))
-    ..registerLazySingleton(() => RecommendationsNetwork(dio));
+    ..registerLazySingleton(() => RecommendationsNetwork(dio))
+    ..registerLazySingleton(() => SeasonsNetwork(dio))
 
-  // getIt.registerLazySingleton<RestClient>(() => RestClient(_buildDioClient()));
-
-  getIt.registerLazySingleton<TopRepository>(() => TopRepository());
+    /// Repositories
+    ..registerLazySingleton(() => TopRepository())
+    ..registerLazySingleton(() => RecommendationsRepository())
+    ..registerLazySingleton(() => SeasonsRepository());
 }

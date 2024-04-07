@@ -20,6 +20,8 @@
   "daily": "Daily",
   "today": "Today",
 
+  "@_MESSAGES": {},
+  "list_is_empty": "List is empty",
 
   "@_ERRORS": {},
   "top_load_error": "Can't load Top",

@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 
 class HorizontalList extends StatelessWidget {
   const HorizontalList(
-      {Key? key, required this.child, this.title, this.onNavigateTap})
-      : super(key: key);
+      {super.key, required this.child, this.title, this.onNavigateTap});
 
   final Widget child;
   final String? title;
@@ -54,9 +53,9 @@ class HorizontalList extends StatelessWidget {
 
 class HorizontalListData extends StatelessWidget {
   const HorizontalListData({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   final List<Anime> data;
 
@@ -81,7 +80,7 @@ class HorizontalListData extends StatelessWidget {
 }
 
 class HorizontalListLoading extends StatelessWidget {
-  const HorizontalListLoading({Key? key}) : super(key: key);
+  const HorizontalListLoading({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +104,7 @@ class HorizontalListLoading extends StatelessWidget {
 }
 
 class HorizontalListError extends StatelessWidget {
-  const HorizontalListError(this.message, {Key? key}) : super(key: key);
+  const HorizontalListError(this.message, {super.key});
 
   final String message;
 

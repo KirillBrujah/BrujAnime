@@ -300,7 +300,7 @@ mixin _$AnimeRecommendationsState {
     required TResult Function() initial,
     required TResult Function(
             List<AnimeRecommendation> list, ApiPagination pagination)
-        data,
+        loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -308,7 +308,7 @@ mixin _$AnimeRecommendationsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -316,7 +316,7 @@ mixin _$AnimeRecommendationsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -324,21 +324,21 @@ mixin _$AnimeRecommendationsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AnimeRecommendationsInitialState value) initial,
-    required TResult Function(_AnimeRecommendationsDataState value) data,
+    required TResult Function(_AnimeRecommendationsLoadedState value) loaded,
     required TResult Function(_AnimeRecommendationsErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult? Function(_AnimeRecommendationsDataState value)? data,
+    TResult? Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult? Function(_AnimeRecommendationsErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult Function(_AnimeRecommendationsDataState value)? data,
+    TResult Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult Function(_AnimeRecommendationsErrorState value)? error,
     required TResult orElse(),
   }) =>
@@ -410,7 +410,7 @@ class _$AnimeRecommendationsInitialStateImpl
     required TResult Function() initial,
     required TResult Function(
             List<AnimeRecommendation> list, ApiPagination pagination)
-        data,
+        loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -421,7 +421,7 @@ class _$AnimeRecommendationsInitialStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -432,7 +432,7 @@ class _$AnimeRecommendationsInitialStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -446,7 +446,7 @@ class _$AnimeRecommendationsInitialStateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AnimeRecommendationsInitialState value) initial,
-    required TResult Function(_AnimeRecommendationsDataState value) data,
+    required TResult Function(_AnimeRecommendationsLoadedState value) loaded,
     required TResult Function(_AnimeRecommendationsErrorState value) error,
   }) {
     return initial(this);
@@ -456,7 +456,7 @@ class _$AnimeRecommendationsInitialStateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult? Function(_AnimeRecommendationsDataState value)? data,
+    TResult? Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult? Function(_AnimeRecommendationsErrorState value)? error,
   }) {
     return initial?.call(this);
@@ -466,7 +466,7 @@ class _$AnimeRecommendationsInitialStateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult Function(_AnimeRecommendationsDataState value)? data,
+    TResult Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult Function(_AnimeRecommendationsErrorState value)? error,
     required TResult orElse(),
   }) {
@@ -485,11 +485,11 @@ abstract class _AnimeRecommendationsInitialState
 }
 
 /// @nodoc
-abstract class _$$AnimeRecommendationsDataStateImplCopyWith<$Res> {
-  factory _$$AnimeRecommendationsDataStateImplCopyWith(
-          _$AnimeRecommendationsDataStateImpl value,
-          $Res Function(_$AnimeRecommendationsDataStateImpl) then) =
-      __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>;
+abstract class _$$AnimeRecommendationsLoadedStateImplCopyWith<$Res> {
+  factory _$$AnimeRecommendationsLoadedStateImplCopyWith(
+          _$AnimeRecommendationsLoadedStateImpl value,
+          $Res Function(_$AnimeRecommendationsLoadedStateImpl) then) =
+      __$$AnimeRecommendationsLoadedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AnimeRecommendation> list, ApiPagination pagination});
 
@@ -497,13 +497,13 @@ abstract class _$$AnimeRecommendationsDataStateImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>
+class __$$AnimeRecommendationsLoadedStateImplCopyWithImpl<$Res>
     extends _$AnimeRecommendationsStateCopyWithImpl<$Res,
-        _$AnimeRecommendationsDataStateImpl>
-    implements _$$AnimeRecommendationsDataStateImplCopyWith<$Res> {
-  __$$AnimeRecommendationsDataStateImplCopyWithImpl(
-      _$AnimeRecommendationsDataStateImpl _value,
-      $Res Function(_$AnimeRecommendationsDataStateImpl) _then)
+        _$AnimeRecommendationsLoadedStateImpl>
+    implements _$$AnimeRecommendationsLoadedStateImplCopyWith<$Res> {
+  __$$AnimeRecommendationsLoadedStateImplCopyWithImpl(
+      _$AnimeRecommendationsLoadedStateImpl _value,
+      $Res Function(_$AnimeRecommendationsLoadedStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -512,7 +512,7 @@ class __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>
     Object? list = null,
     Object? pagination = null,
   }) {
-    return _then(_$AnimeRecommendationsDataStateImpl(
+    return _then(_$AnimeRecommendationsLoadedStateImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -535,9 +535,9 @@ class __$$AnimeRecommendationsDataStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AnimeRecommendationsDataStateImpl
-    extends _AnimeRecommendationsDataState {
-  const _$AnimeRecommendationsDataStateImpl(
+class _$AnimeRecommendationsLoadedStateImpl
+    extends _AnimeRecommendationsLoadedState {
+  const _$AnimeRecommendationsLoadedStateImpl(
       {required final List<AnimeRecommendation> list, required this.pagination})
       : _list = list,
         super._();
@@ -555,14 +555,14 @@ class _$AnimeRecommendationsDataStateImpl
 
   @override
   String toString() {
-    return 'AnimeRecommendationsState.data(list: $list, pagination: $pagination)';
+    return 'AnimeRecommendationsState.loaded(list: $list, pagination: $pagination)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AnimeRecommendationsDataStateImpl &&
+            other is _$AnimeRecommendationsLoadedStateImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pagination, pagination) ||
                 other.pagination == pagination));
@@ -575,10 +575,10 @@ class _$AnimeRecommendationsDataStateImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AnimeRecommendationsDataStateImplCopyWith<
-          _$AnimeRecommendationsDataStateImpl>
-      get copyWith => __$$AnimeRecommendationsDataStateImplCopyWithImpl<
-          _$AnimeRecommendationsDataStateImpl>(this, _$identity);
+  _$$AnimeRecommendationsLoadedStateImplCopyWith<
+          _$AnimeRecommendationsLoadedStateImpl>
+      get copyWith => __$$AnimeRecommendationsLoadedStateImplCopyWithImpl<
+          _$AnimeRecommendationsLoadedStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -586,10 +586,10 @@ class _$AnimeRecommendationsDataStateImpl
     required TResult Function() initial,
     required TResult Function(
             List<AnimeRecommendation> list, ApiPagination pagination)
-        data,
+        loaded,
     required TResult Function(String message) error,
   }) {
-    return data(list, pagination);
+    return loaded(list, pagination);
   }
 
   @override
@@ -597,10 +597,10 @@ class _$AnimeRecommendationsDataStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult? Function(String message)? error,
   }) {
-    return data?.call(list, pagination);
+    return loaded?.call(list, pagination);
   }
 
   @override
@@ -608,12 +608,12 @@ class _$AnimeRecommendationsDataStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(list, pagination);
+    if (loaded != null) {
+      return loaded(list, pagination);
     }
     return orElse();
   }
@@ -622,50 +622,50 @@ class _$AnimeRecommendationsDataStateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AnimeRecommendationsInitialState value) initial,
-    required TResult Function(_AnimeRecommendationsDataState value) data,
+    required TResult Function(_AnimeRecommendationsLoadedState value) loaded,
     required TResult Function(_AnimeRecommendationsErrorState value) error,
   }) {
-    return data(this);
+    return loaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult? Function(_AnimeRecommendationsDataState value)? data,
+    TResult? Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult? Function(_AnimeRecommendationsErrorState value)? error,
   }) {
-    return data?.call(this);
+    return loaded?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult Function(_AnimeRecommendationsDataState value)? data,
+    TResult Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult Function(_AnimeRecommendationsErrorState value)? error,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (loaded != null) {
+      return loaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _AnimeRecommendationsDataState
+abstract class _AnimeRecommendationsLoadedState
     extends AnimeRecommendationsState {
-  const factory _AnimeRecommendationsDataState(
+  const factory _AnimeRecommendationsLoadedState(
           {required final List<AnimeRecommendation> list,
           required final ApiPagination pagination}) =
-      _$AnimeRecommendationsDataStateImpl;
-  const _AnimeRecommendationsDataState._() : super._();
+      _$AnimeRecommendationsLoadedStateImpl;
+  const _AnimeRecommendationsLoadedState._() : super._();
 
   List<AnimeRecommendation> get list;
   ApiPagination get pagination;
   @JsonKey(ignore: true)
-  _$$AnimeRecommendationsDataStateImplCopyWith<
-          _$AnimeRecommendationsDataStateImpl>
+  _$$AnimeRecommendationsLoadedStateImplCopyWith<
+          _$AnimeRecommendationsLoadedStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -742,7 +742,7 @@ class _$AnimeRecommendationsErrorStateImpl
     required TResult Function() initial,
     required TResult Function(
             List<AnimeRecommendation> list, ApiPagination pagination)
-        data,
+        loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -753,7 +753,7 @@ class _$AnimeRecommendationsErrorStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -764,7 +764,7 @@ class _$AnimeRecommendationsErrorStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<AnimeRecommendation> list, ApiPagination pagination)?
-        data,
+        loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -778,7 +778,7 @@ class _$AnimeRecommendationsErrorStateImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AnimeRecommendationsInitialState value) initial,
-    required TResult Function(_AnimeRecommendationsDataState value) data,
+    required TResult Function(_AnimeRecommendationsLoadedState value) loaded,
     required TResult Function(_AnimeRecommendationsErrorState value) error,
   }) {
     return error(this);
@@ -788,7 +788,7 @@ class _$AnimeRecommendationsErrorStateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult? Function(_AnimeRecommendationsDataState value)? data,
+    TResult? Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult? Function(_AnimeRecommendationsErrorState value)? error,
   }) {
     return error?.call(this);
@@ -798,7 +798,7 @@ class _$AnimeRecommendationsErrorStateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AnimeRecommendationsInitialState value)? initial,
-    TResult Function(_AnimeRecommendationsDataState value)? data,
+    TResult Function(_AnimeRecommendationsLoadedState value)? loaded,
     TResult Function(_AnimeRecommendationsErrorState value)? error,
     required TResult orElse(),
   }) {

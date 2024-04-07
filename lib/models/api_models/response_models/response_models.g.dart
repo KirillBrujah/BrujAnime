@@ -24,6 +24,23 @@ Map<String, dynamic> _$$AnimeResponseListImplToJson(
       'data': instance.data,
     };
 
+_$AnimeRecommendationsListImpl _$$AnimeRecommendationsListImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnimeRecommendationsListImpl(
+      pagination:
+          ApiPagination.fromJson(json['pagination'] as Map<String, dynamic>),
+      data: (json['data'] as List<dynamic>)
+          .map((e) => AnimeRecommendation.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$AnimeRecommendationsListImplToJson(
+        _$AnimeRecommendationsListImpl instance) =>
+    <String, dynamic>{
+      'pagination': instance.pagination,
+      'data': instance.data,
+    };
+
 _$ApiPaginationImpl _$$ApiPaginationImplFromJson(Map<String, dynamic> json) =>
     _$ApiPaginationImpl(
       lastVisiblePage: json['last_visible_page'] as int,

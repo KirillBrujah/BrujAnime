@@ -83,9 +83,7 @@ class SplashPage extends StatelessWidget {
 }
 
 class _LogoText extends StatelessWidget {
-  const _LogoText({
-    Key? key,
-  }) : super(key: key);
+  const _LogoText();
 
   @override
   Widget build(BuildContext context) {

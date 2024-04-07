@@ -102,12 +102,11 @@ class _BottomSearchButton extends StatelessWidget {
 
 class _BottomNavItem extends StatelessWidget {
   const _BottomNavItem({
-    Key? key,
     required this.title,
     required this.icon,
     required this.onTap,
     required this.isSelected,
-  }) : super(key: key);
+  });
 
   final bool isSelected;
   final String title;

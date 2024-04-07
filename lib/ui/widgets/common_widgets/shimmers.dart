@@ -5,7 +5,7 @@ import 'package:shimmer/shimmer.dart';
 const _plugColor = Colors.white;
 
 class ShimmerContainer extends StatelessWidget {
-  const ShimmerContainer({Key? key, this.child}) : super(key: key);
+  const ShimmerContainer({super.key, this.child});
 
   final Widget? child;
 
@@ -22,8 +22,7 @@ class ShimmerContainer extends StatelessWidget {
 
 class TextShimmerPlaceholder extends StatelessWidget {
   const TextShimmerPlaceholder(
-      {Key? key, required this.height, required this.width})
-      : super(key: key);
+      {super.key, required this.height, required this.width});
 
   final double height;
   final double width;
@@ -42,8 +41,7 @@ class TextShimmerPlaceholder extends StatelessWidget {
 }
 
 class TextPlaceholder extends StatelessWidget {
-  const TextPlaceholder({Key? key, required this.height, required this.width})
-      : super(key: key);
+  const TextPlaceholder({super.key, required this.height, required this.width});
 
   final double height;
   final double width;
@@ -64,7 +62,7 @@ class TextPlaceholder extends StatelessWidget {
 }
 
 class ImageShimmer extends StatelessWidget {
-  const ImageShimmer({Key? key}) : super(key: key);
+  const ImageShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +71,7 @@ class ImageShimmer extends StatelessWidget {
 }
 
 class ImagePlaceholder extends StatelessWidget {
-  const ImagePlaceholder({Key? key}) : super(key: key);
+  const ImagePlaceholder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +85,7 @@ class ImagePlaceholder extends StatelessWidget {
 }
 
 class HorizontalCardShimmerPlaceholder extends StatelessWidget {
-  const HorizontalCardShimmerPlaceholder({Key? key}) : super(key: key);
+  const HorizontalCardShimmerPlaceholder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +101,7 @@ class HorizontalCardShimmerPlaceholder extends StatelessWidget {
 }
 
 class HorizontalCardPlaceholder extends StatelessWidget {
-  const HorizontalCardPlaceholder({Key? key}) : super(key: key);
+  const HorizontalCardPlaceholder({super.key});
 
   @override
   Widget build(BuildContext context) {

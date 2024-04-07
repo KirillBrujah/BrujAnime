@@ -1,9 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
+import 'package:brujanime/models/api_models/models.dart';
 import 'package:brujanime/utils/debug_functions.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../models.dart';
 
 part 'response_models.freezed.dart';
 
@@ -36,47 +33,26 @@ class ApiResponse<T> with _$ApiResponse<T> {
   }
 }
 
-// class ApiResponseList<T> {
-//   final List<ApiResponse<T>> results;
-//   final ApiPagination? pagination;
-//
-//   ApiResponseList._({required this.results, this.pagination});
-//
-//   factory ApiResponseList.fromJson(
-//     Map<String, dynamic> json,
-//     T Function(Map<String, dynamic>) fromJsonT,
-//   ) =>
-//       ApiResponseList._(
-//         results: (json["data"] as List<dynamic>)
-//             .map((json) => ApiResponse.fromJson(json, fromJsonT))
-//             .toList(),
-//         pagination: json["pagination"] != null
-//             ? ApiPagination.fromJson(json["pagination"])
-//             : null,
-//       );
-//
-//   List<T> get successResults => results
-//       .whereType<_ApiResponseSuccess<T>>()
-//       .map((success) => success.data)
-//       .toList();
-//
-//   List<Object> get errorResults => results
-//       .whereType<_ApiResponseError<T>>()
-//       .map((error) => error.exception)
-//       .toList();
-//
-//   bool get hasErrors => errorResults.isNotEmpty;
-// }
-
 @freezed
-class AnimeResponseList with _$AnimeResponseList {
-  const factory AnimeResponseList({
+class AnimeList with _$AnimeList {
+  const factory AnimeList({
     ApiPagination? pagination,
     required List<Anime> data,
   }) = _AnimeResponseList;
 
-  factory AnimeResponseList.fromJson(Map<String, dynamic> json) =>
-      _$AnimeResponseListFromJson(json);
+  factory AnimeList.fromJson(Map<String, dynamic> json) =>
+      _$AnimeListFromJson(json);
+}
+
+@freezed
+class AnimeRecommendationsList with _$AnimeRecommendationsList {
+  const factory AnimeRecommendationsList({
+    required ApiPagination pagination,
+    required List<AnimeRecommendation> data,
+  }) = _AnimeRecommendationsList;
+
+  factory AnimeRecommendationsList.fromJson(Map<String, dynamic> json) =>
+      _$AnimeRecommendationsListFromJson(json);
 }
 
 @freezed
