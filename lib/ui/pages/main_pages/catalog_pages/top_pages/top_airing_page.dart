@@ -40,11 +40,10 @@ class _TopAnimeList extends StatelessWidget {
         children: [
           TopFirstAnimeCard(list.first),
           const SizedBox(height: 40),
-          // for (Anime anime in list.sublist(1))
-          for (int i =0; i < list.sublist(1).length; i ++)
+          for (int i = 1; i < list.sublist(1).length; i++)
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
-              child: TopAnimeCard(list[i], i+2),
+              child: TopAnimeCard(list[i], i + 1),
             ),
         ],
       ),

@@ -25,17 +25,17 @@ final _headlineSmall = GoogleFonts.prompt(
 
 final _titleLarge = GoogleFonts.prompt(
   fontSize: 22,
-  color: colorScheme.primary,
+  color: colorScheme.onBackground,
   fontWeight: FontWeight.w500,
 );
 final _titleMedium = GoogleFonts.prompt(
   fontSize: 16,
-  color: colorScheme.primary,
+  color: colorScheme.onBackground,
   fontWeight: FontWeight.w500,
 );
 final _titleSmall = GoogleFonts.prompt(
   fontSize: 14,
-  color: colorScheme.primary,
+  color: colorScheme.onBackground,
   fontWeight: FontWeight.w500,
 );
 
