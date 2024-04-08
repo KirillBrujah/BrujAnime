@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:brujanime/ui/theme/constants.dart';
 import 'package:brujanime/ui/widgets/widgets.dart';
+import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:intl/intl.dart';
@@ -11,38 +14,46 @@ class TopFirstAnimeCard extends StatelessWidget {
 
   final Anime anime;
 
+  VoidCallback _handleTap(BuildContext context) => () {
+        context.router.push(AnimeRoute(anime: anime));
+      };
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return SizedBox(
-      height: 200,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _Image(anime.images),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  anime.simpleTitle,
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
-                  style: textTheme.titleMedium,
-                ),
-                const SizedBox(height: 5),
-                _Information(
-                  genres: anime.genres,
-                  favorites: anime.favorites,
-                  score: anime.score,
-                ),
-                if (anime.synopsis.isNotEmpty) _Synopsis(anime.synopsis),
-              ],
+    return InkWell(
+      onTap: _handleTap(context),
+      borderRadius: const BorderRadius.all(CardConstants.borderRadius),
+      child: SizedBox(
+        height: 200,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _Image(anime.images),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    anime.simpleTitle,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 5),
+                  _Information(
+                    genres: anime.genres,
+                    favorites: anime.favorites,
+                    score: anime.score,
+                  ),
+                  if (anime.synopsis.isNotEmpty) _Synopsis(anime.synopsis),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -65,12 +76,13 @@ class _Information extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Row(
       children: [
-        if (genres.isNotEmpty) Text(
-          genres.first.name,
-          textAlign: TextAlign.center,
-          maxLines: 1,
-          style: textTheme.labelMedium,
-        ),
+        if (genres.isNotEmpty)
+          Text(
+            genres.first.name,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            style: textTheme.labelMedium,
+          ),
         const Spacer(),
         const SizedBox(width: 10),
         Icon(
