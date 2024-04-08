@@ -135,7 +135,7 @@ class TopFirstAnimeCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   boxShadow: [
                     BoxShadow(
-                      color: colorScheme.background.withOpacity(.7),
+                      color: colorScheme.background.withOpacity(.5),
                       blurRadius: 7,
                       spreadRadius: 0,
                     )
@@ -147,11 +147,11 @@ class TopFirstAnimeCard extends StatelessWidget {
                     Icon(
                       Icons.star_rounded,
                       color: colorScheme.primary,
-                      size: 40,
+                      size: 60,
                     ),
                     Text(
                       '1',
-                      style: textTheme.labelLarge?.copyWith(
+                      style: textTheme.titleLarge?.copyWith(
                         color: colorScheme.onPrimary,
                       ),
                     ),
@@ -175,6 +175,8 @@ class TopFirstAnimeCard extends StatelessWidget {
                 const SizedBox(height: 5),
                 Row(
                   children: [
+                    if (anime.genres.isNotEmpty) KChip(anime.genres.first.name),
+                    const SizedBox(width: 4),
                     Icon(
                       Icons.star_rounded,
                       color: colorScheme.primary,
@@ -206,33 +208,33 @@ class TopFirstAnimeCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(
-                      anime.synopsis * 99,
-                      maxLines: anime.genres.isNotEmpty ? 2 : 6,
+                      anime.synopsis,
+                      maxLines: 7,
                       overflow: TextOverflow.ellipsis,
                       style: textTheme.bodyMedium,
                     ),
                   ),
-                if (anime.genres.isNotEmpty) ...[
-                  const SizedBox(height: 10),
-                  Expanded(
-                    child: Wrap(
-                      spacing: 3,
-                      runSpacing: 4,
-                      runAlignment: WrapAlignment.start,
-                      alignment: WrapAlignment.start,
-                      children: [
-                        ...anime.genres,
-                        ...anime.genres,
-                        ...anime.genres
-                      ].map((genre) => KChip(genre.name)).toList(),
-                    ),
-                  ),
-                ],
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class TopAnimeCard extends StatelessWidget {
+  const TopAnimeCard(this.anime, {super.key});
+
+  final Anime anime;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    return SizedBox(
+      height: 100,
+      child: Placeholder(),
     );
   }
 }

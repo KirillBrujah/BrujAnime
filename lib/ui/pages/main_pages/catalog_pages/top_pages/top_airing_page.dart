@@ -14,7 +14,7 @@ class TopAiringPage extends StatelessWidget {
     return BlocBuilder<TopAiringBloc, TopAiringState>(
       builder: (context, state) => state.when(
         // TODO: Top shimmer loading
-        initial: () => CircularProgressIndicator(),
+        initial: () => const CircularProgressIndicator(),
         // TODO: Top error
         error: (message) => Text(message),
         loaded: (data, _) => _TopAnimeList(list: data),
@@ -35,13 +35,17 @@ class _TopAnimeList extends StatelessWidget {
     }
 
     return SingleChildScrollView(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           TopFirstAnimeCard(list.first),
 
-          // TODO: Others
-          for (Anime anime in list.sublist(1)) TopFirstAnimeCard(anime),
+
+          const SizedBox(height: 40),
+          for (Anime anime in list.sublist(1)) Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: TopAnimeCard(anime),
+          ),
         ],
       ),
     );

@@ -92,8 +92,11 @@ class _Recommendations extends StatelessWidget {
       bloc: context.read<AnimeRecommendationsBloc>()
         ..add(const AnimeRecommendationsEvent.fetch()),
       builder: (context, state) => state.when(
+        // TODO: Recommendations shimmer
         initial: () => const Center(child: CircularProgressIndicator()),
+        // TODO: Error
         error: (message) => Text(message),
+        // TODO: Cards
         loaded: (data, pagination) => Text('${data.length}'),
       ),
     );
