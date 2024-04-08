@@ -39,13 +39,13 @@ class _TopAnimeList extends StatelessWidget {
       child: Column(
         children: [
           TopFirstAnimeCard(list.first),
-
-
           const SizedBox(height: 40),
-          for (Anime anime in list.sublist(1)) Padding(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: TopAnimeCard(anime),
-          ),
+          // for (Anime anime in list.sublist(1))
+          for (int i =0; i < list.sublist(1).length; i ++)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15),
+              child: TopAnimeCard(list[i], i+2),
+            ),
         ],
       ),
     );
