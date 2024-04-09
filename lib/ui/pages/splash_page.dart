@@ -28,9 +28,6 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Replace season now fetch
-    context.read<SeasonNowBloc>().add(const SeasonNowEvent.fetch());
-
     final colorScheme = Theme.of(context).colorScheme;
 
     return BlocProvider(
@@ -77,7 +74,7 @@ class SplashPage extends StatelessWidget {
   void _splashListener(context, ApplicationPreloadState state) {
     state.mapOrNull(completed: (state) {
       // TODO: Saving loaded data into objects
-      AutoRouter.of(context).replace(const MainRoute());
+      // AutoRouter.of(context).replace(const MainRoute());
     });
   }
 }
@@ -88,7 +85,7 @@ class _LogoText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      S.of(context).BrujAnime,
+      S.of(context).Brujiko,
       style: Theme.of(context).textTheme.displayLarge,
     );
   }

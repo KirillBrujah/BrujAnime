@@ -10,6 +10,12 @@ class ProgressLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Center(
+      child: Assets.svg.brujiko.svg(
+        width: 180,
+      ),
+    );
+
     return SizedBox(
       height: 200,
       width: 200,
@@ -37,6 +43,7 @@ class _ProgressArc extends StatefulWidget {
     required this.progress,
     this.duration = const Duration(milliseconds: 300),
   });
+
   final double progress;
   final Duration duration;
 

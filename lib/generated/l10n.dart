@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Brujiko`
+  String get Brujiko {
+    return Intl.message(
+      'Brujiko',
+      name: 'Brujiko',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Home`
   String get home {
     return Intl.message(
