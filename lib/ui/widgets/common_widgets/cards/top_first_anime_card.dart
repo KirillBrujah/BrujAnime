@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:brujanime/ui/theme/constants.dart';
+import 'package:brujanime/ui/theme/constants/constants.dart';
+import 'package:brujanime/ui/theme/constants/screen_constants.dart';
 import 'package:brujanime/ui/widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
@@ -21,38 +22,48 @@ class TopFirstAnimeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return InkWell(
-      onTap: _handleTap(context),
-      borderRadius: const BorderRadius.all(CardConstants.borderRadius),
-      child: SizedBox(
-        height: 200,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _Image(anime.images),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    anime.simpleTitle,
-                    maxLines: 2,
-                    textAlign: TextAlign.center,
-                    style: textTheme.titleMedium,
-                  ),
-                  const SizedBox(height: 5),
-                  _Information(
-                    genres: anime.genres,
-                    favorites: anime.favorites,
-                    score: anime.score,
-                  ),
-                  if (anime.synopsis.isNotEmpty) _Synopsis(anime.synopsis),
-                ],
+    final colorScheme = Theme.of(context).colorScheme;
+    return Container(
+      decoration: BoxDecoration(
+        color: colorScheme.surface,
+        border: Border(
+          bottom: BorderSide(color: colorScheme.primary, width: 1),
+        ),
+      ),
+      padding: ScreenConstants.contentPadding,
+      child: InkWell(
+        onTap: _handleTap(context),
+        borderRadius: const BorderRadius.all(CardConstants.borderRadius),
+        child: SizedBox(
+          height: 200,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _Image(anime.images),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      anime.simpleTitle,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 5),
+                    _Information(
+                      genres: anime.genres,
+                      favorites: anime.favorites,
+                      score: anime.score,
+                    ),
+                    if (anime.synopsis.isNotEmpty) _Synopsis(anime.synopsis),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

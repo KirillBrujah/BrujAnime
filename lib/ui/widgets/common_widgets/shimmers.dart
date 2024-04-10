@@ -1,4 +1,4 @@
-import 'package:brujanime/ui/theme/constants.dart';
+import 'package:brujanime/ui/theme/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 

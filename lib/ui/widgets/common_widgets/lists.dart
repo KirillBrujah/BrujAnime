@@ -1,4 +1,6 @@
 import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/theme/constants/card_constants.dart';
+import 'package:brujanime/ui/theme/constants/screen_constants.dart';
 import 'package:brujanime/ui/widgets/common_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,7 @@ class HorizontalList extends StatelessWidget {
       children: [
         if (title != null)
           Padding(
-            padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+            padding: ScreenConstants.contentPadding.copyWith(top: 0, bottom: 8),
             child: Row(
               children: [
                 Expanded(
@@ -65,14 +67,14 @@ class HorizontalListData extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          for (Anime anime in data)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: HorizontalAnimeCard(
-                anime: anime,
-              ),
+          SizedBox(width: ScreenConstants.contentPadding.left),
+          for (int i = 0; i < data.length; i++) ...[
+            HorizontalAnimeCard(
+              anime: data[i],
             ),
-          //
+            if (i < data.length - 1) const SizedBox(width: CardConstants.horizontalSpace),
+          ],
+          SizedBox(width: ScreenConstants.contentPadding.right),
         ],
       ),
     );
@@ -90,12 +92,15 @@ class HorizontalListLoading extends StatelessWidget {
       child: ShimmerContainer(
         child: Row(
           children: [
+            SizedBox(width: ScreenConstants.contentPadding.left),
+
             for (int i = 0; i < 3; i++)
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.only(right: CardConstants.horizontalSpace),
                 child: HorizontalCardShimmerPlaceholder(),
               ),
-            //
+
+            SizedBox(width: ScreenConstants.contentPadding.right),
           ],
         ),
       ),
@@ -121,12 +126,15 @@ class HorizontalListError extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             child: Row(
               children: [
+                SizedBox(width: ScreenConstants.contentPadding.left),
+
                 for (int i = 0; i < 3; i++)
                   const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    padding: EdgeInsets.only(right: CardConstants.horizontalSpace),
                     child: HorizontalCardPlaceholder(),
                   ),
-                //
+
+                SizedBox(width: ScreenConstants.contentPadding.right),
               ],
             ),
           ),

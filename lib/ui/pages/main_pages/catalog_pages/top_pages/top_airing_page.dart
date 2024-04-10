@@ -35,16 +35,13 @@ class _TopAnimeList extends StatelessWidget {
     }
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           TopFirstAnimeCard(list.first),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           for (int i = 1; i < list.sublist(1).length; i++)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15),
-              child: TopAnimeCard(list[i], i + 1),
-            ),
+            TopAnimeCard(list[i], i + 1),
+          const SizedBox(height: 10),
         ],
       ),
     );

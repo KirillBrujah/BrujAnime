@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:brujanime/ui/theme/constants.dart';
+import 'package:brujanime/ui/theme/constants/constants.dart';
 import 'package:brujanime/ui/widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
