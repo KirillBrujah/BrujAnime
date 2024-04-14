@@ -1,3 +1,4 @@
+import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
@@ -17,8 +18,10 @@ class SeasonNowBloc extends Bloc<SeasonNowEvent, SeasonNowState> {
     on<_fetch>(_handleFetch);
   }
 
+
   Future<void> _handleFetch(_fetch event, emit) async {
     emit(const SeasonNowState.initial());
+
     try {
       final result = await getIt.get<SeasonsRepository>().now();
       emit(SeasonNowState.data(

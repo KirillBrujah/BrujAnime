@@ -1,3 +1,4 @@
+import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/data/repositories.dart';
@@ -26,7 +27,7 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
 
   late final TopRepository topRepository;
 
-  int page = 0;
+  int page = 1;
 
   Future<void> _fetch(_TopAiringFetchEvent event, emit) async {
     final pagination = state.pagination;
@@ -34,10 +35,10 @@ class TopAiringBloc extends Bloc<TopAiringEvent, TopAiringState> {
 
     try {
       final results = await topRepository.getAiring(
-          // page: page++,
-          // TODO: Fix pagination
-          // page: pagination != null ? pagination.currentPage + 1 : 1,
-          );
+        page: page++,
+        // TODO: Fix pagination
+        // page: pagination != null ? pagination.currentPage + 1 : 1,
+      );
 
       emit(TopAiringState.loaded(
         list: results.data,

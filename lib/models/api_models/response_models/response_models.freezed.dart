@@ -14,336 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-mixin _$ApiResponse<T> {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(Object exception) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? success,
-    TResult? Function(Object exception)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(Object exception)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseSuccess<T> value) success,
-    required TResult Function(_ApiResponseError<T> value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseSuccess<T> value)? success,
-    TResult? Function(_ApiResponseError<T> value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseSuccess<T> value)? success,
-    TResult Function(_ApiResponseError<T> value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ApiResponseCopyWith<T, $Res> {
-  factory $ApiResponseCopyWith(
-          ApiResponse<T> value, $Res Function(ApiResponse<T>) then) =
-      _$ApiResponseCopyWithImpl<T, $Res, ApiResponse<T>>;
-}
-
-/// @nodoc
-class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
-    implements $ApiResponseCopyWith<T, $Res> {
-  _$ApiResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$ApiResponseSuccessImplCopyWith<T, $Res> {
-  factory _$$ApiResponseSuccessImplCopyWith(_$ApiResponseSuccessImpl<T> value,
-          $Res Function(_$ApiResponseSuccessImpl<T>) then) =
-      __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T data});
-}
-
-/// @nodoc
-class __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseSuccessImpl<T>>
-    implements _$$ApiResponseSuccessImplCopyWith<T, $Res> {
-  __$$ApiResponseSuccessImplCopyWithImpl(_$ApiResponseSuccessImpl<T> _value,
-      $Res Function(_$ApiResponseSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$ApiResponseSuccessImpl<T>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ApiResponseSuccessImpl<T> extends _ApiResponseSuccess<T> {
-  const _$ApiResponseSuccessImpl(this.data) : super._();
-
-  @override
-  final T data;
-
-  @override
-  String toString() {
-    return 'ApiResponse<$T>.success(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApiResponseSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
-      get copyWith => __$$ApiResponseSuccessImplCopyWithImpl<T,
-          _$ApiResponseSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(Object exception) error,
-  }) {
-    return success(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? success,
-    TResult? Function(Object exception)? error,
-  }) {
-    return success?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(Object exception)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseSuccess<T> value) success,
-    required TResult Function(_ApiResponseError<T> value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseSuccess<T> value)? success,
-    TResult? Function(_ApiResponseError<T> value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseSuccess<T> value)? success,
-    TResult Function(_ApiResponseError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ApiResponseSuccess<T> extends ApiResponse<T> {
-  const factory _ApiResponseSuccess(final T data) = _$ApiResponseSuccessImpl<T>;
-  const _ApiResponseSuccess._() : super._();
-
-  T get data;
-  @JsonKey(ignore: true)
-  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ApiResponseErrorImplCopyWith<T, $Res> {
-  factory _$$ApiResponseErrorImplCopyWith(_$ApiResponseErrorImpl<T> value,
-          $Res Function(_$ApiResponseErrorImpl<T>) then) =
-      __$$ApiResponseErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({Object exception});
-}
-
-/// @nodoc
-class __$$ApiResponseErrorImplCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseErrorImpl<T>>
-    implements _$$ApiResponseErrorImplCopyWith<T, $Res> {
-  __$$ApiResponseErrorImplCopyWithImpl(_$ApiResponseErrorImpl<T> _value,
-      $Res Function(_$ApiResponseErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? exception = null,
-  }) {
-    return _then(_$ApiResponseErrorImpl<T>(
-      null == exception ? _value.exception : exception,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ApiResponseErrorImpl<T> extends _ApiResponseError<T> {
-  const _$ApiResponseErrorImpl(this.exception) : super._();
-
-  @override
-  final Object exception;
-
-  @override
-  String toString() {
-    return 'ApiResponse<$T>.error(exception: $exception)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApiResponseErrorImpl<T> &&
-            const DeepCollectionEquality().equals(other.exception, exception));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
-      __$$ApiResponseErrorImplCopyWithImpl<T, _$ApiResponseErrorImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T data) success,
-    required TResult Function(Object exception) error,
-  }) {
-    return error(exception);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? success,
-    TResult? Function(Object exception)? error,
-  }) {
-    return error?.call(exception);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? success,
-    TResult Function(Object exception)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(exception);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApiResponseSuccess<T> value) success,
-    required TResult Function(_ApiResponseError<T> value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApiResponseSuccess<T> value)? success,
-    TResult? Function(_ApiResponseError<T> value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApiResponseSuccess<T> value)? success,
-    TResult Function(_ApiResponseError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ApiResponseError<T> extends ApiResponse<T> {
-  const factory _ApiResponseError(final Object exception) =
-      _$ApiResponseErrorImpl<T>;
-  const _ApiResponseError._() : super._();
-
-  Object get exception;
-  @JsonKey(ignore: true)
-  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 AnimeList _$AnimeListFromJson(Map<String, dynamic> json) {
   return _AnimeResponseList.fromJson(json);
 }
@@ -521,6 +191,161 @@ abstract class _AnimeResponseList implements AnimeList {
   @override
   @JsonKey(ignore: true)
   _$$AnimeResponseListImplCopyWith<_$AnimeResponseListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ApiResultWrapper<T> {
+  T get data => throw _privateConstructorUsedError;
+  ApiPagination? get pagination => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ApiResultWrapperCopyWith<T, ApiResultWrapper<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiResultWrapperCopyWith<T, $Res> {
+  factory $ApiResultWrapperCopyWith(
+          ApiResultWrapper<T> value, $Res Function(ApiResultWrapper<T>) then) =
+      _$ApiResultWrapperCopyWithImpl<T, $Res, ApiResultWrapper<T>>;
+  @useResult
+  $Res call({T data, ApiPagination? pagination});
+
+  $ApiPaginationCopyWith<$Res>? get pagination;
+}
+
+/// @nodoc
+class _$ApiResultWrapperCopyWithImpl<T, $Res, $Val extends ApiResultWrapper<T>>
+    implements $ApiResultWrapperCopyWith<T, $Res> {
+  _$ApiResultWrapperCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+    Object? pagination = freezed,
+  }) {
+    return _then(_value.copyWith(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      pagination: freezed == pagination
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as ApiPagination?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiPaginationCopyWith<$Res>? get pagination {
+    if (_value.pagination == null) {
+      return null;
+    }
+
+    return $ApiPaginationCopyWith<$Res>(_value.pagination!, (value) {
+      return _then(_value.copyWith(pagination: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ApiResultWrapperImplCopyWith<T, $Res>
+    implements $ApiResultWrapperCopyWith<T, $Res> {
+  factory _$$ApiResultWrapperImplCopyWith(_$ApiResultWrapperImpl<T> value,
+          $Res Function(_$ApiResultWrapperImpl<T>) then) =
+      __$$ApiResultWrapperImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T data, ApiPagination? pagination});
+
+  @override
+  $ApiPaginationCopyWith<$Res>? get pagination;
+}
+
+/// @nodoc
+class __$$ApiResultWrapperImplCopyWithImpl<T, $Res>
+    extends _$ApiResultWrapperCopyWithImpl<T, $Res, _$ApiResultWrapperImpl<T>>
+    implements _$$ApiResultWrapperImplCopyWith<T, $Res> {
+  __$$ApiResultWrapperImplCopyWithImpl(_$ApiResultWrapperImpl<T> _value,
+      $Res Function(_$ApiResultWrapperImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+    Object? pagination = freezed,
+  }) {
+    return _then(_$ApiResultWrapperImpl<T>(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      pagination: freezed == pagination
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as ApiPagination?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApiResultWrapperImpl<T> implements _ApiResultWrapper<T> {
+  const _$ApiResultWrapperImpl({required this.data, this.pagination});
+
+  @override
+  final T data;
+  @override
+  final ApiPagination? pagination;
+
+  @override
+  String toString() {
+    return 'ApiResultWrapper<$T>(data: $data, pagination: $pagination)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApiResultWrapperImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.pagination, pagination) ||
+                other.pagination == pagination));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(data), pagination);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApiResultWrapperImplCopyWith<T, _$ApiResultWrapperImpl<T>> get copyWith =>
+      __$$ApiResultWrapperImplCopyWithImpl<T, _$ApiResultWrapperImpl<T>>(
+          this, _$identity);
+}
+
+abstract class _ApiResultWrapper<T> implements ApiResultWrapper<T> {
+  const factory _ApiResultWrapper(
+      {required final T data,
+      final ApiPagination? pagination}) = _$ApiResultWrapperImpl<T>;
+
+  @override
+  T get data;
+  @override
+  ApiPagination? get pagination;
+  @override
+  @JsonKey(ignore: true)
+  _$$ApiResultWrapperImplCopyWith<T, _$ApiResultWrapperImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1053,5 +878,335 @@ abstract class _ApiPaginationItems implements ApiPaginationItems {
   @override
   @JsonKey(ignore: true)
   _$$ApiPaginationItemsImplCopyWith<_$ApiPaginationItemsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$ApiResponse<T> {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T data) success,
+    required TResult Function(Object exception) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T data)? success,
+    TResult? Function(Object exception)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T data)? success,
+    TResult Function(Object exception)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ApiResponseSuccess<T> value) success,
+    required TResult Function(_ApiResponseError<T> value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
+    TResult? Function(_ApiResponseError<T> value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ApiResponseSuccess<T> value)? success,
+    TResult Function(_ApiResponseError<T> value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ApiResponseCopyWith<T, $Res> {
+  factory $ApiResponseCopyWith(
+          ApiResponse<T> value, $Res Function(ApiResponse<T>) then) =
+      _$ApiResponseCopyWithImpl<T, $Res, ApiResponse<T>>;
+}
+
+/// @nodoc
+class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
+    implements $ApiResponseCopyWith<T, $Res> {
+  _$ApiResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$ApiResponseSuccessImplCopyWith<T, $Res> {
+  factory _$$ApiResponseSuccessImplCopyWith(_$ApiResponseSuccessImpl<T> value,
+          $Res Function(_$ApiResponseSuccessImpl<T>) then) =
+      __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$ApiResponseSuccessImplCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseSuccessImpl<T>>
+    implements _$$ApiResponseSuccessImplCopyWith<T, $Res> {
+  __$$ApiResponseSuccessImplCopyWithImpl(_$ApiResponseSuccessImpl<T> _value,
+      $Res Function(_$ApiResponseSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$ApiResponseSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApiResponseSuccessImpl<T> extends _ApiResponseSuccess<T> {
+  const _$ApiResponseSuccessImpl(this.data) : super._();
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'ApiResponse<$T>.success(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApiResponseSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
+      get copyWith => __$$ApiResponseSuccessImplCopyWithImpl<T,
+          _$ApiResponseSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T data) success,
+    required TResult Function(Object exception) error,
+  }) {
+    return success(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T data)? success,
+    TResult? Function(Object exception)? error,
+  }) {
+    return success?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T data)? success,
+    TResult Function(Object exception)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ApiResponseSuccess<T> value) success,
+    required TResult Function(_ApiResponseError<T> value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
+    TResult? Function(_ApiResponseError<T> value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ApiResponseSuccess<T> value)? success,
+    TResult Function(_ApiResponseError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ApiResponseSuccess<T> extends ApiResponse<T> {
+  const factory _ApiResponseSuccess(final T data) = _$ApiResponseSuccessImpl<T>;
+  const _ApiResponseSuccess._() : super._();
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$ApiResponseSuccessImplCopyWith<T, _$ApiResponseSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ApiResponseErrorImplCopyWith<T, $Res> {
+  factory _$$ApiResponseErrorImplCopyWith(_$ApiResponseErrorImpl<T> value,
+          $Res Function(_$ApiResponseErrorImpl<T>) then) =
+      __$$ApiResponseErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({Object exception});
+}
+
+/// @nodoc
+class __$$ApiResponseErrorImplCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseErrorImpl<T>>
+    implements _$$ApiResponseErrorImplCopyWith<T, $Res> {
+  __$$ApiResponseErrorImplCopyWithImpl(_$ApiResponseErrorImpl<T> _value,
+      $Res Function(_$ApiResponseErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? exception = null,
+  }) {
+    return _then(_$ApiResponseErrorImpl<T>(
+      null == exception ? _value.exception : exception,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApiResponseErrorImpl<T> extends _ApiResponseError<T> {
+  const _$ApiResponseErrorImpl(this.exception) : super._();
+
+  @override
+  final Object exception;
+
+  @override
+  String toString() {
+    return 'ApiResponse<$T>.error(exception: $exception)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApiResponseErrorImpl<T> &&
+            const DeepCollectionEquality().equals(other.exception, exception));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(exception));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
+      __$$ApiResponseErrorImplCopyWithImpl<T, _$ApiResponseErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T data) success,
+    required TResult Function(Object exception) error,
+  }) {
+    return error(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T data)? success,
+    TResult? Function(Object exception)? error,
+  }) {
+    return error?.call(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T data)? success,
+    TResult Function(Object exception)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ApiResponseSuccess<T> value) success,
+    required TResult Function(_ApiResponseError<T> value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ApiResponseSuccess<T> value)? success,
+    TResult? Function(_ApiResponseError<T> value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ApiResponseSuccess<T> value)? success,
+    TResult Function(_ApiResponseError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ApiResponseError<T> extends ApiResponse<T> {
+  const factory _ApiResponseError(final Object exception) =
+      _$ApiResponseErrorImpl<T>;
+  const _ApiResponseError._() : super._();
+
+  Object get exception;
+  @JsonKey(ignore: true)
+  _$$ApiResponseErrorImplCopyWith<T, _$ApiResponseErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

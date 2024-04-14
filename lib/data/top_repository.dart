@@ -11,6 +11,12 @@ class TopRepository {
 
   Future<AnimeList> getAll() => _topNetwork.getTop();
 
-  Future<AnimeList> getAiring() =>
-      _topNetwork.getTop(filter: AnimeSearchFilter.airing);
+  Future<AnimeList> getAiring({
+    int page = 1,
+  }) =>
+      _topNetwork.getTop(
+        filter: AnimeSearchFilter.airing,
+        limit: 10,
+        page: page,
+      );
 }

@@ -1,5 +1,6 @@
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
+import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/theme/theme.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:flutter/material.dart';
@@ -15,23 +16,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        /// Anime Blocs
-        BlocProvider(create: (_) => TopAiringBloc()),
-        BlocProvider(create: (_) => AnimeRecommendationsBloc()),
-        BlocProvider(create: (_) => SeasonNowBloc()),
+        /// Data Loading Blocs
+        BlocProvider(
+          create: (_) => DataLoadingCubit<TopUpcomingCubit, List<Anime>>(),
+        ),
       ],
-      child: MaterialApp.router(
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
+      child: MultiBlocProvider(
+        providers: [
+          /// Anime Blocs
+          BlocProvider(create: (_) => TopAiringBloc()),
+          BlocProvider(create: (_) => AnimeRecommendationsBloc()),
+          BlocProvider(create: (_) => SeasonNowBloc()),
+          BlocProvider(
+            create: (context) => TopUpcomingCubit(
+              loadingCubit: context
+                  .read<DataLoadingCubit<TopUpcomingCubit, List<Anime>>>(),
+            ),
+          ),
         ],
-        supportedLocales: S.delegate.supportedLocales,
-        title: 'BrujAnime',
-        theme: kDarkTheme,
+        child: MaterialApp.router(
+          routerDelegate: _appRouter.delegate(),
+          routeInformationParser: _appRouter.defaultRouteParser(),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          title: 'BrujAnime',
+          theme: kDarkTheme,
+        ),
       ),
     );
   }
