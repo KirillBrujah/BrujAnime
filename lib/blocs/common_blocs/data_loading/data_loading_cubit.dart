@@ -10,7 +10,7 @@ part 'data_loading_cubit.freezed.dart';
 
 
 
-class DataLoadingCubit<C, T> extends Cubit<DataLoadingState<T>> {
+class DataLoadingCubit<C extends Cubit, T> extends Cubit<DataLoadingState<T>> {
   DataLoadingCubit() : super(const DataLoadingState.initial());
 
   Future<void> initialize(
@@ -47,7 +47,7 @@ class DataLoadingCubit<C, T> extends Cubit<DataLoadingState<T>> {
       reportError(
         exception: e,
         library: "Data Loading Cubit",
-        context: "Load $T data",
+        context: "Load $C data",
       );
 
       emit(DataLoadingState.error(errorMessage));

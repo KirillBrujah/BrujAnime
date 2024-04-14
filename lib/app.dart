@@ -3,6 +3,7 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/theme/theme.dart';
 import 'package:brujanime/utils/app_router.dart';
+import 'package:brujanime/utils/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         /// Data Loading Blocs
         BlocProvider(
-          create: (_) => DataLoadingCubit<TopUpcomingCubit, List<Anime>>(),
+          create: (_) => TopUpcomingLoadingCubit(),
         ),
       ],
       child: MultiBlocProvider(
@@ -29,8 +30,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => SeasonNowBloc()),
           BlocProvider(
             create: (context) => TopUpcomingCubit(
-              loadingCubit: context
-                  .read<DataLoadingCubit<TopUpcomingCubit, List<Anime>>>(),
+              loadingCubit: context.read<TopUpcomingLoadingCubit>(),
             ),
           ),
         ],
