@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "catalog": MessageLookupByLibrary.simpleMessage("Catalog"),
         "daily": MessageLookupByLibrary.simpleMessage("Daily"),
+        "data_load_error":
+            MessageLookupByLibrary.simpleMessage("Can\'t load data"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),

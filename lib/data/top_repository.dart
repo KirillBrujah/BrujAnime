@@ -9,7 +9,13 @@ class TopRepository {
     _topNetwork = getIt.get<TopNetwork>();
   }
 
-  Future<AnimeList> getAll() => _topNetwork.getTop();
+  Future<AnimeList> getAll({
+    int page = 1,
+  }) =>
+      _topNetwork.getTop(
+        limit: 10,
+        page: page,
+      );
 
   Future<AnimeList> getAiring({
     int page = 1,

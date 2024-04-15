@@ -1,5 +1,6 @@
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/utils/sealed.dart';
 import 'package:brujanime/utils/typedefs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -8,9 +9,8 @@ part 'data_loading_state.dart';
 
 part 'data_loading_cubit.freezed.dart';
 
-
-
-class DataLoadingCubit<C extends Cubit, T> extends Cubit<DataLoadingState<T>> {
+class DataLoadingCubit<D extends DataClasses, T>
+    extends Cubit<DataLoadingState<T>> {
   DataLoadingCubit() : super(const DataLoadingState.initial());
 
   Future<void> initialize(
@@ -42,12 +42,12 @@ class DataLoadingCubit<C extends Cubit, T> extends Cubit<DataLoadingState<T>> {
 
       _pagination = results.pagination;
 
-      emit(DataLoadingState.loaded(results.data));
+      emit(DataLoadingState.loaded(results));
     } catch (e) {
       reportError(
         exception: e,
         library: "Data Loading Cubit",
-        context: "Load $C data",
+        context: "Load $D data",
       );
 
       emit(DataLoadingState.error(errorMessage));

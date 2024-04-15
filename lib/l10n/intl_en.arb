@@ -25,6 +25,7 @@
   "list_is_empty": "List is empty",
 
   "@_ERRORS": {},
+  "data_load_error": "Can't load data",
   "top_load_error": "Can't load Top",
   "recommendations_load_error": "Can't load Recommendations",
   "season_now_load_error": "Can't load current season info"

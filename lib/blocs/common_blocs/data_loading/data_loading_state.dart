@@ -10,10 +10,11 @@ class DataLoadingState<T> with _$DataLoadingState<T> {
 
   const factory DataLoadingState.loading() = _loading;
 
-  const factory DataLoadingState.loaded(T data) = _loaded;
+  const factory DataLoadingState.loaded(ApiResponse<T> data) = _loaded;
 
   bool get isInitial => maybeWhen(
         orElse: () => false,
         initial: () => true,
       );
+
 }

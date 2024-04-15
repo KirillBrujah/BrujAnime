@@ -230,6 +230,16 @@ class S {
     );
   }
 
+  /// `Can't load data`
+  String get data_load_error {
+    return Intl.message(
+      'Can\'t load data',
+      name: 'data_load_error',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Can't load Top`
   String get top_load_error {
     return Intl.message(
