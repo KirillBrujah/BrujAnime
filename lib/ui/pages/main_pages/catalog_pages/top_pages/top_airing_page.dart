@@ -14,8 +14,7 @@ class TopAiringPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TopAiringLoadingCubit, DataLoadingState>(
       builder: (context, state) => state.maybeWhen(
-        // TODO: Top shimmer loading
-        initial: () => const CircularProgressIndicator(),
+        initial: () => const TopListLoading(),
         // TODO: Top error
         error: (message) => Text(message),
 

@@ -1,5 +1,9 @@
 import 'package:auto_route/annotations.dart';
 import 'package:brujanime/blocs/blocs.dart';
+import 'package:brujanime/generated/l10n.dart';
+import 'package:brujanime/models/models.dart';
+import 'package:brujanime/ui/widgets/widgets.dart';
+import 'package:brujanime/utils/getit.dart';
 import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,48 +14,47 @@ class TopAllPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = getIt.get<S>();
+    return BlocBuilder<TopAllCubit, DataAnimeState>(builder: (context, state) {
+      if (state.data.isEmpty) {
+        return BlocBuilder<TopAllLoadingCubit, DataLoadingState>(
+          bloc: context.read<TopAllLoadingCubit>()..fetch(),
+          builder: (context, state) => state.maybeWhen(
+            initial: () => const TopListLoading(),
+            // TODO: Top error
+            error: (message) => Text(message),
+            orElse: () => Text(s.list_is_empty),
+          ),
+        );
+      }
+
+      return _TopAnimeList(list: state.data);
+
+    },);
+  }
+}
+
+
+class _TopAnimeList extends StatelessWidget {
+  const _TopAnimeList({required this.list});
+
+  final List<Anime> list;
+
+  @override
+  Widget build(BuildContext context) {
+    if (list.isEmpty) {
+      return const EmptyListMessage();
+    }
+
     return SingleChildScrollView(
       child: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              context.read<TopAllLoadingCubit>().fetch();
-            },
-            child: const Text("Fetch"),
-          ),
-          const _Loading(),
-          const _List(),
+          TopFirstAnimeCard(list.first),
+          const SizedBox(height: 30),
+          for (int i = 1; i < list.sublist(1).length; i++)
+            TopAnimeCard(list[i], i + 1),
+          const SizedBox(height: 10),
         ],
-      ),
-    );
-  }
-}
-
-
-class _Loading extends StatelessWidget {
-  const _Loading();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<TopAllLoadingCubit, DataLoadingState>(
-      builder: (context, state) => state.when(
-        initial: () => const Text("INITIAL"),
-        error: (message) => Text(message),
-        loading: () => const Text("LOADING"),
-        loaded: (data) => const Text("SUCCESS"),
-      ),
-    );
-  }
-}
-
-class _List extends StatelessWidget {
-  const _List();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<TopAllCubit, DataAnimeState>(
-      builder: (context, state) => Column(
-        children: state.data.map((e) => Text(e.simpleTitle)).toList(),
       ),
     );
   }

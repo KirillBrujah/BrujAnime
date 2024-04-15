@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import 'shimmers.dart';
+import 'widgets.dart';
 
 class KNetworkImage extends StatelessWidget {
   const KNetworkImage({

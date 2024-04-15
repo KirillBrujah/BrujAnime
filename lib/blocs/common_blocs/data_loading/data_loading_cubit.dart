@@ -38,6 +38,8 @@ class DataLoadingCubit<D extends DataClasses, T>
     }
 
     try {
+      // TODO: Remove delay
+      await Future.delayed(Duration(seconds: 1));
       final results = await _fetchFunction(page: page++);
 
       _pagination = results.pagination;

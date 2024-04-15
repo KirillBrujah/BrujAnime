@@ -3,8 +3,7 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
-import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
+import 'package:brujanime/ui/widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:brujanime/utils/getit.dart';
 import 'package:brujanime/utils/typedefs/typedefs.dart';
@@ -80,6 +79,7 @@ class _TopAiring extends StatelessWidget {
         builder: (context, state) {
           if (state.data.isEmpty) {
             return BlocBuilder<TopAiringLoadingCubit, DataLoadingState>(
+              // TODO: Return fetching
               bloc: context.read<TopAiringLoadingCubit>()..fetch(),
               builder: (context, state) => state.maybeWhen(
                 initial: () => const HorizontalListLoading(),

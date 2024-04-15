@@ -27,11 +27,8 @@ class $AssetsSvgGen {
   /// File path: assets/svg/brujiko.svg
   SvgGenImage get brujiko => const SvgGenImage('assets/svg/brujiko.svg');
 
-  /// File path: assets/svg/yin_yang.svg
-  SvgGenImage get yinYang => const SvgGenImage('assets/svg/yin_yang.svg');
-
   /// List of all assets
-  List<SvgGenImage> get values => [brujiko, yinYang];
+  List<SvgGenImage> get values => [brujiko];
 }
 
 class Assets {
