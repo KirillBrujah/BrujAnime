@@ -39,20 +39,25 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SeasonNowBloc, SeasonNowState>(
-      bloc: context.read<SeasonNowBloc>()..add(const SeasonNowEvent.fetch()),
+    final s = getIt.get<S>();
+    return BlocBuilder<SeasonNowCubit, DataAnimeState>(
       builder: (context, state) {
-        return state.when(
-          initial: () => const HomeHeaderLoading(),
-          error: (message) => HomeHeaderError(message),
-          data: (data, _) {
-            final season = data
-                .where((anime) => anime.images?.maxSizeImage != null)
-                .toList();
-            return HomeHeaderCarousel(
-              list: season.sublist(0, min(8, season.length)),
-            );
-          },
+        if (state.data.isEmpty) {
+          return BlocBuilder<SeasonNowLoadingCubit, DataLoadingState>(
+            bloc: context.read<SeasonNowLoadingCubit>()..fetch(),
+            builder: (context, state) => state.maybeWhen(
+              initial: () => const HomeHeaderLoading(),
+              error: (message) => HomeHeaderError(message),
+              orElse: () => HomeHeaderError(s.list_is_empty),
+            ),
+          );
+        }
+
+        final season = state.data
+            .where((anime) => anime.images?.maxSizeImage != null)
+            .toList();
+        return HomeHeaderCarousel(
+          list: season.sublist(0, min(8, season.length)),
         );
       },
     );

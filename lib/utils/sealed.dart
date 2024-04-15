@@ -1,9 +1,11 @@
 sealed class DataClasses {}
 
 
-/// Recommandations Data
+/// Recommendations Data
 class RecommendationsData extends DataClasses {}
 
+/// Seasons Data
+class SeasonNowData extends DataClasses {}
 
 /// Top Data
 class TopAllData extends DataClasses {}

@@ -15,26 +15,6 @@ class ProgressLogo extends StatelessWidget {
         width: 180,
       ),
     );
-
-    return SizedBox(
-      height: 200,
-      width: 200,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          _ProgressArc(
-            progress: progress,
-          ),
-          Center(
-            child: SizedBox(
-              height: 170,
-              width: 170,
-              child: Assets.svg.yinYang.svg(),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }
 

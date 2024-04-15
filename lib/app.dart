@@ -16,12 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Fix using of s with get_it
-    // final s = S.of(context);
     final s = getIt.get<S>();
 
     final topRepository = getIt.get<TopRepository>();
     final recommendationsRepository = getIt.get<RecommendationsRepository>();
+    final seasonsRepository = getIt.get<SeasonsRepository>();
 
     return MultiBlocProvider(
       providers: [
@@ -30,18 +29,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => TopAllLoadingCubit()),
         BlocProvider(create: (_) => TopAiringLoadingCubit()),
         BlocProvider(create: (_) => RecommendationsLoadingCubit()),
+        BlocProvider(create: (_) => SeasonNowLoadingCubit()),
       ],
       child: MultiBlocProvider(
         providers: [
-          /// Anime Blocs
+          /// Season Anime Blocs
           BlocProvider(
-            create: (context) => RecommendationsCubit(
+            create: (context) => SeasonNowCubit(
               context,
-              fetchFunction: recommendationsRepository.getAll,
-              errorMessage: s.top_load_error,
+              fetchFunction: seasonsRepository.now,
+              errorMessage: s.season_now_load_error,
             ),
           ),
-          BlocProvider(create: (_) => SeasonNowBloc()),
 
           /// Anime Top Blocs
           BlocProvider(
@@ -67,6 +66,15 @@ class MyApp extends StatelessWidget {
               errorMessage: s.top_load_error,
             ),
           ),
+
+          /// Other Anime Blocs
+          BlocProvider(
+            create: (context) => RecommendationsCubit(
+              context,
+              fetchFunction: recommendationsRepository.getAll,
+              errorMessage: s.top_load_error,
+            ),
+          ),
         ],
         child: MaterialApp.router(
           routerDelegate: _appRouter.delegate(),
@@ -78,7 +86,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          title: 'BrujAnime',
+          title: 'Brujiko',
           theme: kDarkTheme,
         ),
       ),

@@ -9,5 +9,12 @@ class SeasonsRepository {
     _seasonsNetwork = getIt.get<SeasonsNetwork>();
   }
 
-  Future<AnimeList> now() => _seasonsNetwork.getSeason(type: 'now');
+  Future<AnimeList> now({
+    int page = 1,
+  }) =>
+      _seasonsNetwork.getSeason(
+        type: 'now',
+        page: page,
+        limit: 10,
+      );
 }

@@ -1,8 +1,6 @@
-import 'package:brujanime/models/api_models/models.dart';
-import 'package:brujanime/utils/debug_functions.dart';
+import 'package:brujanime/models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'pagination_models.dart';
 
 part 'response_models.g.dart';
 

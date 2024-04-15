@@ -12,5 +12,6 @@ abstract class SeasonsNetwork {
   Future<AnimeList> getSeason({
     @Path("type") required String type,
     @Query("page") int? page,
+    @Query("limit") int? limit,
   });
 }
