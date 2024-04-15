@@ -1,7 +1,7 @@
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/utils/sealed.dart';
-import 'package:brujanime/utils/typedefs.dart';
+import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

@@ -25,4 +25,14 @@ class TopRepository {
         limit: 10,
         page: page,
       );
+
+
+  Future<AnimeList> getUpcoming({
+    int page = 1,
+  }) =>
+      _topNetwork.getTop(
+        filter: AnimeSearchFilter.upcoming,
+        limit: 10,
+        page: page,
+      );
 }

@@ -1,12 +1,10 @@
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/generated/l10n.dart';
-import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/theme/theme.dart';
 import 'package:brujanime/utils/app_router.dart';
 import 'package:brujanime/utils/getit.dart';
-import 'package:brujanime/utils/sealed.dart';
-import 'package:brujanime/utils/typedefs.dart';
+import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,7 +16,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: Fix using of s with get_it
     // final s = S.of(context);
 
@@ -40,7 +37,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => TopAiringBloc()),
 
           BlocProvider(
-            create: (context) => DataCubit<TopAllData, Anime>(
+            create: (context) => TopAllCubit(
               context,
               fetchFunction: topRepository.getAll,
               // TODO: Fix error_message
@@ -50,15 +47,12 @@ class MyApp extends StatelessWidget {
 
           BlocProvider(
             create: (context) => TopUpcomingCubit(
-              context.read<TopUpcomingLoadingCubit>(),
+              context,
+              fetchFunction: topRepository.getUpcoming,
+              // TODO: Fix error_message
+              // errorMessage: s.top_load_error,
             ),
           ),
-
-          // BlocProvider(
-          //   create: (context) => TopAllCubit(
-          //     context.read<TopAllLoadingCubit>(),
-          //   ),
-          // ),
         ],
         child: MaterialApp.router(
           routerDelegate: _appRouter.delegate(),

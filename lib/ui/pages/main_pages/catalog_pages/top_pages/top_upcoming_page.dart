@@ -1,6 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:brujanime/blocs/blocs.dart';
-import 'package:brujanime/utils/typedefs.dart';
+import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,7 +48,7 @@ class _List extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TopUpcomingCubit, TopUpcomingState>(
+    return BlocBuilder<TopUpcomingCubit, DataAnimeState>(
       builder: (context, state) => Column(
         children: state.data.map((e) => Text(e.simpleTitle)).toList(),
       ),
