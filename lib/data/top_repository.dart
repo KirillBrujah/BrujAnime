@@ -26,7 +26,6 @@ class TopRepository {
         page: page,
       );
 
-
   Future<AnimeList> getUpcoming({
     int page = 1,
   }) =>

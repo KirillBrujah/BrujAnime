@@ -1,5 +1,6 @@
 import 'package:brujanime/data/repositories.dart';
 import 'package:brujanime/data/source/network/network.dart';
+import 'package:brujanime/generated/l10n.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
@@ -27,6 +28,8 @@ void setupLocator() {
   final dio = _buildDioClient();
 
   getIt
+    /// Localization
+    ..registerLazySingleton(() => S())
 
     /// Services
     ..registerLazySingleton(() => TopNetwork(dio))

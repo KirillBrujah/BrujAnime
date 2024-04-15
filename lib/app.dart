@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Fix using of s with get_it
     // final s = S.of(context);
+    final s = getIt.get<S>();
 
     final topRepository = getIt.get<TopRepository>();
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         /// Data Loading Blocs
         BlocProvider(create: (_) => TopUpcomingLoadingCubit()),
         BlocProvider(create: (_) => TopAllLoadingCubit()),
+        BlocProvider(create: (_) => TopAiringLoadingCubit()),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -34,14 +36,19 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => SeasonNowBloc()),
 
           /// Anime Top Blocs
-          BlocProvider(create: (_) => TopAiringBloc()),
+          BlocProvider(
+            create: (context) => TopAiringCubit(
+              context,
+              fetchFunction: topRepository.getAiring,
+              errorMessage: s.top_load_error,
+            ),
+          ),
 
           BlocProvider(
             create: (context) => TopAllCubit(
               context,
               fetchFunction: topRepository.getAll,
-              // TODO: Fix error_message
-              // errorMessage: s.top_load_error,
+              errorMessage: s.top_load_error,
             ),
           ),
 
@@ -49,8 +56,7 @@ class MyApp extends StatelessWidget {
             create: (context) => TopUpcomingCubit(
               context,
               fetchFunction: topRepository.getUpcoming,
-              // TODO: Fix error_message
-              // errorMessage: s.top_load_error,
+              errorMessage: s.top_load_error,
             ),
           ),
         ],

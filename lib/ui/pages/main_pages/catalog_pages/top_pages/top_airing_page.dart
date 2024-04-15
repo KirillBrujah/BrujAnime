@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:brujanime/blocs/blocs.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/widgets/widgets.dart';
+import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,13 +12,16 @@ class TopAiringPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TopAiringBloc, TopAiringState>(
-      builder: (context, state) => state.when(
+    return BlocBuilder<TopAiringLoadingCubit, DataLoadingState>(
+      builder: (context, state) => state.maybeWhen(
         // TODO: Top shimmer loading
         initial: () => const CircularProgressIndicator(),
         // TODO: Top error
         error: (message) => Text(message),
-        loaded: (data, _) => _TopAnimeList(list: data),
+
+        orElse: () => BlocBuilder<TopAiringCubit, DataAnimeState>(
+          builder: (context, state) => _TopAnimeList(list: state.data),
+        ),
       ),
     );
   }

@@ -6,6 +6,8 @@ import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/ui/widgets/common_widgets/lists.dart';
 import 'package:brujanime/ui/widgets/home_widgets/widgets.dart';
 import 'package:brujanime/utils/app_router.dart';
+import 'package:brujanime/utils/getit.dart';
+import 'package:brujanime/utils/typedefs/typedefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,23 +64,33 @@ class _TopAiring extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TopAiringBloc, TopAiringState>(
-      bloc: context.read<TopAiringBloc>()..add(const TopAiringEvent.fetch()),
-      builder: (context, state) => HorizontalList(
-        title: S.of(context).top_airing,
-        onNavigateTap: () {
-          context.tabsRouter.navigate(const TopAiringRoute());
-        },
-        child: state.when(
-          initial: () => const HorizontalListLoading(),
-          error: (message) => HorizontalListError(message),
-          loaded: (data, _) => HorizontalListData(
-            data: data.sublist(
+    final s = getIt.get<S>();
+
+    return HorizontalList(
+      title: s.top_airing,
+      onNavigateTap: () {
+        context.tabsRouter.navigate(const TopAiringRoute());
+      },
+      child: BlocBuilder<TopAiringCubit, DataAnimeState>(
+        builder: (context, state) {
+          if (state.data.isEmpty) {
+            return BlocBuilder<TopAiringLoadingCubit, DataLoadingState>(
+              bloc: context.read<TopAiringLoadingCubit>()..fetch(),
+              builder: (context, state) => state.maybeWhen(
+                initial: () => const HorizontalListLoading(),
+                error: (message) => HorizontalListError(message),
+                orElse: () => HorizontalListError(s.list_is_empty),
+              ),
+            );
+          }
+
+          return HorizontalListData(
+            data: state.data.sublist(
               0,
-              min(10, data.length),
+              min(10, state.data.length),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

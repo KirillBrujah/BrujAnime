@@ -17,7 +17,7 @@ class DataLoadingCubit<D extends DataClasses, T>
     FetchFunction<T> fetchFunction, {
     required String errorMessage,
   }) async {
-    this.fetchFunction = fetchFunction;
+    _fetchFunction = fetchFunction;
     this.errorMessage = errorMessage;
   }
 
@@ -26,7 +26,7 @@ class DataLoadingCubit<D extends DataClasses, T>
 
   late final String errorMessage;
 
-  late FetchFunction<T> fetchFunction;
+  late FetchFunction<T> _fetchFunction;
 
   Future<void> fetch() async {
     if (_pagination != null) {
@@ -38,7 +38,7 @@ class DataLoadingCubit<D extends DataClasses, T>
     }
 
     try {
-      final results = await fetchFunction(page: page++);
+      final results = await _fetchFunction(page: page++);
 
       _pagination = results.pagination;
 
