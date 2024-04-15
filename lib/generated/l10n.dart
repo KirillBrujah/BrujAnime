@@ -220,6 +220,16 @@ class S {
     );
   }
 
+  /// `Recommendations`
+  String get recommendations {
+    return Intl.message(
+      'Recommendations',
+      name: 'recommendations',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `List is empty`
   String get list_is_empty {
     return Intl.message(

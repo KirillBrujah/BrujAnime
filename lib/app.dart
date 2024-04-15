@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     final s = getIt.get<S>();
 
     final topRepository = getIt.get<TopRepository>();
+    final recommendationsRepository = getIt.get<RecommendationsRepository>();
 
     return MultiBlocProvider(
       providers: [
@@ -28,11 +29,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => TopUpcomingLoadingCubit()),
         BlocProvider(create: (_) => TopAllLoadingCubit()),
         BlocProvider(create: (_) => TopAiringLoadingCubit()),
+        BlocProvider(create: (_) => RecommendationsLoadingCubit()),
       ],
       child: MultiBlocProvider(
         providers: [
           /// Anime Blocs
-          BlocProvider(create: (_) => AnimeRecommendationsBloc()),
+          BlocProvider(
+            create: (context) => RecommendationsCubit(
+              context,
+              fetchFunction: recommendationsRepository.getAll,
+              errorMessage: s.top_load_error,
+            ),
+          ),
           BlocProvider(create: (_) => SeasonNowBloc()),
 
           /// Anime Top Blocs

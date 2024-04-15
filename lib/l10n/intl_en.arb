@@ -20,6 +20,7 @@
   "schedule": "Schedule",
   "daily": "Daily",
   "today": "Today",
+  "recommendations": "Recommendations",
 
   "@_MESSAGES": {},
   "list_is_empty": "List is empty",

@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "list_is_empty": MessageLookupByLibrary.simpleMessage("List is empty"),
+        "recommendations":
+            MessageLookupByLibrary.simpleMessage("Recommendations"),
         "recommendations_load_error":
             MessageLookupByLibrary.simpleMessage("Can\'t load Recommendations"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),

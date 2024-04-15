@@ -3,3 +3,4 @@ import 'package:brujanime/models/models.dart';
 
 /// Types for Data States
 typedef DataAnimeState = DataState<Anime>;
+typedef DataRecommendationState = DataState<AnimeRecommendation>;

@@ -9,5 +9,9 @@ class RecommendationsRepository {
     _recommendationsNetwork = getIt.get<RecommendationsNetwork>();
   }
 
-  Future<AnimeRecommendationsList> getAll() => _recommendationsNetwork.getRecommendations();
+  Future<AnimeRecommendationsList> getAll({
+    int page = 1,
+  }) =>
+      _recommendationsNetwork.getRecommendations(page: page);
+
 }

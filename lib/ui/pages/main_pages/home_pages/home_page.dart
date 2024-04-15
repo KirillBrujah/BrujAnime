@@ -101,16 +101,26 @@ class _Recommendations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AnimeRecommendationsBloc, AnimeRecommendationsState>(
-      bloc: context.read<AnimeRecommendationsBloc>()
-        ..add(const AnimeRecommendationsEvent.fetch()),
-      builder: (context, state) => state.when(
-        // TODO: Recommendations shimmer
-        initial: () => const Center(child: CircularProgressIndicator()),
-        // TODO: Error
-        error: (message) => Text(message),
-        // TODO: Cards
-        loaded: (data, pagination) => Text('${data.length}'),
+    final s = getIt.get<S>();
+    return HorizontalList(
+      title: s.recommendations,
+      // TODO: Navigation?
+      child: BlocBuilder<RecommendationsCubit, DataRecommendationState>(
+        builder: (context, state) {
+          if (state.data.isEmpty) {
+            return BlocBuilder<RecommendationsLoadingCubit, DataLoadingState>(
+              bloc: context.read<RecommendationsLoadingCubit>()..fetch(),
+              builder: (context, state) => state.maybeWhen(
+                initial: () => const HorizontalListLoading(),
+                error: (message) => HorizontalListError(message),
+                orElse: () => HorizontalListError(s.list_is_empty),
+              ),
+            );
+          }
+
+          // TODO: Recommendations list
+          return Text('${state.data.length}');
+        },
       ),
     );
   }

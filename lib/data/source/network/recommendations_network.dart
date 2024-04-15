@@ -12,5 +12,4 @@ abstract class RecommendationsNetwork {
   Future<AnimeRecommendationsList> getRecommendations({
     @Query("page") int? page,
   });
-//
 }
