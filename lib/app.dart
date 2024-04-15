@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // TODO: Fix using of s with get_it
     // final s = S.of(context);
 
     final topRepository = getIt.get<TopRepository>();
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
             create: (context) => DataCubit<TopAllData, Anime>(
               context,
               fetchFunction: topRepository.getAll,
+              // TODO: Fix error_message
               // errorMessage: s.top_load_error,
             ),
           ),
