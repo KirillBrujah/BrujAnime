@@ -70,10 +70,10 @@ class SplashPage extends StatelessWidget {
     );
   }
 
-  void _splashListener(context, ApplicationPreloadState state) {
+  void _splashListener(BuildContext context, ApplicationPreloadState state) {
     state.mapOrNull(completed: (state) {
       // TODO: Saving loaded data into objects
-      // AutoRouter.of(context).replace(const MainRoute());
+      context.router.replace(const MainRoute());
     });
   }
 }
