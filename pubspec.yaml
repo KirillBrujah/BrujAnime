@@ -33,6 +33,7 @@ dependencies:
   retrofit: ^4.0.3
   get_it: ^7.6.7
   flutter_dotenv: ^5.1.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +47,15 @@ dev_dependencies:
   flutter_gen_runner: ^5.2.0
   retrofit_generator: ^8.0.6
 
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/launcher_icon.png"
+  adaptive_icon_background: "#163615"
+  adaptive_icon_foreground: "assets/images/launcher_icon_foreground.png"
+  image_path_ios: "assets/images/launcher_icon.png"
 
 flutter_gen:
   output: lib/generated/

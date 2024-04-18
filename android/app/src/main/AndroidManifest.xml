@@ -2,9 +2,9 @@
     package="clan.brujah.brujanime">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="brujanime"
+        android:label="Brujiko"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
