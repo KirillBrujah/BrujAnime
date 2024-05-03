@@ -24,12 +24,12 @@ class TopFirstAnimeCard extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
     return Container(
-      decoration: BoxDecoration(
-        color: colorScheme.surface,
-        border: Border(
-          bottom: BorderSide(color: colorScheme.primary, width: 1),
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   color: colorScheme.surface,
+      //   border: Border(
+      //     bottom: BorderSide(color: colorScheme.primary, width: 1),
+      //   ),
+      // ),
       padding: ScreenConstants.contentPadding,
       child: InkWell(
         onTap: _handleTap(context),

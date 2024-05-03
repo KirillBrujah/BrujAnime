@@ -14,21 +14,39 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/launcher_icon.png
+  AssetGenImage get launcherIcon =>
+      const AssetGenImage('assets/images/launcher_icon.png');
+
+  /// File path: assets/images/launcher_icon_foreground.png
+  AssetGenImage get launcherIconForeground =>
+      const AssetGenImage('assets/images/launcher_icon_foreground.png');
+
   /// File path: assets/images/splash.jpeg
   AssetGenImage get splash => const AssetGenImage('assets/images/splash.jpeg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [splash];
+  List<AssetGenImage> get values =>
+      [launcherIcon, launcherIconForeground, splash];
 }
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
-  /// File path: assets/svg/brujiko.svg
-  SvgGenImage get brujiko => const SvgGenImage('assets/svg/brujiko.svg');
+  $AssetsSvgBrujikoGen get brujiko => const $AssetsSvgBrujikoGen();
+}
+
+class $AssetsSvgBrujikoGen {
+  const $AssetsSvgBrujikoGen();
+
+  /// File path: assets/svg/brujiko/happy.svg
+  SvgGenImage get happy => const SvgGenImage('assets/svg/brujiko/happy.svg');
+
+  /// File path: assets/svg/brujiko/sad.svg
+  SvgGenImage get sad => const SvgGenImage('assets/svg/brujiko/sad.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [brujiko];
+  List<SvgGenImage> get values => [happy, sad];
 }
 
 class Assets {

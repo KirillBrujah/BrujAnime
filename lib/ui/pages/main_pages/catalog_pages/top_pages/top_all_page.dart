@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:brujanime/blocs/blocs.dart';
+import 'package:brujanime/generated/assets.gen.dart';
 import 'package:brujanime/generated/l10n.dart';
 import 'package:brujanime/models/models.dart';
 import 'package:brujanime/ui/widgets/widgets.dart';
@@ -15,25 +16,55 @@ class TopAllPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = getIt.get<S>();
-    return BlocBuilder<TopAllCubit, DataAnimeState>(builder: (context, state) {
-      if (state.data.isEmpty) {
-        return BlocBuilder<TopAllLoadingCubit, DataLoadingState>(
-          bloc: context.read<TopAllLoadingCubit>()..fetch(),
-          builder: (context, state) => state.maybeWhen(
-            initial: () => const TopListLoading(),
-            // TODO: Top error
-            error: (message) => Text(message),
-            orElse: () => Text(s.list_is_empty),
-          ),
-        );
-      }
+    return BlocBuilder<TopAllCubit, DataAnimeState>(
+      builder: (context, state) {
+        if (state.data.isEmpty) {
+          return BlocBuilder<TopAllLoadingCubit, DataLoadingState>(
+            bloc: context.read<TopAllLoadingCubit>()..fetch(),
+            builder: (context, state) => state.maybeWhen(
+              initial: () => const TopListLoading(),
+              // TODO: Top error
+              error: (message) => CenterError(message),
+              orElse: () => Text(s.list_is_empty),
+            ),
+          );
+        }
 
-      return _TopAnimeList(list: state.data);
-
-    },);
+        return _TopAnimeList(list: state.data);
+      },
+    );
   }
 }
 
+class CenterError extends StatelessWidget {
+  const CenterError(
+    this.message, {
+    this.height = 150,
+    super.key,
+  });
+
+  final String message;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Opacity(
+            opacity: .4,
+            child: Assets.svg.brujiko.sad.svg(
+              height: height,
+            ),
+          ),
+          const SizedBox(height: 20),
+          Text(message),
+        ],
+      ),
+    );
+  }
+}
 
 class _TopAnimeList extends StatelessWidget {
   const _TopAnimeList({required this.list});

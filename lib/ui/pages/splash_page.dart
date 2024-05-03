@@ -63,6 +63,13 @@ class SplashPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const _LogoText(),
+              // TODO: Remove test button
+              ElevatedButton(
+                onPressed: () {
+                  context.router.replace(const MainRoute());
+                },
+                child: Text("NEXT"),
+              ),
             ],
           ),
         ),
@@ -73,7 +80,7 @@ class SplashPage extends StatelessWidget {
   void _splashListener(BuildContext context, ApplicationPreloadState state) {
     state.mapOrNull(completed: (state) {
       // TODO: Saving loaded data into objects
-      context.router.replace(const MainRoute());
+      // context.router.replace(const MainRoute());
     });
   }
 }

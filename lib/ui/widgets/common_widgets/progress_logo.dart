@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:brujanime/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
+// TODO: Rename widget?
 class ProgressLogo extends StatelessWidget {
   const ProgressLogo({super.key, this.progress = 0.0});
 
@@ -11,8 +12,8 @@ class ProgressLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Assets.svg.brujiko.svg(
-        width: 180,
+      child: Assets.svg.brujiko.happy.svg(
+        width: 200,
       ),
     );
   }
