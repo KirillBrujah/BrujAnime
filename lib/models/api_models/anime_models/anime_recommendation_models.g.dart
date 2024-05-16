@@ -32,7 +32,7 @@ Map<String, dynamic> _$$AnimeRecommendationImplToJson(
 _$AnimeRecommendationEntryImpl _$$AnimeRecommendationEntryImplFromJson(
         Map<String, dynamic> json) =>
     _$AnimeRecommendationEntryImpl(
-      id: json['mal_id'] as int,
+      id: (json['mal_id'] as num).toInt(),
       images: json['images'] == null
           ? null
           : ImagesWrapper.fromJson(json['images'] as Map<String, dynamic>),

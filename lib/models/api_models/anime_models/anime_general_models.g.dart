@@ -7,7 +7,7 @@ part of 'anime_general_models.dart';
 // **************************************************************************
 
 _$AnimeImpl _$$AnimeImplFromJson(Map<String, dynamic> json) => _$AnimeImpl(
-      id: json['mal_id'] as int,
+      id: (json['mal_id'] as num).toInt(),
       images: json['images'] == null
           ? null
           : ImagesWrapper.fromJson(json['images'] as Map<String, dynamic>),
@@ -15,14 +15,14 @@ _$AnimeImpl _$$AnimeImplFromJson(Map<String, dynamic> json) => _$AnimeImpl(
       titleEnglish: json['title_english'] as String?,
       titleJapanese: json['title_japanese'] as String?,
       type: $enumDecode(_$AnimeTypeEnumMap, json['type']),
-      episodes: json['episodes'] as int? ?? 0,
+      episodes: (json['episodes'] as num?)?.toInt() ?? 0,
       airing: json['airing'] as bool,
       duration: json['duration'] as String,
       score: (json['score'] as num?)?.toDouble() ?? 0,
-      favorites: json['favorites'] as int? ?? 0,
-      scoredBy: json['scoredBy'] as int? ?? 0,
-      rank: json['rank'] as int? ?? 0,
-      popularity: json['popularity'] as int? ?? 0,
+      favorites: (json['favorites'] as num?)?.toInt() ?? 0,
+      scoredBy: (json['scoredBy'] as num?)?.toInt() ?? 0,
+      rank: (json['rank'] as num?)?.toInt() ?? 0,
+      popularity: (json['popularity'] as num?)?.toInt() ?? 0,
       synopsis: json['synopsis'] as String? ?? "",
       background: json['background'] as String? ?? "",
       genres: (json['genres'] as List<dynamic>?)
@@ -85,7 +85,7 @@ Map<String, dynamic> _$$AnimeAiredImplToJson(_$AnimeAiredImpl instance) =>
     };
 
 _$GenreImpl _$$GenreImplFromJson(Map<String, dynamic> json) => _$GenreImpl(
-      id: json['mal_id'] as int,
+      id: (json['mal_id'] as num).toInt(),
       type: $enumDecode(_$ArtworkTypesEnumMap, json['type']),
       name: json['name'] as String,
     );
