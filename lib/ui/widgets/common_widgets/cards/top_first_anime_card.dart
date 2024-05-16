@@ -16,7 +16,8 @@ class TopFirstAnimeCard extends StatelessWidget {
   final Anime anime;
 
   VoidCallback _handleTap(BuildContext context) => () {
-        context.router.push(AnimeRoute(anime: anime));
+        context.router.navigate(AnimeRoute(anime: anime));
+        // context.router.push(AnimeRoute(anime: anime));
       };
 
   @override
