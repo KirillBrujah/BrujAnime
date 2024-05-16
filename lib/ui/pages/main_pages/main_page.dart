@@ -30,6 +30,7 @@ class MainPage extends StatelessWidget {
               Expanded(child: child),
             ],
           ),
+
           bottomNavigationBar: MainBottomNavigation(
             activeIndex: tabsRouter.activeIndex,
             setActiveIndex: tabsRouter.setActiveIndex,

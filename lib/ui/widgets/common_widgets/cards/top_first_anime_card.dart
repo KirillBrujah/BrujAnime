@@ -22,20 +22,13 @@ class TopFirstAnimeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final colorScheme = Theme.of(context).colorScheme;
     return Container(
-      // decoration: BoxDecoration(
-      //   color: colorScheme.surface,
-      //   border: Border(
-      //     bottom: BorderSide(color: colorScheme.primary, width: 1),
-      //   ),
-      // ),
       padding: ScreenConstants.contentPadding,
       child: InkWell(
         onTap: _handleTap(context),
         borderRadius: const BorderRadius.all(CardConstants.borderRadius),
         child: SizedBox(
-          height: 200,
+          height: CardConstants.topFirstCardSize.height,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -23,6 +23,7 @@ class MainBottomNavigation extends StatelessWidget {
 
     return BottomAppBar(
       height: _bottomAppBarHeight,
+      padding: EdgeInsets.zero,
       child: Container(
         decoration: BoxDecoration(
           color: colorScheme.background,

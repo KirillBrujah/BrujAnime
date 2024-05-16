@@ -70,20 +70,12 @@ class TopFirstCardShimmer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
-        color: colorScheme.surface,
-        border: Border(
-          bottom: BorderSide(color: colorScheme.primary, width: 1),
-        ),
-      ),
       padding: ScreenConstants.contentPadding,
       child: ShimmerContainer(
         child: SizedBox(
-          height: 200,
+          height: CardConstants.topFirstCardSize.height,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
